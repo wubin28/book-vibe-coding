@@ -1,0 +1,37 @@
+<!--index.wxml-->
+<navigation-bar title="减少AI幻觉" back="{{false}}" color="white" background="#4CAF50"></navigation-bar>
+<view class="container">
+  <!-- 顶部按钮区 -->
+  <view class="header-buttons">
+    <button class="share-btn" open-type="share" hover-class="btn-hover">
+      <text class="btn-text">分享</text>
+    </button>
+    <button class="new-btn" bindtap="clearAll" hover-class="btn-hover">
+      <text class="btn-text">新优化</text>
+    </button>
+  </view>
+
+  <!-- 简介 -->
+  <view class="intro">
+    <text class="intro-text">优化您的提示词，减少AI幻觉，获取更可靠的信息</text>
+  </view>
+
+  <!-- 输入区域 -->
+  <view class="input-section">
+    <text class="section-title">初始提示词</text>
+    <textarea class="prompt-input" placeholder="请输入您的提示词..." bindinput="onInputChange" value="{{originalPrompt}}"></textarea>
+    <button class="submit-btn" bindtap="optimizePrompt" hover-class="btn-hover">生成优化提示词</button>
+  </view>
+
+  <!-- 结果区域 -->
+  <view class="result-section">
+    <text class="section-title">优化后提示词</text>
+    <view class="result-container">
+      <text class="result-text" wx:if="{{optimizedPrompt}}">{{optimizedPrompt}}</text>
+      <text class="placeholder-text" wx:else>优化后的提示词将显示在这里...</text>
+    </view>
+    <button class="copy-btn" bindtap="copyToClipboard" hover-class="btn-hover" wx:if="{{optimizedPrompt}}">
+      <text class="btn-text">复制提示词</text>
+    </button>
+  </view>
+</view>

@@ -1,0 +1,212 @@
+<svg viewBox="0 0 1200 1600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Gradients for visual appeal -->
+    <linearGradient id="headerGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#60a5fa;stop-opacity:0.1"/>
+      <stop offset="100%" style="stop-color:#60a5fa;stop-opacity:0.05"/>
+    </linearGradient>
+    <linearGradient id="salaryFill" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#60a5fa;stop-opacity:0.3"/>
+      <stop offset="100%" style="stop-color:#60a5fa;stop-opacity:0.1"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="1600" fill="#fafafa"/>
+  
+  <!-- Header -->
+  <rect x="0" y="0" width="1200" height="120" fill="url(#headerGrad)" stroke="#e5e7eb" stroke-width="1"/>
+  <text x="60" y="45" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#222">
+    Global AI Job Market &amp; Salary Trends 2025 数据看板
+  </text>
+  <text x="60" y="75" font-family="Arial, sans-serif" font-size="16" fill="#666">
+    共分析 <tspan font-weight="bold">14,999</tspan> 条招聘记录（数据源：Kaggle）
+  </text>
+  
+  <!-- Chart 1: Top Skills Bar Chart -->
+  <g transform="translate(60, 160)">
+    <rect x="0" y="0" width="1080" height="420" fill="white" stroke="#e5e7eb" stroke-width="1" rx="8"/>
+    <text x="540" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#222">
+      Top 20 技能需求
+    </text>
+    
+    <!-- Skills bars -->
+    <g transform="translate(80, 60)">
+      <!-- Python -->
+      <rect x="0" y="0" width="400" height="15" fill="hsl(0,70%,60%)"/>
+      <text x="410" y="12" font-family="Arial, sans-serif" font-size="12" fill="#222">Python (4,450)</text>
+      
+      <!-- SQL -->
+      <rect x="0" y="20" width="307" height="15" fill="hsl(18,70%,60%)"/>
+      <text x="317" y="32" font-family="Arial, sans-serif" font-size="12" fill="#222">SQL (3,407)</text>
+      
+      <!-- TensorFlow -->
+      <rect x="0" y="40" width="272" height="15" fill="hsl(36,70%,60%)"/>
+      <text x="282" y="52" font-family="Arial, sans-serif" font-size="12" fill="#222">TensorFlow (3,022)</text>
+      
+      <!-- Kubernetes -->
+      <rect x="0" y="60" width="271" height="15" fill="hsl(54,70%,60%)"/>
+      <text x="281" y="72" font-family="Arial, sans-serif" font-size="12" fill="#222">Kubernetes (3,009)</text>
+      
+      <!-- Scala -->
+      <rect x="0" y="80" width="251" height="15" fill="hsl(72,70%,60%)"/>
+      <text x="261" y="92" font-family="Arial, sans-serif" font-size="12" fill="#222">Scala (2,794)</text>
+      
+      <!-- PyTorch -->
+      <rect x="0" y="100" width="250" height="15" fill="hsl(90,70%,60%)"/>
+      <text x="260" y="112" font-family="Arial, sans-serif" font-size="12" fill="#222">PyTorch (2,777)</text>
+      
+      <!-- Linux -->
+      <rect x="0" y="120" width="243" height="15" fill="hsl(108,70%,60%)"/>
+      <text x="253" y="132" font-family="Arial, sans-serif" font-size="12" fill="#222">Linux (2,705)</text>
+      
+      <!-- Git -->
+      <rect x="0" y="140" width="237" height="15" fill="hsl(126,70%,60%)"/>
+      <text x="247" y="152" font-family="Arial, sans-serif" font-size="12" fill="#222">Git (2,631)</text>
+      
+      <!-- Java -->
+      <rect x="0" y="160" width="232" height="15" fill="hsl(144,70%,60%)"/>
+      <text x="242" y="172" font-family="Arial, sans-serif" font-size="12" fill="#222">Java (2,578)</text>
+      
+      <!-- GCP -->
+      <rect x="0" y="180" width="220" height="15" fill="hsl(162,70%,60%)"/>
+      <text x="230" y="192" font-family="Arial, sans-serif" font-size="12" fill="#222">GCP (2,442)</text>
+      
+      <!-- Show top 10 for space -->
+    </g>
+  </g>
+  
+  <!-- Chart 2: Countries Horizontal Bar Chart -->
+  <g transform="translate(60, 620)">
+    <rect x="0" y="0" width="1080" height="420" fill="white" stroke="#e5e7eb" stroke-width="1" rx="8"/>
+    <text x="540" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#222">
+      Top 20 国家/地区 AI 职位机会
+    </text>
+    
+    <!-- Country bars (horizontal) -->
+    <g transform="translate(180, 60)">
+      <!-- Germany -->
+      <rect x="0" y="0" width="183" height="15" fill="hsl(72,70%,60%)"/>
+      <text x="-10" y="12" text-anchor="end" font-family="Arial, sans-serif" font-size="12" fill="#222">Germany</text>
+      <text x="190" y="12" font-family="Arial, sans-serif" font-size="12" fill="#222">814</text>
+      
+      <!-- Denmark -->
+      <rect x="0" y="20" width="175" height="15" fill="hsl(90,70%,60%)"/>
+      <text x="-10" y="32" text-anchor="end" font-family="Arial, sans-serif" font-size="12" fill="#222">Denmark</text>
+      <text x="182" y="32" font-family="Arial, sans-serif" font-size="12" fill="#222">778</text>
+      
+      <!-- Canada -->
+      <rect x="0" y="40" width="173" height="15" fill="hsl(108,70%,60%)"/>
+      <text x="-10" y="52" text-anchor="end" font-family="Arial, sans-serif" font-size="12" fill="#222">Canada</text>
+      <text x="180" y="52" font-family="Arial, sans-serif" font-size="12" fill="#222">769</text>
+      
+      <!-- France -->
+      <rect x="0" y="60" width="173" height="15" fill="hsl(126,70%,60%)"/>
+      <text x="-10" y="72" text-anchor="end" font-family="Arial, sans-serif" font-size="12" fill="#222">France</text>
+      <text x="180" y="72" font-family="Arial, sans-serif" font-size="12" fill="#222">769</text>
+      
+      <!-- Austria -->
+      <rect x="0" y="80" width="172" height="15" fill="hsl(144,70%,60%)"/>
+      <text x="-10" y="92" text-anchor="end" font-family="Arial, sans-serif" font-size="12" fill="#222">Austria</text>
+      <text x="179" y="92" font-family="Arial, sans-serif" font-size="12" fill="#222">765</text>
+      
+      <!-- Singapore -->
+      <rect x="0" y="100" width="172" height="15" fill="hsl(162,70%,60%)"/>
+      <text x="-10" y="112" text-anchor="end" font-family="Arial, sans-serif" font-size="12" fill="#222">Singapore</text>
+      <text x="179" y="112" font-family="Arial, sans-serif" font-size="12" fill="#222">764</text>
+      
+      <!-- China -->
+      <rect x="0" y="120" width="172" height="15" fill="hsl(180,70%,60%)"/>
+      <text x="-10" y="132" text-anchor="end" font-family="Arial, sans-serif" font-size="12" fill="#222">China</text>
+      <text x="179" y="132" font-family="Arial, sans-serif" font-size="12" fill="#222">763</text>
+      
+      <!-- India -->
+      <rect x="0" y="140" width="170" height="15" fill="hsl(198,70%,60%)"/>
+      <text x="-10" y="152" text-anchor="end" font-family="Arial, sans-serif" font-size="12" fill="#222">India</text>
+      <text x="177" y="152" font-family="Arial, sans-serif" font-size="12" fill="#222">754</text>
+      
+      <!-- Sweden -->
+      <rect x="0" y="160" width="169" height="15" fill="hsl(216,70%,60%)"/>
+      <text x="-10" y="172" text-anchor="end" font-family="Arial, sans-serif" font-size="12" fill="#222">Sweden</text>
+      <text x="176" y="172" font-family="Arial, sans-serif" font-size="12" fill="#222">752</text>
+      
+      <!-- Israel -->
+      <rect x="0" y="180" width="169" height="15" fill="hsl(234,70%,60%)"/>
+      <text x="-10" y="192" text-anchor="end" font-family="Arial, sans-serif" font-size="12" fill="#222">Israel</text>
+      <text x="176" y="192" font-family="Arial, sans-serif" font-size="12" fill="#222">751</text>
+    </g>
+  </g>
+  
+  <!-- Chart 3: Salary vs Experience Line Chart -->
+  <g transform="translate(60, 1080)">
+    <rect x="0" y="0" width="1080" height="420" fill="white" stroke="#e5e7eb" stroke-width="1" rx="8"/>
+    <text x="540" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#222">
+      工作年限 vs 平均薪资
+    </text>
+    
+    <!-- Chart area -->
+    <g transform="translate(80, 60)">
+      <!-- Grid lines -->
+      <defs>
+        <pattern id="grid" width="50" height="30" patternUnits="userSpaceOnUse">
+          <path d="M 50 0 L 0 0 0 30" fill="none" stroke="#e5e7eb" stroke-width="1"/>
+        </pattern>
+      </defs>
+      <rect x="0" y="0" width="900" height="300" fill="url(#grid)"/>
+      
+      <!-- Y-axis labels (salary) -->
+      <text x="-10" y="10" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#666">$200k</text>
+      <text x="-10" y="85" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#666">$150k</text>
+      <text x="-10" y="160" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#666">$100k</text>
+      <text x="-10" y="235" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#666">$50k</text>
+      <text x="-10" y="310" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#666">$0</text>
+      
+      <!-- X-axis labels (years) -->
+      <text x="0" y="325" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#666">0</text>
+      <text x="225" y="325" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#666">5</text>
+      <text x="450" y="325" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#666">10</text>
+      <text x="675" y="325" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#666">15</text>
+      <text x="900" y="325" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#666">20</text>
+      
+      <!-- Salary curve with area fill -->
+      <path d="M 0,254 L 45,254 L 90,166 L 135,171 L 180,169 L 225,100 L 270,94 L 315,101 L 360,94 L 405,97 L 450,43 L 495,47 L 540,37 L 585,42 L 630,48 L 675,50 L 720,55 L 765,49 L 810,47 L 855,42 L 900,47"
+            fill="none" stroke="#60a5fa" stroke-width="3"/>
+      
+      <!-- Area fill -->
+      <path d="M 0,254 L 45,254 L 90,166 L 135,171 L 180,169 L 225,100 L 270,94 L 315,101 L 360,94 L 405,97 L 450,43 L 495,47 L 540,37 L 585,42 L 630,48 L 675,50 L 720,55 L 765,49 L 810,47 L 855,42 L 900,47 L 900,300 L 0,300 Z"
+            fill="url(#salaryFill)"/>
+      
+      <!-- Data points -->
+      <circle cx="0" cy="254" r="3" fill="#60a5fa"/>
+      <circle cx="45" cy="254" r="3" fill="#60a5fa"/>
+      <circle cx="90" cy="166" r="3" fill="#60a5fa"/>
+      <circle cx="135" cy="171" r="3" fill="#60a5fa"/>
+      <circle cx="180" cy="169" r="3" fill="#60a5fa"/>
+      <circle cx="225" cy="100" r="3" fill="#60a5fa"/>
+      <circle cx="270" cy="94" r="3" fill="#60a5fa"/>
+      <circle cx="315" cy="101" r="3" fill="#60a5fa"/>
+      <circle cx="360" cy="94" r="3" fill="#60a5fa"/>
+      <circle cx="405" cy="97" r="3" fill="#60a5fa"/>
+      <circle cx="450" cy="43" r="3" fill="#60a5fa"/>
+      <circle cx="495" cy="47" r="3" fill="#60a5fa"/>
+      <circle cx="540" cy="37" r="3" fill="#60a5fa"/>
+      <circle cx="585" cy="42" r="3" fill="#60a5fa"/>
+      <circle cx="630" cy="48" r="3" fill="#60a5fa"/>
+      <circle cx="675" cy="50" r="3" fill="#60a5fa"/>
+      <circle cx="720" cy="55" r="3" fill="#60a5fa"/>
+      <circle cx="765" cy="49" r="3" fill="#60a5fa"/>
+      <circle cx="810" cy="47" r="3" fill="#60a5fa"/>
+      <circle cx="855" cy="42" r="3" fill="#60a5fa"/>
+      <circle cx="900" cy="47" r="3" fill="#60a5fa"/>
+      
+      <!-- Axis labels -->
+      <text x="450" y="350" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#222">工作年限</text>
+      <text x="-40" y="150" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#222" transform="rotate(-90, -40, 150)">平均薪资 (USD)</text>
+    </g>
+  </g>
+  
+  <!-- Footer -->
+  <text x="600" y="1570" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#666">
+    © 2025 Career Insights Dashboard
+  </text>
+</svg>

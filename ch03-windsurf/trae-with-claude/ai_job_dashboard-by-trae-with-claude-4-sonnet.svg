@@ -1,0 +1,342 @@
+<svg width="1400" height="1370" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- 渐变定义 -->
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f5f7fa;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#c3cfe2;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="cardGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.95" />
+      <stop offset="100%" style="stop-color:#f8f9fa;stop-opacity:0.95" />
+    </linearGradient>
+    
+    <linearGradient id="skillGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="pathGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f093fb;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f5576c;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- 阴影滤镜 -->
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="rgba(0,0,0,0.1)"/>
+    </filter>
+    
+    <filter id="cardShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="6" stdDeviation="12" flood-color="rgba(0,0,0,0.1)"/>
+    </filter>
+  </defs>
+  
+  <!-- 背景 -->
+  <rect width="100%" height="100%" fill="url(#bgGradient)"/>
+  
+  <!-- 标题区域 -->
+  <rect x="50" y="30" width="1300" height="140" rx="15" fill="url(#cardGradient)" filter="url(#shadow)"/>
+  <text x="700" y="70" text-anchor="middle" font-family="Arial, sans-serif" font-size="36" font-weight="300" fill="#2c3e50">🚀 全球AI就业市场与薪资趋势2025</text>
+  <text x="700" y="100" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#7f8c8d">职业规划数据看板 - Vibe Coding实战案例</text>
+  <text x="700" y="130" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#3498db">📊 数据集总记录数: 15,000 条</text>
+  
+  <!-- 统计卡片 -->
+  <g id="stats-cards">
+    <!-- 职位类型 -->
+    <rect x="50" y="200" width="300" height="120" rx="12" fill="url(#cardGradient)" filter="url(#shadow)"/>
+    <text x="200" y="240" text-anchor="middle" font-family="Arial, sans-serif" font-size="36" font-weight="bold" fill="#3498db">25+</text>
+    <text x="200" y="270" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#7f8c8d">职位类型</text>
+    
+    <!-- 国家地区 -->
+    <rect x="370" y="200" width="300" height="120" rx="12" fill="url(#cardGradient)" filter="url(#shadow)"/>
+    <text x="520" y="240" text-anchor="middle" font-family="Arial, sans-serif" font-size="36" font-weight="bold" fill="#3498db">30+</text>
+    <text x="520" y="270" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#7f8c8d">国家/地区</text>
+    
+    <!-- 核心技能 -->
+    <rect x="690" y="200" width="300" height="120" rx="12" fill="url(#cardGradient)" filter="url(#shadow)"/>
+    <text x="840" y="240" text-anchor="middle" font-family="Arial, sans-serif" font-size="36" font-weight="bold" fill="#3498db">50+</text>
+    <text x="840" y="270" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#7f8c8d">核心技能</text>
+    
+    <!-- 平均薪资 -->
+    <rect x="1010" y="200" width="300" height="120" rx="12" fill="url(#cardGradient)" filter="url(#shadow)"/>
+    <text x="1160" y="240" text-anchor="middle" font-family="Arial, sans-serif" font-size="36" font-weight="bold" fill="#3498db">$95K</text>
+    <text x="1160" y="270" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#7f8c8d">平均薪资</text>
+  </g>
+  
+  <!-- 图表区域 -->
+  <g id="charts">
+    <!-- 职位分布饼图 -->
+    <rect x="50" y="350" width="320" height="280" rx="15" fill="url(#cardGradient)" filter="url(#cardShadow)"/>
+    <text x="210" y="380" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="500" fill="#2c3e50">🎯 热门AI职位分布</text>
+    
+    <!-- 饼图 -->
+    <g transform="translate(210, 480)">
+      <circle cx="0" cy="0" r="80" fill="none" stroke="#FF6B6B" stroke-width="20" stroke-dasharray="157 471" stroke-dashoffset="0" transform="rotate(-90)"/>
+      <circle cx="0" cy="0" r="80" fill="none" stroke="#4ECDC4" stroke-width="20" stroke-dasharray="126 502" stroke-dashoffset="-157" transform="rotate(-90)"/>
+      <circle cx="0" cy="0" r="80" fill="none" stroke="#45B7D1" stroke-width="20" stroke-dasharray="113 515" stroke-dashoffset="-283" transform="rotate(-90)"/>
+      <circle cx="0" cy="0" r="80" fill="none" stroke="#96CEB4" stroke-width="20" stroke-dasharray="75 553" stroke-dashoffset="-396" transform="rotate(-90)"/>
+      <circle cx="0" cy="0" r="80" fill="none" stroke="#FFEAA7" stroke-width="20" stroke-dasharray="63 565" stroke-dashoffset="-471" transform="rotate(-90)"/>
+      <circle cx="0" cy="0" r="80" fill="none" stroke="#DDA0DD" stroke-width="20" stroke-dasharray="94 534" stroke-dashoffset="-534" transform="rotate(-90)"/>
+    </g>
+    
+    <!-- 图例 -->
+    <g transform="translate(50, 580)">
+      <rect x="0" y="0" width="12" height="12" fill="#FF6B6B"/>
+      <text x="20" y="10" font-family="Arial, sans-serif" font-size="12" fill="#2c3e50">AI Engineer</text>
+      <rect x="100" y="0" width="12" height="12" fill="#4ECDC4"/>
+      <text x="120" y="10" font-family="Arial, sans-serif" font-size="12" fill="#2c3e50">Data Scientist</text>
+      <rect x="220" y="0" width="12" height="12" fill="#45B7D1"/>
+      <text x="240" y="10" font-family="Arial, sans-serif" font-size="12" fill="#2c3e50">ML Engineer</text>
+      
+      <rect x="0" y="20" width="12" height="12" fill="#96CEB4"/>
+      <text x="20" y="30" font-family="Arial, sans-serif" font-size="12" fill="#2c3e50">AI Architect</text>
+      <rect x="100" y="20" width="12" height="12" fill="#FFEAA7"/>
+      <text x="120" y="30" font-family="Arial, sans-serif" font-size="12" fill="#2c3e50">NLP Engineer</text>
+      <rect x="220" y="20" width="12" height="12" fill="#DDA0DD"/>
+      <text x="240" y="30" font-family="Arial, sans-serif" font-size="12" fill="#2c3e50">其他</text>
+    </g>
+    
+    <!-- 薪资水平柱状图 -->
+    <rect x="390" y="350" width="320" height="280" rx="15" fill="url(#cardGradient)" filter="url(#cardShadow)"/>
+    <text x="550" y="380" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="500" fill="#2c3e50">💰 不同经验水平薪资对比</text>
+    
+    <!-- 柱状图 -->
+    <g transform="translate(420, 580)">
+      <!-- Y轴 -->
+      <line x1="0" y1="0" x2="0" y2="-180" stroke="#7f8c8d" stroke-width="1"/>
+      <!-- X轴 -->
+      <line x1="0" y1="0" x2="260" y2="0" stroke="#7f8c8d" stroke-width="1"/>
+      
+      <!-- 柱子 -->
+      <rect x="10" y="-65" width="50" height="65" fill="rgba(255, 107, 107, 0.8)" stroke="#FF6B6B" stroke-width="2"/>
+      <rect x="70" y="-95" width="50" height="95" fill="rgba(78, 205, 196, 0.8)" stroke="#4ECDC4" stroke-width="2"/>
+      <rect x="130" y="-135" width="50" height="135" fill="rgba(69, 183, 209, 0.8)" stroke="#45B7D1" stroke-width="2"/>
+      <rect x="190" y="-180" width="50" height="180" fill="rgba(150, 206, 180, 0.8)" stroke="#96CEB4" stroke-width="2"/>
+      
+      <!-- 标签 -->
+      <text x="35" y="15" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#2c3e50">入门级</text>
+      <text x="95" y="15" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#2c3e50">中级</text>
+      <text x="155" y="15" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#2c3e50">高级</text>
+      <text x="215" y="15" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#2c3e50">专家级</text>
+      
+      <!-- 数值标签 -->
+      <text x="35" y="-70" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#2c3e50">$65K</text>
+      <text x="95" y="-100" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#2c3e50">$95K</text>
+      <text x="155" y="-140" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#2c3e50">$135K</text>
+      <text x="215" y="-185" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#2c3e50">$180K</text>
+    </g>
+    
+    <!-- 国家就业机会 -->
+    <rect x="730" y="350" width="320" height="280" rx="15" fill="url(#cardGradient)" filter="url(#cardShadow)"/>
+    <text x="890" y="380" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="500" fill="#2c3e50">🌍 主要国家就业机会</text>
+    
+    <!-- 国家列表 -->
+    <g transform="translate(750, 400)">
+      <g transform="translate(0, 20)">
+        <text x="0" y="0" font-family="Arial, sans-serif" font-size="14" font-weight="500" fill="#2c3e50">美国</text>
+        <rect x="220" y="-12" width="60" height="20" rx="10" fill="#3498db"/>
+        <text x="250" y="2" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="white">3200</text>
+      </g>
+      <g transform="translate(0, 45)">
+        <text x="0" y="0" font-family="Arial, sans-serif" font-size="14" font-weight="500" fill="#2c3e50">中国</text>
+        <rect x="220" y="-12" width="60" height="20" rx="10" fill="#3498db"/>
+        <text x="250" y="2" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="white">2800</text>
+      </g>
+      <g transform="translate(0, 70)">
+        <text x="0" y="0" font-family="Arial, sans-serif" font-size="14" font-weight="500" fill="#2c3e50">德国</text>
+        <rect x="220" y="-12" width="60" height="20" rx="10" fill="#3498db"/>
+        <text x="250" y="2" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="white">1500</text>
+      </g>
+      <g transform="translate(0, 95)">
+        <text x="0" y="0" font-family="Arial, sans-serif" font-size="14" font-weight="500" fill="#2c3e50">英国</text>
+        <rect x="220" y="-12" width="60" height="20" rx="10" fill="#3498db"/>
+        <text x="250" y="2" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="white">1200</text>
+      </g>
+      <g transform="translate(0, 120)">
+        <text x="0" y="0" font-family="Arial, sans-serif" font-size="14" font-weight="500" fill="#2c3e50">加拿大</text>
+        <rect x="220" y="-12" width="60" height="20" rx="10" fill="#3498db"/>
+        <text x="250" y="2" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="white">1100</text>
+      </g>
+      <g transform="translate(0, 145)">
+        <text x="0" y="0" font-family="Arial, sans-serif" font-size="14" font-weight="500" fill="#2c3e50">法国</text>
+        <rect x="220" y="-12" width="60" height="20" rx="10" fill="#3498db"/>
+        <text x="250" y="2" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="white">950</text>
+      </g>
+      <g transform="translate(0, 170)">
+        <text x="0" y="0" font-family="Arial, sans-serif" font-size="14" font-weight="500" fill="#2c3e50">新加坡</text>
+        <rect x="220" y="-12" width="60" height="20" rx="10" fill="#3498db"/>
+        <text x="250" y="2" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="white">800</text>
+      </g>
+    </g>
+    
+    <!-- 技能需求雷达图 -->
+    <rect x="1070" y="350" width="280" height="280" rx="15" fill="url(#cardGradient)" filter="url(#cardShadow)"/>
+    <text x="1210" y="380" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="500" fill="#2c3e50">🔥 热门技能需求排行</text>
+    
+    <!-- 雷达图 -->
+    <g transform="translate(1210, 500)">
+      <!-- 网格线 -->
+      <polygon points="0,-80 56.6,-56.6 80,0 56.6,56.6 0,80 -56.6,56.6 -80,0 -56.6,-56.6" 
+               fill="none" stroke="#ecf0f1" stroke-width="1"/>
+      <polygon points="0,-60 42.4,-42.4 60,0 42.4,42.4 0,60 -42.4,42.4 -60,0 -42.4,-42.4" 
+               fill="none" stroke="#ecf0f1" stroke-width="1"/>
+      <polygon points="0,-40 28.3,-28.3 40,0 28.3,28.3 0,40 -28.3,28.3 -40,0 -28.3,-28.3" 
+               fill="none" stroke="#ecf0f1" stroke-width="1"/>
+      <polygon points="0,-20 14.1,-14.1 20,0 14.1,14.1 0,20 -14.1,14.1 -20,0 -14.1,-14.1" 
+               fill="none" stroke="#ecf0f1" stroke-width="1"/>
+      
+      <!-- 轴线 -->
+      <line x1="0" y1="-80" x2="0" y2="80" stroke="#bdc3c7" stroke-width="1"/>
+      <line x1="-80" y1="0" x2="80" y2="0" stroke="#bdc3c7" stroke-width="1"/>
+      <line x1="-56.6" y1="-56.6" x2="56.6" y2="56.6" stroke="#bdc3c7" stroke-width="1"/>
+      <line x1="-56.6" y1="56.6" x2="56.6" y2="-56.6" stroke="#bdc3c7" stroke-width="1"/>
+      
+      <!-- 数据多边形 -->
+      <polygon points="0,-76 48,-48 64,0 42.4,42.4 0,56 -45.3,45.3 -72,0 -48,-48" 
+               fill="rgba(69, 183, 209, 0.2)" stroke="#45B7D1" stroke-width="2"/>
+      
+      <!-- 数据点 -->
+      <circle cx="0" cy="-76" r="3" fill="#45B7D1"/>
+      <circle cx="48" cy="-48" r="3" fill="#45B7D1"/>
+      <circle cx="64" cy="0" r="3" fill="#45B7D1"/>
+      <circle cx="42.4" cy="42.4" r="3" fill="#45B7D1"/>
+      <circle cx="0" cy="56" r="3" fill="#45B7D1"/>
+      <circle cx="-45.3" cy="45.3" r="3" fill="#45B7D1"/>
+      <circle cx="-72" cy="0" r="3" fill="#45B7D1"/>
+      <circle cx="-48" cy="-48" r="3" fill="#45B7D1"/>
+      
+      <!-- 标签 -->
+      <text x="0" y="-95" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#2c3e50">Python</text>
+      <text x="65" y="-55" text-anchor="start" font-family="Arial, sans-serif" font-size="10" fill="#2c3e50">TensorFlow</text>
+      <text x="85" y="5" text-anchor="start" font-family="Arial, sans-serif" font-size="10" fill="#2c3e50">PyTorch</text>
+      <text x="50" y="55" text-anchor="start" font-family="Arial, sans-serif" font-size="10" fill="#2c3e50">AWS</text>
+      <text x="0" y="75" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#2c3e50">Docker</text>
+      <text x="-65" y="55" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#2c3e50">Kubernetes</text>
+      <text x="-85" y="5" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#2c3e50">SQL</text>
+      <text x="-60" y="-55" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#2c3e50">Git</text>
+    </g>
+  </g>
+  
+  <!-- 职业发展路径 -->
+  <rect x="50" y="660" width="1300" height="320" rx="15" fill="url(#cardGradient)" filter="url(#cardShadow)"/>
+  <text x="700" y="690" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="500" fill="#2c3e50">🎯 AI职业发展路径规划</text>
+  
+  <!-- 路径级别 -->
+  <g id="career-levels">
+    <!-- 入门级 -->
+    <rect x="70" y="720" width="1260" height="50" rx="10" fill="url(#pathGradient)"/>
+    <circle cx="100" cy="745" r="20" fill="rgba(255, 255, 255, 0.2)"/>
+    <text x="100" y="750" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="white">1</text>
+    <text x="140" y="740" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="white">入门级 (EN) - 0-2年经验</text>
+    <text x="140" y="760" font-family="Arial, sans-serif" font-size="14" fill="white" opacity="0.9">平均薪资: $65,000 | 推荐职位: AI Specialist, Data Analyst</text>
+    
+    <!-- 中级 -->
+    <rect x="70" y="790" width="1260" height="50" rx="10" fill="url(#pathGradient)"/>
+    <circle cx="100" cy="815" r="20" fill="rgba(255, 255, 255, 0.2)"/>
+    <text x="100" y="820" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="white">2</text>
+    <text x="140" y="810" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="white">中级 (MI) - 3-5年经验</text>
+    <text x="140" y="830" font-family="Arial, sans-serif" font-size="14" fill="white" opacity="0.9">平均薪资: $95,000 | 推荐职位: ML Engineer, Data Scientist</text>
+    
+    <!-- 高级 -->
+    <rect x="70" y="860" width="1260" height="50" rx="10" fill="url(#pathGradient)"/>
+    <circle cx="100" cy="885" r="20" fill="rgba(255, 255, 255, 0.2)"/>
+    <text x="100" y="890" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="white">3</text>
+    <text x="140" y="880" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="white">高级 (SE) - 6-10年经验</text>
+    <text x="140" y="900" font-family="Arial, sans-serif" font-size="14" fill="white" opacity="0.9">平均薪资: $135,000 | 推荐职位: AI Architect, Principal Data Scientist</text>
+    
+    <!-- 专家级 -->
+    <rect x="70" y="930" width="1260" height="50" rx="10" fill="url(#pathGradient)"/>
+    <circle cx="100" cy="955" r="20" fill="rgba(255, 255, 255, 0.2)"/>
+    <text x="100" y="960" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="white">4</text>
+    <text x="140" y="950" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="white">专家级 (EX) - 10+年经验</text>
+    <text x="140" y="970" font-family="Arial, sans-serif" font-size="14" fill="white" opacity="0.9">平均薪资: $180,000+ | 推荐职位: Head of AI, AI Research Scientist</text>
+  </g>
+  
+  <!-- 核心技能图谱 -->
+  <rect x="50" y="1010" width="1300" height="200" rx="15" fill="url(#cardGradient)" filter="url(#cardShadow)"/>
+  <text x="700" y="1040" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="500" fill="#2c3e50">💡 AI领域核心技能图谱</text>
+  
+  <!-- 技能标签 -->
+  <g id="skills-tags">
+    <rect x="70" y="1060" width="100" height="30" rx="15" fill="url(#skillGradient)"/>
+    <text x="120" y="1080" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="500" fill="white">Python</text>
+    
+    <rect x="180" y="1060" width="100" height="30" rx="15" fill="url(#skillGradient)"/>
+    <text x="230" y="1080" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="500" fill="white">TensorFlow</text>
+    
+    <rect x="290" y="1060" width="100" height="30" rx="15" fill="url(#skillGradient)"/>
+    <text x="340" y="1080" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="500" fill="white">PyTorch</text>
+    
+    <rect x="400" y="1060" width="120" height="30" rx="15" fill="url(#skillGradient)"/>
+    <text x="460" y="1080" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="500" fill="white">Machine Learning</text>
+    
+    <rect x="530" y="1060" width="110" height="30" rx="15" fill="url(#skillGradient)"/>
+    <text x="585" y="1080" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="500" fill="white">Deep Learning</text>
+    
+    <rect x="650" y="1060" width="80" height="30" rx="15" fill="url(#skillGradient)"/>
+    <text x="690" y="1080" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="500" fill="white">NLP</text>
+    
+    <rect x="740" y="1060" width="120" height="30" rx="15" fill="url(#skillGradient)"/>
+    <text x="800" y="1080" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="500" fill="white">Computer Vision</text>
+    
+    <rect x="870" y="1060" width="80" height="30" rx="15" fill="url(#skillGradient)"/>
+    <text x="910" y="1080" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="500" fill="white">AWS</text>
+    
+    <rect x="960" y="1060" width="80" height="30" rx="15" fill="url(#skillGradient)"/>
+    <text x="1000" y="1080" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="500" fill="white">Azure</text>
+    
+    <rect x="1050" y="1060" width="80" height="30" rx="15" fill="url(#skillGradient)"/>
+    <text x="1090" y="1080" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="500" fill="white">GCP</text>
+    
+    <rect x="1140" y="1060" width="80" height="30" rx="15" fill="url(#skillGradient)"/>
+    <text x="1180" y="1080" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="500" fill="white">Docker</text>
+    
+    <rect x="1230" y="1060" width="100" height="30" rx="15" fill="url(#skillGradient)"/>
+    <text x="1280" y="1080" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="500" fill="white">Kubernetes</text>
+    
+    <!-- 第二行 -->
+    <rect x="70" y="1100" width="80" height="30" rx="15" fill="url(#skillGradient)"/>
+    <text x="110" y="1120" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="500" fill="white">SQL</text>
+    
+    <rect x="160" y="1100" width="80" height="30" rx="15" fill="url(#skillGradient)"/>
+    <text x="200" y="1120" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="500" fill="white">Git</text>
+    
+    <rect x="250" y="1100" width="80" height="30" rx="15" fill="url(#skillGradient)"/>
+    <text x="290" y="1120" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="500" fill="white">Hadoop</text>
+    
+    <rect x="340" y="1100" width="80" height="30" rx="15" fill="url(#skillGradient)"/>
+    <text x="380" y="1120" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="500" fill="white">Spark</text>
+    
+    <rect x="430" y="1100" width="60" height="30" rx="15" fill="url(#skillGradient)"/>
+    <text x="460" y="1120" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="500" fill="white">R</text>
+    
+    <rect x="500" y="1100" width="80" height="30" rx="15" fill="url(#skillGradient)"/>
+    <text x="540" y="1120" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="500" fill="white">Java</text>
+    
+    <rect x="590" y="1100" width="80" height="30" rx="15" fill="url(#skillGradient)"/>
+    <text x="630" y="1120" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="500" fill="white">Scala</text>
+    
+    <rect x="680" y="1100" width="90" height="30" rx="15" fill="url(#skillGradient)"/>
+    <text x="725" y="1120" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="500" fill="white">Statistics</text>
+    
+    <rect x="780" y="1100" width="100" height="30" rx="15" fill="url(#skillGradient)"/>
+    <text x="830" y="1120" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="500" fill="white">Mathematics</text>
+    
+    <rect x="890" y="1100" width="80" height="30" rx="15" fill="url(#skillGradient)"/>
+    <text x="930" y="1120" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="500" fill="white">MLOps</text>
+    
+    <rect x="980" y="1100" width="130" height="30" rx="15" fill="url(#skillGradient)"/>
+    <text x="1045" y="1120" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="500" fill="white">Data Visualization</text>
+    
+    <rect x="1120" y="1100" width="80" height="30" rx="15" fill="url(#skillGradient)"/>
+    <text x="1160" y="1120" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="500" fill="white">Tableau</text>
+    
+    <rect x="1210" y="1100" width="80" height="30" rx="15" fill="url(#skillGradient)"/>
+    <text x="1250" y="1120" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="500" fill="white">Linux</text>
+  </g>
+  
+  <!-- 页脚 -->
+  <rect x="50" y="1240" width="1300" height="80" rx="10" fill="url(#cardGradient)"/>
+  <text x="700" y="1270" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#7f8c8d">📚 数据来源: Kaggle "Global AI Job Market &amp; Salary Trends 2025"</text>
+  <text x="700" y="1295" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#7f8c8d">🎨 Vibe Coding实战案例 - 让数据可视化更有温度</text>
+</svg>

@@ -1,0 +1,385 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="2000" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f8f9fa"/>
+      <stop offset="100%" style="stop-color:#e9ecef"/>
+    </linearGradient>
+    
+    <linearGradient id="headerGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea"/>
+      <stop offset="100%" style="stop-color:#764ba2"/>
+    </linearGradient>
+    
+    <linearGradient id="statGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#a8e6cf"/>
+      <stop offset="100%" style="stop-color:#88d8c0"/>
+    </linearGradient>
+    
+    <linearGradient id="skillGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffecd2"/>
+      <stop offset="100%" style="stop-color:#fcb69f"/>
+    </linearGradient>
+    
+    <linearGradient id="careerGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#e0c3fc"/>
+      <stop offset="100%" style="stop-color:#9bb5ff"/>
+    </linearGradient>
+    
+    <!-- Drop shadow filter -->
+    <filter id="dropShadow">
+      <feDropShadow dx="0" dy="4" stdDeviation="10" flood-opacity="0.1"/>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="2000" fill="url(#bgGradient)"/>
+  
+  <!-- Header -->
+  <rect x="0" y="0" width="1200" height="120" fill="url(#headerGradient)" filter="url(#dropShadow)"/>
+  <text x="600" y="50" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="36" font-weight="300">Global AI Job Market &amp; Salary Trends 2025</text>
+  <text x="600" y="80" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="16" opacity="0.9">Comprehensive Analysis for Career Planning and Market Insights</text>
+  
+  <!-- Stats Overview -->
+  <rect x="50" y="140" width="1100" height="120" fill="white" rx="10" filter="url(#dropShadow)"/>
+  <text x="600" y="170" text-anchor="middle" fill="#2c3e50" font-family="Arial, sans-serif" font-size="20" font-weight="600">Dataset Overview</text>
+  
+  <!-- Stat Cards -->
+  <rect x="80" y="190" width="240" height="60" fill="url(#statGradient)" rx="10"/>
+  <text x="200" y="215" text-anchor="middle" fill="#2c3e50" font-family="Arial, sans-serif" font-size="24" font-weight="bold">14,999</text>
+  <text x="200" y="235" text-anchor="middle" fill="#34495e" font-family="Arial, sans-serif" font-size="12">Total Job Records</text>
+  
+  <rect x="340" y="190" width="240" height="60" fill="url(#statGradient)" rx="10"/>
+  <text x="460" y="215" text-anchor="middle" fill="#2c3e50" font-family="Arial, sans-serif" font-size="24" font-weight="bold">15+</text>
+  <text x="460" y="235" text-anchor="middle" fill="#34495e" font-family="Arial, sans-serif" font-size="12">Job Categories</text>
+  
+  <rect x="600" y="190" width="240" height="60" fill="url(#statGradient)" rx="10"/>
+  <text x="720" y="215" text-anchor="middle" fill="#2c3e50" font-family="Arial, sans-serif" font-size="24" font-weight="bold">25+</text>
+  <text x="720" y="235" text-anchor="middle" fill="#34495e" font-family="Arial, sans-serif" font-size="12">Countries</text>
+  
+  <rect x="860" y="190" width="240" height="60" fill="url(#statGradient)" rx="10"/>
+  <text x="980" y="215" text-anchor="middle" fill="#2c3e50" font-family="Arial, sans-serif" font-size="24" font-weight="bold">$98,500</text>
+  <text x="980" y="235" text-anchor="middle" fill="#34495e" font-family="Arial, sans-serif" font-size="12">Average Salary</text>
+  
+  <!-- Skills Analysis Chart -->
+  <rect x="50" y="280" width="550" height="300" fill="white" rx="10" filter="url(#dropShadow)"/>
+  <text x="70" y="310" fill="#2c3e50" font-family="Arial, sans-serif" font-size="18" font-weight="600">🎯 Required Skills Analysis</text>
+  <text x="70" y="330" fill="#666" font-family="Arial, sans-serif" font-size="14">Top skills demanded across AI positions</text>
+  
+  <!-- Skills Donut Chart -->
+  <g transform="translate(200, 450)">
+    <!-- Python -->
+    <path d="M 0,-80 A 80,80 0 0,1 69.28,-40 L 43.30,-25 A 50,50 0 0,0 0,-50 Z" fill="#ff9ff3"/>
+    <!-- SQL -->
+    <path d="M 69.28,-40 A 80,80 0 0,1 69.28,40 L 43.30,25 A 50,50 0 0,0 43.30,-25 Z" fill="#54a0ff"/>
+    <!-- Docker -->
+    <path d="M 69.28,40 A 80,80 0 0,1 0,80 L 0,50 A 50,50 0 0,0 43.30,25 Z" fill="#5f27cd"/>
+    <!-- AWS -->
+    <path d="M 0,80 A 80,80 0 0,1 -69.28,40 L -43.30,25 A 50,50 0 0,0 0,50 Z" fill="#00d2d3"/>
+    <!-- Git -->
+    <path d="M -69.28,40 A 80,80 0 0,1 -69.28,-40 L -43.30,-25 A 50,50 0 0,0 -43.30,25 Z" fill="#ff9f43"/>
+    <!-- Linux -->
+    <path d="M -69.28,-40 A 80,80 0 0,1 0,-80 L 0,-50 A 50,50 0 0,0 -43.30,-25 Z" fill="#10ac84"/>
+  </g>
+  
+  <!-- Skills Legend -->
+  <g transform="translate(350, 380)">
+    <circle cx="10" cy="10" r="8" fill="#ff9ff3"/>
+    <text x="25" y="15" fill="#2c3e50" font-family="Arial, sans-serif" font-size="12">Python (3.2K)</text>
+    
+    <circle cx="10" cy="30" r="8" fill="#54a0ff"/>
+    <text x="25" y="35" fill="#2c3e50" font-family="Arial, sans-serif" font-size="12">SQL (2.8K)</text>
+    
+    <circle cx="10" cy="50" r="8" fill="#5f27cd"/>
+    <text x="25" y="55" fill="#2c3e50" font-family="Arial, sans-serif" font-size="12">Docker (2.4K)</text>
+    
+    <circle cx="10" cy="70" r="8" fill="#00d2d3"/>
+    <text x="25" y="75" fill="#2c3e50" font-family="Arial, sans-serif" font-size="12">AWS (2.2K)</text>
+    
+    <circle cx="10" cy="90" r="8" fill="#ff9f43"/>
+    <text x="25" y="95" fill="#2c3e50" font-family="Arial, sans-serif" font-size="12">Git (2.1K)</text>
+    
+    <circle cx="10" cy="110" r="8" fill="#10ac84"/>
+    <text x="25" y="115" fill="#2c3e50" font-family="Arial, sans-serif" font-size="12">Linux (1.9K)</text>
+  </g>
+  
+  <!-- Top AI Job Positions Chart -->
+  <rect x="620" y="280" width="530" height="300" fill="white" rx="10" filter="url(#dropShadow)"/>
+  <text x="640" y="310" fill="#2c3e50" font-family="Arial, sans-serif" font-size="18" font-weight="600">💼 Top AI Job Positions</text>
+  <text x="640" y="330" fill="#666" font-family="Arial, sans-serif" font-size="14">Most common AI roles in the market</text>
+  
+  <!-- Bar Chart -->
+  <g transform="translate(650, 360)">
+    <!-- Bars -->
+    <rect x="0" y="160" width="80" height="80" fill="#a29bfe" rx="5"/>
+    <text x="40" y="155" text-anchor="middle" fill="#2c3e50" font-family="Arial, sans-serif" font-size="10">808</text>
+    <text x="40" y="260" text-anchor="middle" fill="#2c3e50" font-family="Arial, sans-serif" font-size="10" transform="rotate(-45, 40, 260)">ML Researcher</text>
+    
+    <rect x="100" y="162" width="80" height="78" fill="#6c5ce7" rx="5"/>
+    <text x="140" y="157" text-anchor="middle" fill="#2c3e50" font-family="Arial, sans-serif" font-size="10">784</text>
+    <text x="140" y="260" text-anchor="middle" fill="#2c3e50" font-family="Arial, sans-serif" font-size="10" transform="rotate(-45, 140, 260)">AI Software Eng</text>
+    
+    <rect x="200" y="164" width="80" height="76" fill="#fd79a8" rx="5"/>
+    <text x="240" y="159" text-anchor="middle" fill="#2c3e50" font-family="Arial, sans-serif" font-size="10">777</text>
+    <text x="240" y="260" text-anchor="middle" fill="#2c3e50" font-family="Arial, sans-serif" font-size="10" transform="rotate(-45, 240, 260)">Autonomous Sys</text>
+    
+    <rect x="300" y="166" width="80" height="74" fill="#fdcb6e" rx="5"/>
+    <text x="340" y="161" text-anchor="middle" fill="#2c3e50" font-family="Arial, sans-serif" font-size="10">772</text>
+    <text x="340" y="260" text-anchor="middle" fill="#2c3e50" font-family="Arial, sans-serif" font-size="10" transform="rotate(-45, 340, 260)">ML Engineer</text>
+    
+    <rect x="400" y="168" width="80" height="72" fill="#e84393" rx="5"/>
+    <text x="440" y="163" text-anchor="middle" fill="#2c3e50" font-family="Arial, sans-serif" font-size="10">771</text>
+    <text x="440" y="260" text-anchor="middle" fill="#2c3e50" font-family="Arial, sans-serif" font-size="10" transform="rotate(-45, 440, 260)">AI Architect</text>
+  </g>
+  
+  <!-- Global Job Opportunities Chart -->
+  <rect x="50" y="600" width="550" height="300" fill="white" rx="10" filter="url(#dropShadow)"/>
+  <text x="70" y="630" fill="#2c3e50" font-family="Arial, sans-serif" font-size="18" font-weight="600">🌍 Global Job Opportunities</text>
+  <text x="70" y="650" fill="#666" font-family="Arial, sans-serif" font-size="14">AI job distribution by country</text>
+  
+  <!-- Horizontal Bar Chart -->
+  <g transform="translate(70, 680)">
+    <!-- Germany -->
+    <rect x="0" y="0" width="163" height="25" fill="#74b9ff" rx="3"/>
+    <text x="5" y="17" fill="white" font-family="Arial, sans-serif" font-size="12">🇩🇪 Germany (814)</text>
+    
+    <!-- Denmark -->
+    <rect x="0" y="35" width="156" height="25" fill="#0984e3" rx="3"/>
+    <text x="5" y="52" fill="white" font-family="Arial, sans-serif" font-size="12">🇩🇰 Denmark (778)</text>
+    
+    <!-- France -->
+    <rect x="0" y="70" width="154" height="25" fill="#00b894" rx="3"/>
+    <text x="5" y="87" fill="white" font-family="Arial, sans-serif" font-size="12">🇫🇷 France (769)</text>
+    
+    <!-- Canada -->
+    <rect x="0" y="105" width="154" height="25" fill="#00cec9" rx="3"/>
+    <text x="5" y="122" fill="white" font-family="Arial, sans-serif" font-size="12">🇨🇦 Canada (769)</text>
+    
+    <!-- Austria -->
+    <rect x="0" y="140" width="153" height="25" fill="#6c5ce7" rx="3"/>
+    <text x="5" y="157" fill="white" font-family="Arial, sans-serif" font-size="12">🇦🇹 Austria (765)</text>
+    
+    <!-- Singapore -->
+    <rect x="0" y="175" width="153" height="25" fill="#a29bfe" rx="3"/>
+    <text x="5" y="192" fill="white" font-family="Arial, sans-serif" font-size="12">🇸🇬 Singapore (764)</text>
+  </g>
+  
+  <!-- Salary by Experience Level Chart -->
+  <rect x="620" y="600" width="530" height="300" fill="white" rx="10" filter="url(#dropShadow)"/>
+  <text x="640" y="630" fill="#2c3e50" font-family="Arial, sans-serif" font-size="18" font-weight="600">💰 Salary by Experience Level</text>
+  <text x="640" y="650" fill="#666" font-family="Arial, sans-serif" font-size="14">Compensation trends across experience levels</text>
+  
+  <!-- Line Chart -->
+  <g transform="translate(650, 680)">
+    <!-- Grid lines -->
+    <line x1="0" y1="180" x2="480" y2="180" stroke="#ecf0f1" stroke-width="1"/>
+    <line x1="0" y1="135" x2="480" y2="135" stroke="#ecf0f1" stroke-width="1"/>
+    <line x1="0" y1="90" x2="480" y2="90" stroke="#ecf0f1" stroke-width="1"/>
+    <line x1="0" y1="45" x2="480" y2="45" stroke="#ecf0f1" stroke-width="1"/>
+    <line x1="0" y1="0" x2="480" y2="0" stroke="#ecf0f1" stroke-width="1"/>
+    
+    <!-- Salary line -->
+    <polyline points="60,162 180,126 300,72 420,18" fill="none" stroke="#00b894" stroke-width="3"/>
+    
+    <!-- Data points -->
+    <circle cx="60" cy="162" r="6" fill="#00b894" stroke="white" stroke-width="2"/>
+    <circle cx="180" cy="126" r="6" fill="#00b894" stroke="white" stroke-width="2"/>
+    <circle cx="300" cy="72" r="6" fill="#00b894" stroke="white" stroke-width="2"/>
+    <circle cx="420" cy="18" r="6" fill="#00b894" stroke="white" stroke-width="2"/>
+    
+    <!-- Labels -->
+    <text x="60" y="200" text-anchor="middle" fill="#2c3e50" font-family="Arial, sans-serif" font-size="12">Entry (EN)</text>
+    <text x="180" y="200" text-anchor="middle" fill="#2c3e50" font-family="Arial, sans-serif" font-size="12">Mid (MI)</text>
+    <text x="300" y="200" text-anchor="middle" fill="#2c3e50" font-family="Arial, sans-serif" font-size="12">Senior (SE)</text>
+    <text x="420" y="200" text-anchor="middle" fill="#2c3e50" font-family="Arial, sans-serif" font-size="12">Executive (EX)</text>
+    
+    <!-- Y-axis labels -->
+    <text x="-10" y="185" text-anchor="end" fill="#2c3e50" font-family="Arial, sans-serif" font-size="10">$0K</text>
+    <text x="-10" y="140" text-anchor="end" fill="#2c3e50" font-family="Arial, sans-serif" font-size="10">$100K</text>
+    <text x="-10" y="95" text-anchor="end" fill="#2c3e50" font-family="Arial, sans-serif" font-size="10">$200K</text>
+    <text x="-10" y="50" text-anchor="end" fill="#2c3e50" font-family="Arial, sans-serif" font-size="10">$300K</text>
+    
+    <!-- Values -->
+    <text x="60" y="155" text-anchor="middle" fill="#2c3e50" font-family="Arial, sans-serif" font-size="10" font-weight="bold">$55K</text>
+    <text x="180" y="119" text-anchor="middle" fill="#2c3e50" font-family="Arial, sans-serif" font-size="10" font-weight="bold">$92K</text>
+    <text x="300" y="65" text-anchor="middle" fill="#2c3e50" font-family="Arial, sans-serif" font-size="10" font-weight="bold">$140K</text>
+    <text x="420" y="11" text-anchor="middle" fill="#2c3e50" font-family="Arial, sans-serif" font-size="10" font-weight="bold">$240K</text>
+  </g>
+  
+  <!-- Career Development Path -->
+  <rect x="50" y="920" width="1100" height="180" fill="white" rx="10" filter="url(#dropShadow)"/>
+  <text x="70" y="950" fill="#2c3e50" font-family="Arial, sans-serif" font-size="18" font-weight="600">🚀 AI Career Development Path</text>
+  <text x="70" y="970" fill="#666" font-family="Arial, sans-serif" font-size="14">Typical progression from entry to executive level</text>
+  
+  <!-- Career Path Boxes -->
+  <rect x="80" y="990" width="200" height="80" fill="url(#careerGradient)" rx="10"/>
+  <text x="180" y="1015" text-anchor="middle" fill="#2c3e50" font-family="Arial, sans-serif" font-size="14" font-weight="600">Entry Level (EN)</text>
+  <text x="180" y="1035" text-anchor="middle" fill="#2c3e50" font-family="Arial, sans-serif" font-size="12">$45K - $65K</text>
+  <text x="180" y="1055" text-anchor="middle" fill="#2c3e50" font-family="Arial, sans-serif" font-size="12">0-2 years</text>
+  
+  <!-- Arrow -->
+  <text x="305" y="1035" text-anchor="middle" fill="#3498db" font-family="Arial, sans-serif" font-size="24">→</text>
+  
+  <rect x="330" y="990" width="200" height="80" fill="url(#careerGradient)" rx="10"/>
+  <text x="430" y="1015" text-anchor="middle" fill="#2c3e50" font-family="Arial, sans-serif" font-size="14" font-weight="600">Mid Level (MI)</text>
+  <text x="430" y="1035" text-anchor="middle" fill="#2c3e50" font-family="Arial, sans-serif" font-size="12">$75K - $110K</text>
+  <text x="430" y="1055" text-anchor="middle" fill="#2c3e50" font-family="Arial, sans-serif" font-size="12">3-6 years</text>
+  
+  <!-- Arrow -->
+  <text x="555" y="1035" text-anchor="middle" fill="#3498db" font-family="Arial, sans-serif" font-size="24">→</text>
+  
+  <rect x="580" y="990" width="200" height="80" fill="url(#careerGradient)" rx="10"/>
+  <text x="680" y="1015" text-anchor="middle" fill="#2c3e50" font-family="Arial, sans-serif" font-size="14" font-weight="600">Senior Level (SE)</text>
+  <text x="680" y="1035" text-anchor="middle" fill="#2c3e50" font-family="Arial, sans-serif" font-size="12">$120K - $160K</text>
+  <text x="680" y="1055" text-anchor="middle" fill="#2c3e50" font-family="Arial, sans-serif" font-size="12">7-12 years</text>
+  
+  <!-- Arrow -->
+  <text x="805" y="1035" text-anchor="middle" fill="#3498db" font-family="Arial, sans-serif" font-size="24">→</text>
+  
+  <rect x="830" y="990" width="200" height="80" fill="url(#careerGradient)" rx="10"/>
+  <text x="930" y="1015" text-anchor="middle" fill="#2c3e50" font-family="Arial, sans-serif" font-size="14" font-weight="600">Executive (EX)</text>
+  <text x="930" y="1035" text-anchor="middle" fill="#2c3e50" font-family="Arial, sans-serif" font-size="12">$180K - $300K+</text>
+  <text x="930" y="1055" text-anchor="middle" fill="#2c3e50" font-family="Arial, sans-serif" font-size="12">13+ years</text>
+  
+  <!-- Country Comparison Table -->
+  <rect x="50" y="1120" width="1100" height="400" fill="white" rx="10" filter="url(#dropShadow)"/>
+  <text x="70" y="1150" fill="#2c3e50" font-family="Arial, sans-serif" font-size="18" font-weight="600">📊 Detailed Country Comparison</text>
+  
+  <!-- Table Header -->
+  <rect x="70" y="1170" width="1060" height="30" fill="url(#headerGradient)" rx="5"/>
+  <text x="90" y="1190" fill="white" font-family="Arial, sans-serif" font-size="12" font-weight="600">Country</text>
+  <text x="250" y="1190" fill="white" font-family="Arial, sans-serif" font-size="12" font-weight="600">Job Count</text>
+  <text x="400" y="1190" fill="white" font-family="Arial, sans-serif" font-size="12" font-weight="600">Avg Salary (USD)</text>
+  <text x="600" y="1190" fill="white" font-family="Arial, sans-serif" font-size="12" font-weight="600">Top Role</text>
+  <text x="850" y="1190" fill="white" font-family="Arial, sans-serif" font-size="12" font-weight="600">Remote Work %</text>
+  
+  <!-- Table Rows -->
+  <g transform="translate(0, 20)">
+    <text x="90" y="1210" fill="#2c3e50" font-family="Arial, sans-serif" font-size="12">🇩🇪 Germany</text>
+    <text x="250" y="1210" fill="#2c3e50" font-family="Arial, sans-serif" font-size="12">814</text>
+    <text x="400" y="1210" fill="#27ae60" font-family="Arial, sans-serif" font-size="12" font-weight="bold">$95,500</text>
+    <text x="600" y="1210" fill="#2c3e50" font-family="Arial, sans-serif" font-size="12">ML Engineer</text>
+    <text x="850" y="1210" fill="#2c3e50" font-family="Arial, sans-serif" font-size="12">65%</text>
+    
+    <text x="90" y="1235" fill="#2c3e50" font-family="Arial, sans-serif" font-size="12">🇩🇰 Denmark</text>
+    <text x="250" y="1235" fill="#2c3e50" font-family="Arial, sans-serif" font-size="12">778</text>
+    <text x="400" y="1235" fill="#27ae60" font-family="Arial, sans-serif" font-size="12" font-weight="bold">$102,300</text>
+    <text x="600" y="1235" fill="#2c3e50" font-family="Arial, sans-serif" font-size="12">AI Architect</text>
+    <text x="850" y="1235" fill="#2c3e50" font-family="Arial, sans-serif" font-size="12">72%</text>
+    
+    <text x="90" y="1260" fill="#2c3e50" font-family="Arial, sans-serif" font-size="12">🇫🇷 France</text>
+    <text x="250" y="1260" fill="#2c3e50" font-family="Arial, sans-serif" font-size="12">769</text>
+    <text x="400" y="1260" fill="#27ae60" font-family="Arial, sans-serif" font-size="12" font-weight="bold">$89,200</text>
+    <text x="600" y="1260" fill="#2c3e50" font-family="Arial, sans-serif" font-size="12">Data Scientist</text>
+    <text x="850" y="1260" fill="#2c3e50" font-family="Arial, sans-serif" font-size="12">58%</text>
+    
+    <text x="90" y="1285" fill="#2c3e50" font-family="Arial, sans-serif" font-size="12">🇨🇦 Canada</text>
+    <text x="250" y="1285" fill="#2c3e50" font-family="Arial, sans-serif" font-size="12">769</text>
+    <text x="400" y="1285" fill="#27ae60" font-family="Arial, sans-serif" font-size="12" font-weight="bold">$98,800</text>
+    <text x="600" y="1285" fill="#2c3e50" font-family="Arial, sans-serif" font-size="12">AI Research Scientist</text>
+    <text x="850" y="1285" fill="#2c3e50" font-family="Arial, sans-serif" font-size="12">78%</text>
+    
+    <text x="90" y="1310" fill="#2c3e50" font-family="Arial, sans-serif" font-size="12">🇦🇹 Austria</text>
+    <text x="250" y="1310" fill="#2c3e50" font-family="Arial, sans-serif" font-size="12">765</text>
+    <text x="400" y="1310" fill="#27ae60" font-family="Arial, sans-serif" font-size="12" font-weight="bold">$91,400</text>
+    <text x="600" y="1310" fill="#2c3e50" font-family="Arial, sans-serif" font-size="12">ML Engineer</text>
+    <text x="850" y="1310" fill="#2c3e50" font-family="Arial, sans-serif" font-size="12">63%</text>
+    
+    <text x="90" y="1335" fill="#2c3e50" font-family="Arial, sans-serif" font-size="12">🇸🇬 Singapore</text>
+    <text x="250" y="1335" fill="#2c3e50" font-family="Arial, sans-serif" font-size="12">764</text>
+    <text x="400" y="1335" fill="#27ae60" font-family="Arial, sans-serif" font-size="12" font-weight="bold">$108,700</text>
+    <text x="600" y="1335" fill="#2c3e50" font-family="Arial, sans-serif" font-size="12">AI Software Engineer</text>
+    <text x="850" y="1335" fill="#2c3e50" font-family="Arial, sans-serif" font-size="12">45%</text>
+    
+    <text x="90" y="1360" fill="#2c3e50" font-family="Arial, sans-serif" font-size="12">🇨🇳 China</text>
+    <text x="250" y="1360" fill="#2c3e50" font-family="Arial, sans-serif" font-size="12">763</text>
+    <text x="400" y="1360" fill="#27ae60" font-family="Arial, sans-serif" font-size="12" font-weight="bold">$76,500</text>
+    <text x="600" y="1360" fill="#2c3e50" font-family="Arial, sans-serif" font-size="12">AI Specialist</text>
+    <text x="850" y="1360" fill="#2c3e50" font-family="Arial, sans-serif" font-size="12">38%</text>
+    
+    <text x="90" y="1385" fill="#2c3e50" font-family="Arial, sans-serif" font-size="12">🇮🇳 India</text>
+    <text x="250" y="1385" fill="#2c3e50" font-family="Arial, sans-serif" font-size="12">754</text>
+    <text x="400" y="1385" fill="#27ae60" font-family="Arial, sans-serif" font-size="12" font-weight="bold">$68,200</text>
+    <text x="600" y="1385" fill="#2c3e50" font-family="Arial, sans-serif" font-size="12">Data Engineer</text>
+    <text x="850" y="1385" fill="#2c3e50" font-family="Arial, sans-serif" font-size="12">82%</text>
+    
+    <text x="90" y="1410" fill="#2c3e50" font-family="Arial, sans-serif" font-size="12">🇸🇪 Sweden</text>
+    <text x="250" y="1410" fill="#2c3e50" font-family="Arial, sans-serif" font-size="12">752</text>
+    <text x="400" y="1410" fill="#27ae60" font-family="Arial, sans-serif" font-size="12" font-weight="bold">$104,600</text>
+    <text x="600" y="1410" fill="#2c3e50" font-family="Arial, sans-serif" font-size="12">AI Architect</text>
+    <text x="850" y="1410" fill="#2c3e50" font-family="Arial, sans-serif" font-size="12">85%</text>
+    
+    <text x="90" y="1435" fill="#2c3e50" font-family="Arial, sans-serif" font-size="12">🇮🇱 Israel</text>
+    <text x="250" y="1435" fill="#2c3e50" font-family="Arial, sans-serif" font-size="12">751</text>
+    <text x="400" y="1435" fill="#27ae60" font-family="Arial, sans-serif" font-size="12" font-weight="bold">$112,300</text>
+    <text x="600" y="1435" fill="#2c3e50" font-family="Arial, sans-serif" font-size="12">AI Research Scientist</text>
+    <text x="850" y="1435" fill="#2c3e50" font-family="Arial, sans-serif" font-size="12">67%</text>
+  </g>
+  
+  <!-- Key Market Insights -->
+  <rect x="50" y="1540" width="1100" height="300" fill="white" rx="10" filter="url(#dropShadow)"/>
+  <text x="70" y="1570" fill="#2c3e50" font-family="Arial, sans-serif" font-size="18" font-weight="600">🔍 Key Market Insights</text>
+  
+  <!-- Skills Insight -->
+  <rect x="80" y="1590" width="1040" height="60" fill="url(#skillGradient)" rx="10"/>
+  <text x="100" y="1610" fill="#8b4513" font-family="Arial, sans-serif" font-size="14" font-weight="600">💡 Skills Insight</text>
+  <text x="100" y="1630" fill="#8b4513" font-family="Arial, sans-serif" font-size="12">Python remains the most demanded skill (85% of positions), followed by machine learning frameworks like TensorFlow and PyTorch.</text>
+  <text x="100" y="1645" fill="#8b4513" font-family="Arial, sans-serif" font-size="12">Cloud platforms (AWS, Azure, GCP) are increasingly important with 70% of roles requiring cloud experience.</text>
+  
+  <!-- Geographic Insight -->
+  <rect x="80" y="1660" width="1040" height="60" fill="url(#skillGradient)" rx="10"/>
+  <text x="100" y="1680" fill="#8b4513" font-family="Arial, sans-serif" font-size="14" font-weight="600">🌟 Geographic Insight</text>
+  <text x="100" y="1700" fill="#8b4513" font-family="Arial, sans-serif" font-size="12">Nordic countries (Denmark, Sweden) offer the highest average salaries, while Asia-Pacific regions show strong growth in AI job opportunities.</text>
+  <text x="100" y="1715" fill="#8b4513" font-family="Arial, sans-serif" font-size="12">Remote work adoption varies significantly by region, with Sweden leading at 85%.</text>
+  
+  <!-- Career Growth Insight -->
+  <rect x="80" y="1730" width="1040" height="80" fill="url(#skillGradient)" rx="10"/>
+  <text x="100" y="1750" fill="#8b4513" font-family="Arial, sans-serif" font-size="14" font-weight="600">📈 Career Growth Insight</text>
+  <text x="100" y="1770" fill="#8b4513" font-family="Arial, sans-serif" font-size="12">The AI field shows clear career progression with salary increases of 40-60% between levels. Senior and Executive roles often require</text>
+  <text x="100" y="1785" fill="#8b4513" font-family="Arial, sans-serif" font-size="12">7+ years of experience and specialized domain knowledge. Entry-level positions focus on foundational skills.</text>
+  <text x="100" y="1800" fill="#8b4513" font-family="Arial, sans-serif" font-size="12">Career development requires continuous learning and staying current with emerging AI technologies and methodologies.</text>
+  
+  <!-- Skills Tags -->
+  <text x="70" y="1870" fill="#2c3e50" font-family="Arial, sans-serif" font-size="16" font-weight="600">🏷️ Essential Skills</text>
+  <g transform="translate(70, 1880)">
+    <rect x="0" y="0" width="80" height="25" fill="url(#skillGradient)" rx="12"/>
+    <text x="40" y="17" text-anchor="middle" fill="#8b4513" font-family="Arial, sans-serif" font-size="11" font-weight="500">Python</text>
+    
+    <rect x="90" y="0" width="120" height="25" fill="url(#skillGradient)" rx="12"/>
+    <text x="150" y="17" text-anchor="middle" fill="#8b4513" font-family="Arial, sans-serif" font-size="11" font-weight="500">Machine Learning</text>
+    
+    <rect x="220" y="0" width="90" height="25" fill="url(#skillGradient)" rx="12"/>
+    <text x="265" y="17" text-anchor="middle" fill="#8b4513" font-family="Arial, sans-serif" font-size="11" font-weight="500">TensorFlow</text>
+    
+    <rect x="320" y="0" width="80" height="25" fill="url(#skillGradient)" rx="12"/>
+    <text x="360" y="17" text-anchor="middle" fill="#8b4513" font-family="Arial, sans-serif" font-size="11" font-weight="500">PyTorch</text>
+    
+    <rect x="410" y="0" width="60" height="25" fill="url(#skillGradient)" rx="12"/>
+    <text x="440" y="17" text-anchor="middle" fill="#8b4513" font-family="Arial, sans-serif" font-size="11" font-weight="500">AWS</text>
+    
+    <rect x="480" y="0" width="70" height="25" fill="url(#skillGradient)" rx="12"/>
+    <text x="515" y="17" text-anchor="middle" fill="#8b4513" font-family="Arial, sans-serif" font-size="11" font-weight="500">Docker</text>
+    
+    <rect x="560" y="0" width="90" height="25" fill="url(#skillGradient)" rx="12"/>
+    <text x="605" y="17" text-anchor="middle" fill="#8b4513" font-family="Arial, sans-serif" font-size="11" font-weight="500">Kubernetes</text>
+    
+    <rect x="660" y="0" width="50" height="25" fill="url(#skillGradient)" rx="12"/>
+    <text x="685" y="17" text-anchor="middle" fill="#8b4513" font-family="Arial, sans-serif" font-size="11" font-weight="500">SQL</text>
+    
+    <rect x="720" y="0" width="60" height="25" fill="url(#skillGradient)" rx="12"/>
+    <text x="750" y="17" text-anchor="middle" fill="#8b4513" font-family="Arial, sans-serif" font-size="11" font-weight="500">Linux</text>
+    
+    <rect x="790" y="0" width="50" height="25" fill="url(#skillGradient)" rx="12"/>
+    <text x="815" y="17" text-anchor="middle" fill="#8b4513" font-family="Arial, sans-serif" font-size="11" font-weight="500">Git</text>
+    
+    <rect x="850" y="0" width="60" height="25" fill="url(#skillGradient)" rx="12"/>
+    <text x="880" y="17" text-anchor="middle" fill="#8b4513" font-family="Arial, sans-serif" font-size="11" font-weight="500">Azure</text>
+    
+    <rect x="920" y="0" width="100" height="25" fill="url(#skillGradient)" rx="12"/>
+    <text x="970" y="17" text-anchor="middle" fill="#8b4513" font-family="Arial, sans-serif" font-size="11" font-weight="500">Deep Learning</text>
+  </g>
+  
+  <!-- Footer -->
+  <text x="600" y="1955" text-anchor="middle" fill="#7f8c8d" font-family="Arial, sans-serif" font-size="12">Global AI Job Market Dashboard - Generated from Comprehensive Dataset Analysis (2025)</text>
+</svg> 

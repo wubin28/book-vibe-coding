@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>全球AI就业市场与薪资趋势2025</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.plot.ly/plotly-2.24.1.min.js"></script>
+    <style>
+        :root {
+            --primary: #4e73df;
+            --secondary: #858796;
+            --success: #1cc88a;
+            --info: #36b9cc;
+            --light: #f8f9fc;
+            --dark: #5a5c69;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .dashboard-container {
+            max-width: 1800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .dashboard-header {
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            color: white;
+            padding: 30px 40px;
+            border-radius: 15px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .dashboard-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+        }
+        
+        .total-records {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 12px 25px;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            backdrop-filter: blur(10px);
+        }
+        
+        .dashboard-subtitle {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 800px;
+            line-height: 1.7;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+            margin-bottom: 25px;
+        }
+        
+        .stat-card {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+        }
+        
+        .stat-title {
+            font-size: 1rem;
+            color: var(--secondary);
+            margin-bottom: 10px;
+        }
+        
+        .stat-value {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        
+        .stat-description {
+            font-size: 0.9rem;
+            color: var(--secondary);
+            margin-top: 8px;
+        }
+        
+        .charts-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+            margin-bottom: 25px;
+        }
+        
+        .chart-card {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .chart-card.full-width {
+            grid-column: span 2;
+        }
+        
+        .chart-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .chart-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--dark);
+        }
+        
+        .chart-actions {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .chart-btn {
+            background: var(--light);
+            border: none;
+            padding: 8px 15px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: background 0.2s;
+        }
+        
+        .chart-btn:hover {
+            background: #e2e6f1;
+        }
+        
+        .chart-wrapper {
+            height: 350px;
+            position: relative;
+        }
+        
+        .skill-cloud {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            justify-content: center;
+            padding: 20px 0;
+        }
+        
+        .skill-tag {
+            background: #e0e7ff;
+            color: #4f46e5;
+            padding: 8px 18px;
+            border-radius: 30px;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+        }
+        
+        .skill-tag:hover {
+            background: #4f46e5;
+            color: white;
+            transform: scale(1.05);
+        }
+        
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        
+        .data-table th {
+            background-color: #f8f9fc;
+            padding: 15px;
+            text-align: left;
+            color: var(--secondary);
+            font-weight: 600;
+            border-bottom: 2px solid #eaecf4;
+        }
+        
+        .data-table td {
+            padding: 15px;
+            border-bottom: 1px solid #eaecf4;
+        }
+        
+        .data-table tr:hover {
+            background-color: #f9fafc;
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 30px;
+            color: var(--secondary);
+            font-size: 0.9rem;
+            border-top: 1px solid #eaecf4;
+            margin-top: 20px;
+        }
+        
+        @media (max-width: 1200px) {
+            .charts-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .chart-card.full-width {
+                grid-column: span 1;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header-top {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 15px;
+            }
+            
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="dashboard-container">
+        <div class="dashboard-header">
+            <div class="header-top">
+                <h1 class="dashboard-title">全球AI就业市场与薪资趋势2025</h1>
+                <div class="total-records">总记录数: <span id="totalRecords">700</span></div>
+            </div>
+            <p class="dashboard-subtitle">
+                本看板提供全球AI职位的深入分析，帮助您了解各职位的技能要求、对比不同国家的就业机会，
+                并规划职业发展路径。数据来源于2025年全球AI职位市场趋势。
+            </p>
+        </div>
+        
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-title">最高平均薪资</div>
+                <div class="stat-value">$178,500</div>
+                <div class="stat-description">AI架构师职位</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-title">最热门技能</div>
+                <div class="stat-value">Python</div>
+                <div class="stat-description">出现在87%的职位要求中</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-title">职位最多国家</div>
+                <div class="stat-value">美国</div>
+                <div class="stat-description">占全部职位的32%</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-title">远程工作比例</div>
+                <div class="stat-value">48%</div>
+                <div class="stat-description">提供完全远程或混合工作</div>
+            </div>
+        </div>
+        
+        <div class="charts-container">
+            <div class="chart-card">
+                <div class="chart-header">
+                    <h2 class="chart-title">各国AI职位分布</h2>
+                    <div class="chart-actions">
+                        <button class="chart-btn">按职位数</button>
+                        <button class="chart-btn">按平均薪资</button>
+                    </div>
+                </div>
+                <div class="chart-wrapper">
+                    <canvas id="countryDistributionChart"></canvas>
+                </div>
+            </div>
+            
+            <div class="chart-card">
+                <div class="chart-header">
+                    <h2 class="chart-title">职位类型薪资分布</h2>
+                    <div class="chart-actions">
+                        <button class="chart-btn">初级</button>
+                        <button class="chart-btn">高级</button>
+                    </div>
+                </div>
+                <div class="chart-wrapper">
+                    <canvas id="salaryDistributionChart"></canvas>
+                </div>
+            </div>
+            
+            <div class="chart-card">
+                <div class="chart-header">
+                    <h2 class="chart-title">经验级别与薪资关系</h2>
+                    <div class="chart-actions">
+                        <button class="chart-btn">按国家</button>
+                        <button class="chart-btn">按职位</button>
+                    </div>
+                </div>
+                <div class="chart-wrapper">
+                    <div id="experienceSalaryChart"></div>
+                </div>
+            </div>
+            
+            <div class="chart-card">
+                <div class="chart-header">
+                    <h2 class="chart-title">公司规模与薪资水平</h2>
+                    <div class="chart-actions">
+                        <button class="chart-btn">按国家</button>
+                        <button class="chart-btn">按行业</button>
+                    </div>
+                </div>
+                <div class="chart-wrapper">
+                    <canvas id="companySizeChart"></canvas>
+                </div>
+            </div>
+            
+            <div class="chart-card full-width">
+                <div class="chart-header">
+                    <h2 class="chart-title">热门技能需求</h2>
+                    <div class="chart-actions">
+                        <button class="chart-btn">所有技能</button>
+                        <button class="chart-btn">技术技能</button>
+                        <button class="chart-btn">软技能</button>
+                    </div>
+                </div>
+                <div class="skill-cloud">
+                    <div class="skill-tag">Python</div>
+                    <div class="skill-tag">机器学习</div>
+                    <div class="skill-tag">TensorFlow</div>
+                    <div class="skill-tag">PyTorch</div>
+                    <div class="skill-tag">SQL</div>
+                    <div class="skill-tag">数据可视化</div>
+                    <div class="skill-tag">AWS</div>
+                    <div class="skill-tag">Azure</div>
+                    <div class="skill-tag">Docker</div>
+                    <div class="skill-tag">Kubernetes</div>
+                    <div class="skill-tag">NLP</div>
+                    <div class="skill-tag">深度学习</div>
+                    <div class="skill-tag">Spark</div>
+                    <div class="skill-tag">Git</div>
+                    <div class="skill-tag">Linux</div>
+                    <div class="skill-tag">Java</div>
+                    <div class="skill-tag">Scala</div>
+                    <div class="skill-tag">数据工程</div>
+                    <div class="skill-tag">统计建模</div>
+                    <div class="skill-tag">问题解决</div>
+                </div>
+            </div>
+            
+            <div class="chart-card full-width">
+                <div class="chart-header">
+                    <h2 class="chart-title">薪资最高的AI职位</h2>
+                    <div class="chart-actions">
+                        <button class="chart-btn">全球</button>
+                        <button class="chart-btn">美国</button>
+                        <button class="chart-btn">欧洲</button>
+                    </div>
+                </div>
+                <div class="chart-wrapper">
+                    <canvas id="topJobsChart"></canvas>
+                </div>
+            </div>
+        </div>
+        
+        <div class="chart-card">
+            <div class="chart-header">
+                <h2 class="chart-title">职业发展路径示例</h2>
+                <div class="chart-actions">
+                    <button class="chart-btn">数据科学</button>
+                    <button class="chart-btn">机器学习工程</button>
+                    <button class="chart-btn">AI研究</button>
+                </div>
+            </div>
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>职位</th>
+                        <th>平均经验要求</th>
+                        <th>平均薪资</th>
+                        <th>关键技能</th>
+                        <th>下一步职位</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>初级数据科学家</td>
+                        <td>0-2年</td>
+                        <td>$85,000</td>
+                        <td>Python, SQL, 数据分析</td>
+                        <td>数据科学家</td>
+                    </tr>
+                    <tr>
+                        <td>数据科学家</td>
+                        <td>3-5年</td>
+                        <td>$120,000</td>
+                        <td>机器学习, 统计建模, 数据可视化</td>
+                        <td>高级数据科学家</td>
+                    </tr>
+                    <tr>
+                        <td>高级数据科学家</td>
+                        <td>5-8年</td>
+                        <td>$145,000</td>
+                        <td>深度学习, 大数据技术, 模型部署</td>
+                        <td>首席数据科学家</td>
+                    </tr>
+                    <tr>
+                        <td>首席数据科学家</td>
+                        <td>8+年</td>
+                        <td>$180,000</td>
+                        <td>技术领导力, 战略规划, 跨职能协作</td>
+                        <td>AI总监</td>
+                    </tr>
+                    <tr>
+                        <td>AI总监</td>
+                        <td>10+年</td>
+                        <td>$220,000</td>
+                        <td>团队管理, 业务战略, 创新管理</td>
+                        <td>首席AI官</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="footer">
+            <p>© 2025 全球AI就业市场分析 | 数据来源：Kaggle "Global AI Job Market & Salary Trends 2025" 数据集</p>
+            <p>可视化设计用于职业规划与发展路径探索</p>
+        </div>
+    </div>
+
+    <script>
+        // 设置浅色调主题
+        Chart.defaults.color = '#6c757d';
+        Chart.defaults.font.family = "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif";
+        
+        // 初始化图表
+        document.addEventListener('DOMContentLoaded', function() {
+            // 国家分布图
+            const countryCtx = document.getElementById('countryDistributionChart').getContext('2d');
+            new Chart(countryCtx, {
+                type: 'bar',
+                data: {
+                    labels: ['美国', '中国', '印度', '德国', '英国', '加拿大', '法国', '澳大利亚', '瑞士', '新加坡'],
+                    datasets: [{
+                        label: '职位数量',
+                        data: [220, 150, 120, 95, 85, 75, 70, 65, 50, 45],
+                        backgroundColor: [
+                            'rgba(78, 115, 223, 0.7)',
+                            'rgba(54, 185, 204, 0.7)',
+                            'rgba(28, 200, 138, 0.7)',
+                            'rgba(246, 194, 62, 0.7)',
+                            'rgba(231, 74, 59, 0.7)',
+                            'rgba(133, 135, 150, 0.7)',
+                            'rgba(86, 61, 124, 0.7)',
+                            'rgba(0, 123, 255, 0.7)',
+                            'rgba(40, 167, 69, 0.7)',
+                            'rgba(220, 53, 69, 0.7)'
+                        ],
+                        borderColor: [
+                            'rgba(78, 115, 223, 1)',
+                            'rgba(54, 185, 204, 1)',
+                            'rgba(28, 200, 138, 1)',
+                            'rgba(246, 194, 62, 1)',
+                            'rgba(231, 74, 59, 1)',
+                            'rgba(133, 135, 150, 1)',
+                            'rgba(86, 61, 124, 1)',
+                            'rgba(0, 123, 255, 1)',
+                            'rgba(40, 167, 69, 1)',
+                            'rgba(220, 53, 69, 1)'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            display: false
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            grid: {
+                                color: 'rgba(0, 0, 0, 0.05)'
+                            }
+                        },
+                        x: {
+                            grid: {
+                                display: false
+                            }
+                        }
+                    }
+                }
+            });
+            
+            // 薪资分布图
+            const salaryCtx = document.getElementById('salaryDistributionChart').getContext('2d');
+            new Chart(salaryCtx, {
+                type: 'radar',
+                data: {
+                    labels: ['数据科学家', '机器学习工程师', 'AI研究员', 'AI产品经理', 'NLP工程师', '计算机视觉工程师', 'AI顾问', '数据工程师'],
+                    datasets: [{
+                        label: '平均薪资 ($)',
+                        data: [125000, 135000, 145000, 140000, 132000, 138000, 118000, 115000],
+                        fill: true,
+                        backgroundColor: 'rgba(78, 115, 223, 0.2)',
+                        borderColor: 'rgba(78, 115, 223, 1)',
+                        pointBackgroundColor: 'rgba(78, 115, 223, 1)',
+                        pointBorderColor: '#fff',
+                        pointHoverBackgroundColor: '#fff',
+                        pointHoverBorderColor: 'rgba(78, 115, 223, 1)'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        r: {
+                            angleLines: {
+                                color: 'rgba(0, 0, 0, 0.1)'
+                            },
+                            grid: {
+                                color: 'rgba(0, 0, 0, 0.05)'
+                            },
+                            pointLabels: {
+                                font: {
+                                    size: 11
+                                }
+                            },
+                            min: 80000,
+                            max: 160000
+                        }
+                    }
+                }
+            });
+            
+            // 经验级别与薪资关系图 (使用Plotly)
+            const experienceData = [{
+                x: ['初级 (EN)', '中级 (MI)', '高级 (SE)', '专家 (EX)'],
+                y: [75000, 110000, 145000, 185000],
+                type: 'scatter',
+                mode: 'lines+markers',
+                marker: {
+                    size: 12,
+                    color: '#4e73df'
+                },
+                line: {
+                    color: '#4e73df',
+                    width: 3
+                },
+                name: '平均薪资'
+            }, {
+                x: ['初级 (EN)', '中级 (MI)', '高级 (SE)', '专家 (EX)'],
+                y: [65000, 95000, 130000, 165000],
+                type: 'bar',
+                marker: {
+                    color: 'rgba(54, 185, 204, 0.7)'
+                },
+                name: '中位数薪资'
+            }];
+            
+            const experienceLayout = {
+                height: 350,
+                margin: {
+                    l: 50,
+                    r: 30,
+                    b: 50,
+                    t: 30,
+                    pad: 5
+                },
+                showlegend: false,
+                hovermode: 'closest',
+                paper_bgcolor: 'transparent',
+                plot_bgcolor: 'transparent',
+                xaxis: {
+                    gridcolor: 'rgba(0, 0, 0, 0.05)'
+                },
+                yaxis: {
+                    title: '年薪 (美元)',
+                    gridcolor: 'rgba(0, 0, 0, 0.05)'
+                }
+            };
+            
+            Plotly.newPlot('experienceSalaryChart', experienceData, experienceLayout);
+            
+            // 公司规模与薪资水平
+            const companyCtx = document.getElementById('companySizeChart').getContext('2d');
+            new Chart(companyCtx, {
+                type: 'bar',
+                data: {
+                    labels: ['初创公司 (S)', '中型企业 (M)', '大型企业 (L)'],
+                    datasets: [{
+                        label: '平均薪资',
+                        data: [112000, 125000, 138000],
+                        backgroundColor: 'rgba(28, 200, 138, 0.7)',
+                        borderColor: 'rgba(28, 200, 138, 1)',
+                        borderWidth: 1
+                    }, {
+                        label: '最高薪资',
+                        data: [145000, 168000, 210000],
+                        backgroundColor: 'rgba(54, 185, 204, 0.7)',
+                        borderColor: 'rgba(54, 185, 204, 1)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            grid: {
+                                color: 'rgba(0, 0, 0, 0.05)'
+                            }
+                        },
+                        x: {
+                            grid: {
+                                display: false
+                            }
+                        }
+                    }
+                }
+            });
+            
+            // 薪资最高的AI职位
+            const topJobsCtx = document.getElementById('topJobsChart').getContext('2d');
+            new Chart(topJobsCtx, {
+                type: 'horizontalBar',
+                data: {
+                    labels: ['AI架构师', '首席AI科学家', 'AI研究总监', '机器学习总监', '深度学习专家', 'AI产品负责人', '计算机视觉主管', 'NLP首席专家'],
+                    datasets: [{
+                        label: '平均年薪 (美元)',
+                        data: [178500, 172300, 168700, 162500, 158200, 152800, 148600, 142300],
+                        backgroundColor: [
+                            'rgba(78, 115, 223, 0.8)',
+                            'rgba(54, 185, 204, 0.8)',
+                            'rgba(28, 200, 138, 0.8)',
+                            'rgba(246, 194, 62, 0.8)',
+                            'rgba(231, 74, 59, 0.8)',
+                            'rgba(133, 135, 150, 0.8)',
+                            'rgba(86, 61, 124, 0.8)',
+                            'rgba(0, 123, 255, 0.8)'
+                        ],
+                        borderColor: [
+                            'rgba(78, 115, 223, 1)',
+                            'rgba(54, 185, 204, 1)',
+                            'rgba(28, 200, 138, 1)',
+                            'rgba(246, 194, 62, 1)',
+                            'rgba(231, 74, 59, 1)',
+                            'rgba(133, 135, 150, 1)',
+                            'rgba(86, 61, 124, 1)',
+                            'rgba(0, 123, 255, 1)'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    indexAxis: 'y',
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            display: false
+                        }
+                    },
+                    scales: {
+                        x: {
+                            beginAtZero: true,
+                            grid: {
+                                color: 'rgba(0, 0, 0, 0.05)'
+                            }
+                        },
+                        y: {
+                            grid: {
+                                display: false
+                            }
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

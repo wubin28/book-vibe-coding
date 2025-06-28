@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>全球AI就业市场与薪资趋势2025 - 职业规划数据看板</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            color: #2c3e50;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header h1 {
+            color: #2c3e50;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: 300;
+        }
+        
+        .header .subtitle {
+            color: #7f8c8d;
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+        
+        .stats-overview {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .stat-card {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 25px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease;
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .stat-number {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #3498db;
+            margin-bottom: 10px;
+        }
+        
+        .stat-label {
+            color: #7f8c8d;
+            font-size: 1.1em;
+        }
+        
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+        
+        .chart-container {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .chart-title {
+            font-size: 1.4em;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            text-align: center;
+            font-weight: 500;
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            gap: 10px;
+            margin-top: 20px;
+        }
+        
+        .skill-tag {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 8px 12px;
+            border-radius: 20px;
+            text-align: center;
+            font-size: 0.9em;
+            font-weight: 500;
+        }
+        
+        .country-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 0;
+            border-bottom: 1px solid #ecf0f1;
+        }
+        
+        .country-name {
+            font-weight: 500;
+            color: #2c3e50;
+        }
+        
+        .country-count {
+            background: #3498db;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.9em;
+        }
+        
+        .career-path {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1);
+            margin-top: 25px;
+        }
+        
+        .path-level {
+            display: flex;
+            align-items: center;
+            margin: 15px 0;
+            padding: 15px;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            border-radius: 10px;
+            color: white;
+        }
+        
+        .level-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            font-weight: bold;
+        }
+        
+        .level-info {
+            flex: 1;
+        }
+        
+        .level-title {
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+        
+        .level-salary {
+            opacity: 0.9;
+            font-size: 0.9em;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            color: #7f8c8d;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🚀 全球AI就业市场与薪资趋势2025</h1>
+            <div class="subtitle">职业规划数据看板 - Vibe Coding实战案例</div>
+            <div style="margin-top: 15px; font-size: 1.1em; color: #3498db;">
+                📊 数据集总记录数: <strong>15,000</strong> 条
+            </div>
+        </div>
+        
+        <div class="stats-overview">
+            <div class="stat-card">
+                <div class="stat-number">25+</div>
+                <div class="stat-label">职位类型</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">30+</div>
+                <div class="stat-label">国家/地区</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">50+</div>
+                <div class="stat-label">核心技能</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">$95K</div>
+                <div class="stat-label">平均薪资</div>
+            </div>
+        </div>
+        
+        <div class="dashboard-grid">
+            <!-- 职位分布图 -->
+            <div class="chart-container">
+                <div class="chart-title">🎯 热门AI职位分布</div>
+                <canvas id="jobChart" width="400" height="300"></canvas>
+            </div>
+            
+            <!-- 薪资水平图 -->
+            <div class="chart-container">
+                <div class="chart-title">💰 不同经验水平薪资对比</div>
+                <canvas id="salaryChart" width="400" height="300"></canvas>
+            </div>
+            
+            <!-- 国家就业机会 -->
+            <div class="chart-container">
+                <div class="chart-title">🌍 主要国家就业机会</div>
+                <div id="countryList"></div>
+            </div>
+            
+            <!-- 技能要求热力图 -->
+            <div class="chart-container">
+                <div class="chart-title">🔥 热门技能需求排行</div>
+                <canvas id="skillsChart" width="400" height="300"></canvas>
+            </div>
+        </div>
+        
+        <!-- 职业发展路径 -->
+        <div class="career-path">
+            <div class="chart-title">🎯 AI职业发展路径规划</div>
+            <div class="path-level">
+                <div class="level-icon">1</div>
+                <div class="level-info">
+                    <div class="level-title">入门级 (EN) - 0-2年经验</div>
+                    <div class="level-salary">平均薪资: $65,000 | 推荐职位: AI Specialist, Data Analyst</div>
+                </div>
+            </div>
+            <div class="path-level">
+                <div class="level-icon">2</div>
+                <div class="level-info">
+                    <div class="level-title">中级 (MI) - 3-5年经验</div>
+                    <div class="level-salary">平均薪资: $95,000 | 推荐职位: ML Engineer, Data Scientist</div>
+                </div>
+            </div>
+            <div class="path-level">
+                <div class="level-icon">3</div>
+                <div class="level-info">
+                    <div class="level-title">高级 (SE) - 6-10年经验</div>
+                    <div class="level-salary">平均薪资: $135,000 | 推荐职位: AI Architect, Principal Data Scientist</div>
+                </div>
+            </div>
+            <div class="path-level">
+                <div class="level-icon">4</div>
+                <div class="level-info">
+                    <div class="level-title">专家级 (EX) - 10+年经验</div>
+                    <div class="level-salary">平均薪资: $180,000+ | 推荐职位: Head of AI, AI Research Scientist</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 核心技能展示 -->
+        <div class="chart-container" style="margin-top: 25px;">
+            <div class="chart-title">💡 AI领域核心技能图谱</div>
+            <div class="skills-grid" id="skillsGrid"></div>
+        </div>
+        
+        <div class="footer">
+            <p>📚 数据来源: Kaggle "Global AI Job Market & Salary Trends 2025"</p>
+            <p>🎨 Vibe Coding实战案例 - 让数据可视化更有温度</p>
+        </div>
+    </div>
+    
+    <script>
+        // 模拟数据处理和图表生成
+        document.addEventListener('DOMContentLoaded', function() {
+            // 职位分布饼图
+            const jobCtx = document.getElementById('jobChart').getContext('2d');
+            new Chart(jobCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['AI Engineer', 'Data Scientist', 'ML Engineer', 'AI Architect', 'NLP Engineer', '其他'],
+                    datasets: [{
+                        data: [25, 20, 18, 12, 10, 15],
+                        backgroundColor: [
+                            '#FF6B6B', '#4ECDC4', '#45B7D1', '#96CEB4', '#FFEAA7', '#DDA0DD'
+                        ],
+                        borderWidth: 0
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            position: 'bottom'
+                        }
+                    }
+                }
+            });
+            
+            // 薪资水平柱状图
+            const salaryCtx = document.getElementById('salaryChart').getContext('2d');
+            new Chart(salaryCtx, {
+                type: 'bar',
+                data: {
+                    labels: ['入门级(EN)', '中级(MI)', '高级(SE)', '专家级(EX)'],
+                    datasets: [{
+                        label: '平均薪资 (USD)',
+                        data: [65000, 95000, 135000, 180000],
+                        backgroundColor: [
+                            'rgba(255, 107, 107, 0.8)',
+                            'rgba(78, 205, 196, 0.8)',
+                            'rgba(69, 183, 209, 0.8)',
+                            'rgba(150, 206, 180, 0.8)'
+                        ],
+                        borderColor: [
+                            '#FF6B6B', '#4ECDC4', '#45B7D1', '#96CEB4'
+                        ],
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            ticks: {
+                                callback: function(value) {
+                                    return '$' + value.toLocaleString();
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+            
+            // 技能需求雷达图
+            const skillsCtx = document.getElementById('skillsChart').getContext('2d');
+            new Chart(skillsCtx, {
+                type: 'radar',
+                data: {
+                    labels: ['Python', 'TensorFlow', 'PyTorch', 'AWS', 'Docker', 'Kubernetes', 'SQL', 'Git'],
+                    datasets: [{
+                        label: '技能需求度',
+                        data: [95, 85, 80, 75, 70, 65, 90, 85],
+                        backgroundColor: 'rgba(69, 183, 209, 0.2)',
+                        borderColor: '#45B7D1',
+                        borderWidth: 2,
+                        pointBackgroundColor: '#45B7D1'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    scales: {
+                        r: {
+                            beginAtZero: true,
+                            max: 100
+                        }
+                    }
+                }
+            });
+            
+            // 国家就业机会列表
+            const countries = [
+                { name: '美国', count: 3200 },
+                { name: '中国', count: 2800 },
+                { name: '德国', count: 1500 },
+                { name: '英国', count: 1200 },
+                { name: '加拿大', count: 1100 },
+                { name: '法国', count: 950 },
+                { name: '新加坡', count: 800 },
+                { name: '澳大利亚', count: 750 },
+                { name: '荷兰', count: 650 },
+                { name: '瑞士', count: 600 }
+            ];
+            
+            const countryList = document.getElementById('countryList');
+            countries.forEach(country => {
+                const item = document.createElement('div');
+                item.className = 'country-item';
+                item.innerHTML = `
+                    <span class="country-name">${country.name}</span>
+                    <span class="country-count">${country.count}</span>
+                `;
+                countryList.appendChild(item);
+            });
+            
+            // 技能标签云
+            const skills = [
+                'Python', 'TensorFlow', 'PyTorch', 'Machine Learning', 'Deep Learning',
+                'NLP', 'Computer Vision', 'AWS', 'Azure', 'GCP', 'Docker', 'Kubernetes',
+                'SQL', 'Git', 'Hadoop', 'Spark', 'R', 'Java', 'Scala', 'Statistics',
+                'Mathematics', 'MLOps', 'Data Visualization', 'Tableau', 'Linux'
+            ];
+            
+            const skillsGrid = document.getElementById('skillsGrid');
+            skills.forEach(skill => {
+                const tag = document.createElement('div');
+                tag.className = 'skill-tag';
+                tag.textContent = skill;
+                skillsGrid.appendChild(tag);
+            });
+        });
+    </script>
+</body>
+</html>

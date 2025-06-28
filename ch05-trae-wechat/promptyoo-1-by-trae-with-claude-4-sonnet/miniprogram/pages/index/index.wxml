@@ -1,0 +1,39 @@
+<!--index.wxml-->
+<navigation-bar title="减少AI幻觉" back="{{false}}" color="black" background="#FFF">
+  <view slot="right" class="nav-buttons">
+    <button class="nav-btn" bindtap="onShare" open-type="share">分享</button>
+    <button class="nav-btn" bindtap="onNewOptimize">新优化</button>
+  </view>
+</navigation-bar>
+<scroll-view class="scrollarea" scroll-y type="list">
+  <view class="container">
+    <!-- 小程序名称和简介 -->
+    <view class="header">
+      <text class="app-title">减少AI幻觉</text>
+      <text class="app-description">优化您的提示词，让AI回复更准确可靠</text>
+    </view>
+
+    <!-- 用户输入区域 -->
+    <view class="input-section">
+      <text class="section-title">请输入您的初始提示词：</text>
+      <textarea 
+        class="prompt-input" 
+        placeholder="请输入您想要询问AI的问题或提示词..."
+        value="{{userPrompt}}"
+        bindinput="onPromptInput"
+        maxlength="1000"
+        show-confirm-bar="{{false}}"
+      ></textarea>
+      <button class="submit-btn" bindtap="onOptimizePrompt" disabled="{{!canSubmit}}">优化提示词</button>
+    </view>
+
+    <!-- 优化结果区域 -->
+    <view class="result-section" wx:if="{{optimizedPrompt}}">
+      <text class="section-title">优化后的提示词：</text>
+      <view class="result-box">
+        <text class="result-text">{{optimizedPrompt}}</text>
+      </view>
+      <button class="copy-btn" bindtap="onCopyPrompt">复制提示词</button>
+    </view>
+  </view>
+</scroll-view>

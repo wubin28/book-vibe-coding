@@ -1,0 +1,56 @@
+<!--index.wxml-->
+<navigation-bar title="减少AI幻觉" back="{{false}}" color="black" background="#90EE90">
+  <view slot="right">
+    <button class="nav-btn" bindtap="handleShare">分享</button>
+    <button class="nav-btn" bindtap="handleNew">新优化</button>
+  </view>
+</navigation-bar>
+
+<view class="container">
+  <view class="header">
+    <view class="title">减少AI幻觉</view>
+    <view class="subtitle">优化提示词，减少AI回答中的幻觉问题</view>
+  </view>
+
+  <view class="section">
+    <view class="section-title">输入您的提示词</view>
+    <textarea class="input-area" placeholder="请在此输入您想要优化的提示词..." bindinput="onInputChange" value="{{inputPrompt}}"></textarea>
+  </view>
+
+  <view class="action-area">
+    <button class="submit-btn" bindtap="optimizePrompt" loading="{{isOptimizing}}" disabled="{{isOptimizing}}">
+      {{isOptimizing ? '优化中...' : '优化提示词'}}
+    </button>
+  </view>
+
+  <view class="section result-section" wx:if="{{optimizedPrompt}}">
+    <view class="section-title">优化后的提示词</view>
+    <view class="result-area">{{optimizedPrompt}}</view>
+    <view class="button-group">
+      <button class="copy-btn" bindtap="copyPrompt">复制提示词</button>
+      <button class="share-btn" open-type="share">分享</button>
+    </view>
+  </view>
+
+  <!-- 历史记录部分 -->
+  <view class="section history-section" wx:if="{{history.length > 0}}">
+    <view class="section-title">历史记录</view>
+    <view class="history-list">
+      <view class="history-item" wx:for="{{history}}" wx:key="timestamp" bindtap="loadHistoryItem" data-index="{{index}}">
+        <view class="history-content">{{item.original.length > 30 ? item.original.substring(0, 30) + '...' : item.original}}</view>
+        <view class="history-time">{{item.timestamp.substring(0, 10)}}</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="footer">
+    <view class="tips">
+      <view class="tip-title">使用提示：</view>
+      <view class="tip-content">1. 输入您的原始提示词</view>
+      <view class="tip-content">2. 点击"优化提示词"按钮</view>
+      <view class="tip-content">3. 复制优化后的提示词用于AI聊天</view>
+      <view class="tip-content">4. 通过点击AI回复中的网页链接验证信息真实性</view>
+      <view class="tip-content">5. 点击历史记录可快速加载之前的提示词</view>
+    </view>
+  </view>
+</view>

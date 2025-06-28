@@ -1,0 +1,352 @@
+<svg width="1200" height="3000" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Gradients -->
+    <linearGradient id="headerGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="statGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#a8e6cf;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#88d8c0;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="skillGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffecd2;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#fcb69f;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="careerGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#e0c3fc;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#9bb5ff;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="insightGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#fd79a8;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#fdcb6e;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="tableHeaderGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#74b9ff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0984e3;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="3000" fill="#f8f9fa"/>
+  
+  <!-- Header -->
+  <rect x="0" y="0" width="1200" height="120" fill="url(#headerGrad)"/>
+  <text x="600" y="50" text-anchor="middle" fill="white" font-family="Segoe UI" font-size="36" font-weight="300">Global AI Job Market &amp; Salary Trends 2025</text>
+  <text x="600" y="80" text-anchor="middle" fill="white" font-family="Segoe UI" font-size="16" opacity="0.9">Comprehensive Analysis for Career Planning and Market Insights</text>
+  
+  <!-- Dataset Overview -->
+  <rect x="50" y="150" width="1100" height="180" fill="white" rx="10" filter="drop-shadow(0 4px 20px rgba(0,0,0,0.1))"/>
+  <text x="600" y="180" text-anchor="middle" fill="#2c3e50" font-family="Segoe UI" font-size="24" font-weight="600">Dataset Overview</text>
+  
+  <!-- Stat Cards -->
+  <rect x="80" y="200" width="240" height="100" fill="url(#statGrad)" rx="10"/>
+  <text x="200" y="230" text-anchor="middle" fill="#2c3e50" font-family="Segoe UI" font-size="32" font-weight="bold">14,999</text>
+  <text x="200" y="250" text-anchor="middle" fill="#34495e" font-family="Segoe UI" font-size="14" font-weight="500">Total Job Records</text>
+  
+  <rect x="340" y="200" width="240" height="100" fill="url(#statGrad)" rx="10"/>
+  <text x="460" y="230" text-anchor="middle" fill="#2c3e50" font-family="Segoe UI" font-size="32" font-weight="bold">15+</text>
+  <text x="460" y="250" text-anchor="middle" fill="#34495e" font-family="Segoe UI" font-size="14" font-weight="500">Job Categories</text>
+  
+  <rect x="600" y="200" width="240" height="100" fill="url(#statGrad)" rx="10"/>
+  <text x="720" y="230" text-anchor="middle" fill="#2c3e50" font-family="Segoe UI" font-size="32" font-weight="bold">25+</text>
+  <text x="720" y="250" text-anchor="middle" fill="#34495e" font-family="Segoe UI" font-size="14" font-weight="500">Countries</text>
+  
+  <rect x="860" y="200" width="240" height="100" fill="url(#statGrad)" rx="10"/>
+  <text x="980" y="230" text-anchor="middle" fill="#2c3e50" font-family="Segoe UI" font-size="32" font-weight="bold">$98,500</text>
+  <text x="980" y="250" text-anchor="middle" fill="#34495e" font-family="Segoe UI" font-size="14" font-weight="500">Average Salary</text>
+  
+  <!-- Skills Analysis Card -->
+  <rect x="50" y="360" width="550" height="400" fill="white" rx="10" filter="drop-shadow(0 4px 20px rgba(0,0,0,0.1))"/>
+  <text x="70" y="390" fill="#2c3e50" font-family="Segoe UI" font-size="20" font-weight="600">🎯 Required Skills Analysis</text>
+  <text x="70" y="410" fill="#666" font-family="Segoe UI" font-size="14">Top skills demanded across AI positions</text>
+  
+  <!-- Skills Pie Chart -->
+  <g transform="translate(325, 550)">
+    <!-- Python slice -->
+    <path d="M 0,0 L 0,-80 A 80,80 0 0,1 56.57,-56.57 Z" fill="#ff9ff3"/>
+    <!-- SQL slice -->
+    <path d="M 0,0 L 56.57,-56.57 A 80,80 0 0,1 80,0 Z" fill="#54a0ff"/>
+    <!-- Docker slice -->
+    <path d="M 0,0 L 80,0 A 80,80 0 0,1 56.57,56.57 Z" fill="#5f27cd"/>
+    <!-- AWS slice -->
+    <path d="M 0,0 L 56.57,56.57 A 80,80 0 0,1 0,80 Z" fill="#00d2d3"/>
+    <!-- Git slice -->
+    <path d="M 0,0 L 0,80 A 80,80 0 0,1 -56.57,56.57 Z" fill="#ff9f43"/>
+    <!-- Linux slice -->
+    <path d="M 0,0 L -56.57,56.57 A 80,80 0 0,1 -80,0 Z" fill="#10ac84"/>
+    <!-- TensorFlow slice -->
+    <path d="M 0,0 L -80,0 A 80,80 0 0,1 -56.57,-56.57 Z" fill="#ee5a6f"/>
+    <!-- Others slice -->
+    <path d="M 0,0 L -56.57,-56.57 A 80,80 0 0,1 0,-80 Z" fill="#c8d6e5"/>
+  </g>
+  
+  <!-- Skills Legend -->
+  <circle cx="80" cy="650" r="6" fill="#ff9ff3"/>
+  <text x="95" y="655" fill="#2c3e50" font-family="Segoe UI" font-size="12">Python</text>
+  <circle cx="150" cy="650" r="6" fill="#54a0ff"/>
+  <text x="165" y="655" fill="#2c3e50" font-family="Segoe UI" font-size="12">SQL</text>
+  <circle cx="200" cy="650" r="6" fill="#5f27cd"/>
+  <text x="215" y="655" fill="#2c3e50" font-family="Segoe UI" font-size="12">Docker</text>
+  <circle cx="260" cy="650" r="6" fill="#00d2d3"/>
+  <text x="275" y="655" fill="#2c3e50" font-family="Segoe UI" font-size="12">AWS</text>
+  
+  <circle cx="80" cy="670" r="6" fill="#ff9f43"/>
+  <text x="95" y="675" fill="#2c3e50" font-family="Segoe UI" font-size="12">Git</text>
+  <circle cx="130" cy="670" r="6" fill="#10ac84"/>
+  <text x="145" y="675" fill="#2c3e50" font-family="Segoe UI" font-size="12">Linux</text>
+  <circle cx="190" cy="670" r="6" fill="#ee5a6f"/>
+  <text x="205" y="675" fill="#2c3e50" font-family="Segoe UI" font-size="12">TensorFlow</text>
+  <circle cx="280" cy="670" r="6" fill="#c8d6e5"/>
+  <text x="295" y="675" fill="#2c3e50" font-family="Segoe UI" font-size="12">Others</text>
+  
+  <!-- Skill Tags -->
+  <rect x="70" y="690" width="80" height="25" fill="url(#skillGrad)" rx="12"/>
+  <text x="110" y="705" text-anchor="middle" fill="#8b4513" font-family="Segoe UI" font-size="11" font-weight="500">Python</text>
+  
+  <rect x="160" y="690" width="100" height="25" fill="url(#skillGrad)" rx="12"/>
+  <text x="210" y="705" text-anchor="middle" fill="#8b4513" font-family="Segoe UI" font-size="11" font-weight="500">Machine Learning</text>
+  
+  <rect x="270" y="690" width="80" height="25" fill="url(#skillGrad)" rx="12"/>
+  <text x="310" y="705" text-anchor="middle" fill="#8b4513" font-family="Segoe UI" font-size="11" font-weight="500">TensorFlow</text>
+  
+  <rect x="360" y="690" width="70" height="25" fill="url(#skillGrad)" rx="12"/>
+  <text x="395" y="705" text-anchor="middle" fill="#8b4513" font-family="Segoe UI" font-size="11" font-weight="500">PyTorch</text>
+  
+  <rect x="440" y="690" width="50" height="25" fill="url(#skillGrad)" rx="12"/>
+  <text x="465" y="705" text-anchor="middle" fill="#8b4513" font-family="Segoe UI" font-size="11" font-weight="500">AWS</text>
+  
+  <rect x="500" y="690" width="60" height="25" fill="url(#skillGrad)" rx="12"/>
+  <text x="530" y="705" text-anchor="middle" fill="#8b4513" font-family="Segoe UI" font-size="11" font-weight="500">Docker</text>
+  
+  <!-- Job Titles Card -->
+  <rect x="620" y="360" width="530" height="400" fill="white" rx="10" filter="drop-shadow(0 4px 20px rgba(0,0,0,0.1))"/>
+  <text x="640" y="390" fill="#2c3e50" font-family="Segoe UI" font-size="20" font-weight="600">💼 Top AI Job Positions</text>
+  <text x="640" y="410" fill="#666" font-family="Segoe UI" font-size="14">Most common AI roles in the market</text>
+  
+  <!-- Job Bar Chart -->
+  <rect x="650" y="450" width="200" height="20" fill="#a29bfe" rx="3"/>
+  <text x="660" y="465" fill="white" font-family="Segoe UI" font-size="12" font-weight="500">ML Researcher (808)</text>
+  
+  <rect x="650" y="480" width="195" height="20" fill="#6c5ce7" rx="3"/>
+  <text x="660" y="495" fill="white" font-family="Segoe UI" font-size="12" font-weight="500">AI Software Eng (784)</text>
+  
+  <rect x="650" y="510" width="193" height="20" fill="#fd79a8" rx="3"/>
+  <text x="660" y="525" fill="white" font-family="Segoe UI" font-size="12" font-weight="500">Autonomous Sys (777)</text>
+  
+  <rect x="650" y="540" width="192" height="20" fill="#fdcb6e" rx="3"/>
+  <text x="660" y="555" fill="#333" font-family="Segoe UI" font-size="12" font-weight="500">ML Engineer (772)</text>
+  
+  <rect x="650" y="570" width="191" height="20" fill="#e84393" rx="3"/>
+  <text x="660" y="585" fill="white" font-family="Segoe UI" font-size="12" font-weight="500">AI Architect (771)</text>
+  
+  <!-- Country Comparison Card -->
+  <rect x="50" y="780" width="550" height="400" fill="white" rx="10" filter="drop-shadow(0 4px 20px rgba(0,0,0,0.1))"/>
+  <text x="70" y="810" fill="#2c3e50" font-family="Segoe UI" font-size="20" font-weight="600">🌍 Global Job Opportunities</text>
+  <text x="70" y="830" fill="#666" font-family="Segoe UI" font-size="14">AI job distribution by country</text>
+  
+  <!-- Country Horizontal Bar Chart -->
+  <text x="70" y="870" fill="#2c3e50" font-family="Segoe UI" font-size="12">Germany</text>
+  <rect x="140" y="855" width="163" height="15" fill="#74b9ff" rx="3"/>
+  <text x="310" y="867" fill="#2c3e50" font-family="Segoe UI" font-size="11">814</text>
+  
+  <text x="70" y="895" fill="#2c3e50" font-family="Segoe UI" font-size="12">Denmark</text>
+  <rect x="140" y="880" width="156" height="15" fill="#0984e3" rx="3"/>
+  <text x="300" y="892" fill="#2c3e50" font-family="Segoe UI" font-size="11">778</text>
+  
+  <text x="70" y="920" fill="#2c3e50" font-family="Segoe UI" font-size="12">France</text>
+  <rect x="140" y="905" width="154" height="15" fill="#00b894" rx="3"/>
+  <text x="298" y="917" fill="#2c3e50" font-family="Segoe UI" font-size="11">769</text>
+  
+  <text x="70" y="945" fill="#2c3e50" font-family="Segoe UI" font-size="12">Canada</text>
+  <rect x="140" y="930" width="154" height="15" fill="#00cec9" rx="3"/>
+  <text x="298" y="942" fill="#2c3e50" font-family="Segoe UI" font-size="11">769</text>
+  
+  <text x="70" y="970" fill="#2c3e50" font-family="Segoe UI" font-size="12">Austria</text>
+  <rect x="140" y="955" width="153" height="15" fill="#6c5ce7" rx="3"/>
+  <text x="297" y="967" fill="#2c3e50" font-family="Segoe UI" font-size="11">765</text>
+  
+  <text x="70" y="995" fill="#2c3e50" font-family="Segoe UI" font-size="12">Singapore</text>
+  <rect x="140" y="980" width="153" height="15" fill="#a29bfe" rx="3"/>
+  <text x="297" y="992" fill="#2c3e50" font-family="Segoe UI" font-size="11">764</text>
+  
+  <!-- Salary Analysis Card -->
+  <rect x="620" y="780" width="530" height="400" fill="white" rx="10" filter="drop-shadow(0 4px 20px rgba(0,0,0,0.1))"/>
+  <text x="640" y="810" fill="#2c3e50" font-family="Segoe UI" font-size="20" font-weight="600">💰 Salary by Experience Level</text>
+  <text x="640" y="830" fill="#666" font-family="Segoe UI" font-size="14">Compensation trends across experience levels</text>
+  
+  <!-- Salary Line Chart -->
+  <g transform="translate(650, 850)">
+    <!-- Grid lines -->
+    <line x1="0" y1="0" x2="480" y2="0" stroke="#ecf0f1" stroke-width="1"/>
+    <line x1="0" y1="60" x2="480" y2="60" stroke="#ecf0f1" stroke-width="1"/>
+    <line x1="0" y1="120" x2="480" y2="120" stroke="#ecf0f1" stroke-width="1"/>
+    <line x1="0" y1="180" x2="480" y2="180" stroke="#ecf0f1" stroke-width="1"/>
+    <line x1="0" y1="240" x2="480" y2="240" stroke="#ecf0f1" stroke-width="1"/>
+    
+    <!-- Salary line -->
+    <polyline points="0,220 160,160 320,80 480,20" fill="none" stroke="#00b894" stroke-width="3"/>
+    
+    <!-- Data points -->
+    <circle cx="0" cy="220" r="6" fill="#00b894" stroke="white" stroke-width="2"/>
+    <circle cx="160" cy="160" r="6" fill="#00b894" stroke="white" stroke-width="2"/>
+    <circle cx="320" cy="80" r="6" fill="#00b894" stroke="white" stroke-width="2"/>
+    <circle cx="480" cy="20" r="6" fill="#00b894" stroke="white" stroke-width="2"/>
+    
+    <!-- Labels -->
+    <text x="0" y="260" text-anchor="middle" fill="#2c3e50" font-family="Segoe UI" font-size="11">Entry (EN)</text>
+    <text x="160" y="260" text-anchor="middle" fill="#2c3e50" font-family="Segoe UI" font-size="11">Mid (MI)</text>
+    <text x="320" y="260" text-anchor="middle" fill="#2c3e50" font-family="Segoe UI" font-size="11">Senior (SE)</text>
+    <text x="480" y="260" text-anchor="middle" fill="#2c3e50" font-family="Segoe UI" font-size="11">Executive (EX)</text>
+    
+    <!-- Y-axis labels -->
+    <text x="-10" y="245" text-anchor="end" fill="#2c3e50" font-family="Segoe UI" font-size="10">$0K</text>
+    <text x="-10" y="185" text-anchor="end" fill="#2c3e50" font-family="Segoe UI" font-size="10">$100K</text>
+    <text x="-10" y="125" text-anchor="end" fill="#2c3e50" font-family="Segoe UI" font-size="10">$200K</text>
+    <text x="-10" y="65" text-anchor="end" fill="#2c3e50" font-family="Segoe UI" font-size="10">$300K</text>
+    
+    <!-- Value labels -->
+    <text x="0" y="210" text-anchor="middle" fill="#00b894" font-family="Segoe UI" font-size="10" font-weight="bold">$55K</text>
+    <text x="160" y="150" text-anchor="middle" fill="#00b894" font-family="Segoe UI" font-size="10" font-weight="bold">$92.5K</text>
+    <text x="320" y="70" text-anchor="middle" fill="#00b894" font-family="Segoe UI" font-size="10" font-weight="bold">$140K</text>
+    <text x="480" y="10" text-anchor="middle" fill="#00b894" font-family="Segoe UI" font-size="10" font-weight="bold">$240K</text>
+  </g>
+  
+  <!-- Career Path Card -->
+  <rect x="50" y="1200" width="1100" height="200" fill="white" rx="10" filter="drop-shadow(0 4px 20px rgba(0,0,0,0.1))"/>
+  <text x="70" y="1230" fill="#2c3e50" font-family="Segoe UI" font-size="20" font-weight="600">🚀 AI Career Development Path</text>
+  <text x="70" y="1250" fill="#666" font-family="Segoe UI" font-size="14">Typical progression from entry to executive level</text>
+  
+  <!-- Career Path Boxes -->
+  <rect x="100" y="1270" width="200" height="80" fill="url(#careerGrad)" rx="10"/>
+  <text x="200" y="1295" text-anchor="middle" fill="#2c3e50" font-family="Segoe UI" font-size="16" font-weight="600">Entry Level (EN)</text>
+  <text x="200" y="1315" text-anchor="middle" fill="#7f8c8d" font-family="Segoe UI" font-size="14">$45K - $65K</text>
+  <text x="200" y="1335" text-anchor="middle" fill="#7f8c8d" font-family="Segoe UI" font-size="14">0-2 years</text>
+  
+  <text x="320" y="1315" text-anchor="middle" fill="#3498db" font-family="Segoe UI" font-size="20">→</text>
+  
+  <rect x="350" y="1270" width="200" height="80" fill="url(#careerGrad)" rx="10"/>
+  <text x="450" y="1295" text-anchor="middle" fill="#2c3e50" font-family="Segoe UI" font-size="16" font-weight="600">Mid Level (MI)</text>
+  <text x="450" y="1315" text-anchor="middle" fill="#7f8c8d" font-family="Segoe UI" font-size="14">$75K - $110K</text>
+  <text x="450" y="1335" text-anchor="middle" fill="#7f8c8d" font-family="Segoe UI" font-size="14">3-6 years</text>
+  
+  <text x="570" y="1315" text-anchor="middle" fill="#3498db" font-family="Segoe UI" font-size="20">→</text>
+  
+  <rect x="600" y="1270" width="200" height="80" fill="url(#careerGrad)" rx="10"/>
+  <text x="700" y="1295" text-anchor="middle" fill="#2c3e50" font-family="Segoe UI" font-size="16" font-weight="600">Senior Level (SE)</text>
+  <text x="700" y="1315" text-anchor="middle" fill="#7f8c8d" font-family="Segoe UI" font-size="14">$120K - $160K</text>
+  <text x="700" y="1335" text-anchor="middle" fill="#7f8c8d" font-family="Segoe UI" font-size="14">7-12 years</text>
+  
+  <text x="820" y="1315" text-anchor="middle" fill="#3498db" font-family="Segoe UI" font-size="20">→</text>
+  
+  <rect x="850" y="1270" width="200" height="80" fill="url(#careerGrad)" rx="10"/>
+  <text x="950" y="1295" text-anchor="middle" fill="#2c3e50" font-family="Segoe UI" font-size="16" font-weight="600">Executive (EX)</text>
+  <text x="950" y="1315" text-anchor="middle" fill="#7f8c8d" font-family="Segoe UI" font-size="14">$180K - $300K+</text>
+  <text x="950" y="1335" text-anchor="middle" fill="#7f8c8d" font-family="Segoe UI" font-size="14">13+ years</text>
+  
+  <!-- Country Comparison Table -->
+  <rect x="50" y="1420" width="1100" height="400" fill="white" rx="10" filter="drop-shadow(0 4px 20px rgba(0,0,0,0.1))"/>
+  <text x="70" y="1450" fill="#2c3e50" font-family="Segoe UI" font-size="20" font-weight="600">📊 Detailed Country Comparison</text>
+  
+  <!-- Table Header -->
+  <rect x="70" y="1470" width="1060" height="30" fill="url(#tableHeaderGrad)" rx="5"/>
+  <text x="90" y="1490" fill="white" font-family="Segoe UI" font-size="14" font-weight="600">Country</text>
+  <text x="250" y="1490" fill="white" font-family="Segoe UI" font-size="14" font-weight="600">Job Count</text>
+  <text x="400" y="1490" fill="white" font-family="Segoe UI" font-size="14" font-weight="600">Avg Salary (USD)</text>
+  <text x="600" y="1490" fill="white" font-family="Segoe UI" font-size="14" font-weight="600">Top Role</text>
+  <text x="850" y="1490" fill="white" font-family="Segoe UI" font-size="14" font-weight="600">Remote Work %</text>
+  
+  <!-- Table Rows -->
+  <rect x="70" y="1500" width="1060" height="25" fill="#f8f9fa" rx="3"/>
+  <text x="90" y="1518" fill="#2c3e50" font-family="Segoe UI" font-size="12">🇩🇪 Germany</text>
+  <text x="250" y="1518" fill="#2c3e50" font-family="Segoe UI" font-size="12">814</text>
+  <text x="400" y="1518" fill="#27ae60" font-family="Segoe UI" font-size="12" font-weight="bold">$95,500</text>
+  <text x="600" y="1518" fill="#2c3e50" font-family="Segoe UI" font-size="12">ML Engineer</text>
+  <text x="850" y="1518" fill="#2c3e50" font-family="Segoe UI" font-size="12">65%</text>
+  
+  <rect x="70" y="1525" width="1060" height="25" fill="white" rx="3"/>
+  <text x="90" y="1543" fill="#2c3e50" font-family="Segoe UI" font-size="12">🇩🇰 Denmark</text>
+  <text x="250" y="1543" fill="#2c3e50" font-family="Segoe UI" font-size="12">778</text>
+  <text x="400" y="1543" fill="#27ae60" font-family="Segoe UI" font-size="12" font-weight="bold">$102,300</text>
+  <text x="600" y="1543" fill="#2c3e50" font-family="Segoe UI" font-size="12">AI Architect</text>
+  <text x="850" y="1543" fill="#2c3e50" font-family="Segoe UI" font-size="12">72%</text>
+  
+  <rect x="70" y="1550" width="1060" height="25" fill="#f8f9fa" rx="3"/>
+  <text x="90" y="1568" fill="#2c3e50" font-family="Segoe UI" font-size="12">🇫🇷 France</text>
+  <text x="250" y="1568" fill="#2c3e50" font-family="Segoe UI" font-size="12">769</text>
+  <text x="400" y="1568" fill="#27ae60" font-family="Segoe UI" font-size="12" font-weight="bold">$89,200</text>
+  <text x="600" y="1568" fill="#2c3e50" font-family="Segoe UI" font-size="12">Data Scientist</text>
+  <text x="850" y="1568" fill="#2c3e50" font-family="Segoe UI" font-size="12">58%</text>
+  
+  <rect x="70" y="1575" width="1060" height="25" fill="white" rx="3"/>
+  <text x="90" y="1593" fill="#2c3e50" font-family="Segoe UI" font-size="12">🇨🇦 Canada</text>
+  <text x="250" y="1593" fill="#2c3e50" font-family="Segoe UI" font-size="12">769</text>
+  <text x="400" y="1593" fill="#27ae60" font-family="Segoe UI" font-size="12" font-weight="bold">$98,800</text>
+  <text x="600" y="1593" fill="#2c3e50" font-family="Segoe UI" font-size="12">AI Research Scientist</text>
+  <text x="850" y="1593" fill="#2c3e50" font-family="Segoe UI" font-size="12">78%</text>
+  
+  <rect x="70" y="1600" width="1060" height="25" fill="#f8f9fa" rx="3"/>
+  <text x="90" y="1618" fill="#2c3e50" font-family="Segoe UI" font-size="12">🇦🇹 Austria</text>
+  <text x="250" y="1618" fill="#2c3e50" font-family="Segoe UI" font-size="12">765</text>
+  <text x="400" y="1618" fill="#27ae60" font-family="Segoe UI" font-size="12" font-weight="bold">$91,400</text>
+  <text x="600" y="1618" fill="#2c3e50" font-family="Segoe UI" font-size="12">ML Engineer</text>
+  <text x="850" y="1618" fill="#2c3e50" font-family="Segoe UI" font-size="12">63%</text>
+  
+  <rect x="70" y="1625" width="1060" height="25" fill="white" rx="3"/>
+  <text x="90" y="1643" fill="#2c3e50" font-family="Segoe UI" font-size="12">🇸🇬 Singapore</text>
+  <text x="250" y="1643" fill="#2c3e50" font-family="Segoe UI" font-size="12">764</text>
+  <text x="400" y="1643" fill="#27ae60" font-family="Segoe UI" font-size="12" font-weight="bold">$108,700</text>
+  <text x="600" y="1643" fill="#2c3e50" font-family="Segoe UI" font-size="12">AI Software Engineer</text>
+  <text x="850" y="1643" fill="#2c3e50" font-family="Segoe UI" font-size="12">45%</text>
+  
+  <rect x="70" y="1650" width="1060" height="25" fill="#f8f9fa" rx="3"/>
+  <text x="90" y="1668" fill="#2c3e50" font-family="Segoe UI" font-size="12">🇨🇳 China</text>
+  <text x="250" y="1668" fill="#2c3e50" font-family="Segoe UI" font-size="12">763</text>
+  <text x="400" y="1668" fill="#27ae60" font-family="Segoe UI" font-size="12" font-weight="bold">$76,500</text>
+  <text x="600" y="1668" fill="#2c3e50" font-family="Segoe UI" font-size="12">AI Specialist</text>
+  <text x="850" y="1668" fill="#2c3e50" font-family="Segoe UI" font-size="12">38%</text>
+  
+  <rect x="70" y="1675" width="1060" height="25" fill="white" rx="3"/>
+  <text x="90" y="1693" fill="#2c3e50" font-family="Segoe UI" font-size="12">🇮🇳 India</text>
+  <text x="250" y="1693" fill="#2c3e50" font-family="Segoe UI" font-size="12">754</text>
+  <text x="400" y="1693" fill="#27ae60" font-family="Segoe UI" font-size="12" font-weight="bold">$68,200</text>
+  <text x="600" y="1693" fill="#2c3e50" font-family="Segoe UI" font-size="12">Data Engineer</text>
+  <text x="850" y="1693" fill="#2c3e50" font-family="Segoe UI" font-size="12">82%</text>
+  
+  <rect x="70" y="1700" width="1060" height="25" fill="#f8f9fa" rx="3"/>
+  <text x="90" y="1718" fill="#2c3e50" font-family="Segoe UI" font-size="12">🇸🇪 Sweden</text>
+  <text x="250" y="1718" fill="#2c3e50" font-family="Segoe UI" font-size="12">752</text>
+  <text x="400" y="1718" fill="#27ae60" font-family="Segoe UI" font-size="12" font-weight="bold">$104,600</text>
+  <text x="600" y="1718" fill="#2c3e50" font-family="Segoe UI" font-size="12">AI Architect</text>
+  <text x="850" y="1718" fill="#2c3e50" font-family="Segoe UI" font-size="12">85%</text>
+  
+  <rect x="70" y="1725" width="1060" height="25" fill="white" rx="3"/>
+  <text x="90" y="1743" fill="#2c3e50" font-family="Segoe UI" font-size="12">🇮🇱 Israel</text>
+  <text x="250" y="1743" fill="#2c3e50" font-family="Segoe UI" font-size="12">751</text>
+  <text x="400" y="1743" fill="#27ae60" font-family="Segoe UI" font-size="12" font-weight="bold">$112,300</text>
+  <text x="600" y="1743" fill="#2c3e50" font-family="Segoe UI" font-size="12">AI Research Scientist</text>
+  <text x="850" y="1743" fill="#2c3e50" font-family="Segoe UI" font-size="12">67%</text>
+  
+  <!-- Key Market Insights Section -->
+  <rect x="50" y="1840" width="1100" height="400" fill="white" rx="10" filter="drop-shadow(0 4px 20px rgba(0,0,0,0.1))"/>
+  <text x="70" y="1870" fill="#2c3e50" font-family="Segoe UI" font-size="20" font-weight="600">🔍 Key Market Insights</text>
+  
+  <!-- Skills Insight Card -->
+  <rect x="80" y="1890" width="1040" height="80" fill="url(#insightGrad1)" rx="10"/>
+  <text x="100" y="1915" fill="white" font-family="Segoe UI" font-size="16" font-weight="600">💡 Skills Insight</text>
+  <text x="100" y="1935" fill="white" font-family="Segoe UI" font-size="13">Python remains the most demanded skill (85% of positions), followed by machine learning frameworks like TensorFlow and PyTorch.</text>
+  <text x="100" y="1955" fill="white" font-family="Segoe UI" font-size="13">Cloud platforms (AWS, Azure, GCP) are increasingly important with 70% of roles requiring cloud experience.</text>
+  
+  <!-- Geographic Insight Card -->
+  <rect x="80" y="1980" width="1040" height="80" fill="url(#insightGrad1)" rx="10"/>
+  <text x="100" y="2005" fill="white" font-family="Segoe UI" font-size="16" font-weight="600">🌟 Geographic Insight</text>
+  <text x="100" y="2025" fill="white" font-family="Segoe UI" font-size="13">Nordic countries (Denmark, Sweden) offer the highest average salaries, while Asia-Pacific regions show strong growth in AI job opportunities.</text>
+  <text x="100" y="2045" fill="white" font-family="Segoe UI" font-size="13">Remote work adoption varies significantly by region, with Sweden leading at 85%.</text>
+  
+  <!-- Career Growth Insight Card -->
+  <rect x="80" y="2070" width="1040" height="80" fill="url(#insightGrad1)" rx="10"/>
+  <text x="100" y="2095" fill="white" font-family="Segoe UI" font-size="16" font-weight="600">📈 Career Growth Insight</text>
+  <text x="100" y="2115" fill="white" font-family="Segoe UI" font-size="13">The AI field shows clear career progression with salary increases of 40-60% between levels. Senior and Executive roles often require 7+ years of experience</text>
+  <text x="100" y="2135" fill="white" font-family="Segoe UI" font-size="13">and specialized domain knowledge. Entry-level positions focus on foundational skills.</text>
+  
+</svg>

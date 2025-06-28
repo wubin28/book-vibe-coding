@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI职位市场数据分析看板</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.8/dist/chart.umd.min.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#4F46E5',
+                        secondary: '#10B981',
+                        accent: '#F59E0B',
+                        light: '#F3F4F6',
+                        dark: '#1F2937'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+            .card-shadow {
+                box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            }
+            .transition-custom {
+                transition: all 0.3s ease;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans text-gray-800">
+    <div class="container mx-auto px-4 py-8 max-w-7xl">
+        <!-- 页面标题 -->
+        <header class="mb-10 text-center">
+            <h1 class="text-[clamp(1.8rem,4vw,2.8rem)] font-bold text-gray-800 mb-2">AI职位市场数据分析看板</h1>
+            <p class="text-gray-600 text-lg">基于Global AI Job Market & Salary Trends 2025数据集 | 总记录数: <span class="font-semibold text-primary">15001</span> 条</p>
+            <div class="mt-4 inline-block bg-blue-50 px-4 py-2 rounded-full text-sm text-blue-700">
+                <i class="fa fa-info-circle mr-1"></i> 数据更新时间: 2025年
+            </div>
+        </header>
+
+        <!-- 主要内容区 -->
+        <main class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            <!-- 左侧边栏：筛选器 -->
+            <div class="lg:col-span-1 space-y-6">
+                <div class="bg-white rounded-xl p-5 card-shadow transition-custom hover:shadow-lg">
+                    <h2 class="text-xl font-semibold mb-4 flex items-center">
+                        <i class="fa fa-filter text-primary mr-2"></i>数据筛选
+                    </h2>
+                    
+                    <div class="space-y-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">职位类型</label>
+                            <select id="jobTypeFilter" class="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary/50 focus:border-primary transition-custom">
+                                <option value="all">所有职位</option>
+                                <option value="AI Research Scientist">AI研究科学家</option>
+                                <option value="AI Software Engineer">AI软件工程师</option>
+                                <option value="Data Scientist">数据科学家</option>
+                                <option value="Machine Learning Engineer">机器学习工程师</option>
+                                <option value="NLP Engineer">NLP工程师</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">经验水平</label>
+                            <div class="space-y-2">
+                                <label class="flex items-center"><input type="checkbox" checked class="mr-2 text-primary"> 初级 (EN)</label>
+                                <label class="flex items-center"><input type="checkbox" checked class="mr-2 text-primary"> 中级 (MI)</label>
+                                <label class="flex items-center"><input type="checkbox" checked class="mr-2 text-primary"> 高级 (SE)</label>
+                                <label class="flex items-center"><input type="checkbox" checked class="mr-2 text-primary"> 专家 (EX)</label>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">远程工作</label>
+                            <div class="space-y-2">
+                                <label class="flex items-center"><input type="checkbox" checked class="mr-2 text-primary"> 完全远程 (100%)</label>
+                                <label class="flex items-center"><input type="checkbox" checked class="mr-2 text-primary"> 部分远程 (50%)</label>
+                                <label class="flex items-center"><input type="checkbox" checked class="mr-2 text-primary"> 无远程 (0%)</label>
+                            </div>
+                        </div>
+                        
+                        <button id="applyFilters" class="w-full bg-primary hover:bg-primary/90 text-white py-2 px-4 rounded-lg transition-custom flex items-center justify-center">
+                            <i class="fa fa-refresh mr-2"></i>应用筛选
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl p-5 card-shadow transition-custom hover:shadow-lg">
+                    <h2 class="text-xl font-semibold mb-4 flex items-center">
+                        <i class="fa fa-lightbulb-o text-accent mr-2"></i>职业建议
+                    </h2>
+                    <div class="text-gray-700 space-y-3 text-sm">
+                        <p><i class="fa fa-check-circle text-secondary mr-2"></i>Python、SQL和机器学习框架是最受欢迎的技能</p>
+                        <p><i class="fa fa-check-circle text-secondary mr-2"></i>美国、英国和德国提供最多的AI就业机会</p>
+                        <p><i class="fa fa-check-circle text-secondary mr-2"></i>高级职位平均需要7-10年相关工作经验</p>
+                        <p><i class="fa fa-check-circle text-secondary mr-2"></i>完全远程职位占比约35%，且呈上升趋势</p>
+                        <p><i class="fa fa-check-circle text-secondary mr-2"></i>金融和医疗行业的AI职位薪资普遍较高</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 右侧内容区：图表和数据 -->
+            <div class="lg:col-span-2 space-y-6">
+                <!-- 技能要求分析 -->
+                <section class="bg-white rounded-xl p-5 card-shadow transition-custom hover:shadow-lg">
+                    <div class="flex justify-between items-center mb-6">
+                        <h2 class="text-xl font-semibold flex items-center">
+                            <i class="fa fa-code text-primary mr-2"></i>技能要求分析
+                        </h2>
+                        <div class="text-sm text-gray-500">基于职位需求频率</div>
+                    </div>
+                    <div class="h-[300px]">
+                        <canvas id="skillsChart"></canvas>
+                    </div>
+                    <div class="mt-4 grid grid-cols-2 md:grid-cols-4 gap-3 text-sm">
+                        <div class="bg-blue-50 p-3 rounded-lg">
+                            <div class="font-semibold text-primary">Python</div>
+                            <div class="text-gray-600">78% 的职位要求</div>
+                        </div>
+                        <div class="bg-green-50 p-3 rounded-lg">
+                            <div class="font-semibold text-secondary">SQL</div>
+                            <div class="text-gray-600">65% 的职位要求</div>
+                        </div>
+                        <div class="bg-yellow-50 p-3 rounded-lg">
+                            <div class="font-semibold text-accent">TensorFlow/PyTorch</div>
+                            <div class="text-gray-600">52% 的职位要求</div>
+                        </div>
+                        <div class="bg-purple-50 p-3 rounded-lg">
+                            <div class="font-semibold text-purple-600">AWS/Azure/GCP</div>
+                            <div class="text-gray-600">48% 的职位要求</div>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- 国家就业机会对比 -->
+                <section class="bg-white rounded-xl p-5 card-shadow transition-custom hover:shadow-lg">
+                    <div class="flex justify-between items-center mb-6">
+                        <h2 class="text-xl font-semibold flex items-center">
+                            <i class="fa fa-globe text-primary mr-2"></i>国家就业机会对比
+                        </h2>
+                        <div class="text-sm text-gray-500">职位数量与平均薪资</div>
+                    </div>
+                    <div class="h-[300px]">
+                        <canvas id="countryChart"></canvas>
+                    </div>
+                </section>
+                
+                <!-- 职业发展路径规划 -->
+                <section class="bg-white rounded-xl p-5 card-shadow transition-custom hover:shadow-lg">
+                    <div class="flex justify-between items-center mb-6">
+                        <h2 class="text-xl font-semibold flex items-center">
+                            <i class="fa fa-line-chart text-primary mr-2"></i>职业发展路径规划
+                        </h2>
+                        <div class="text-sm text-gray-500">经验与薪资关系</div>
+                    </div>
+                    <div class="h-[300px]">
+                        <canvas id="careerPathChart"></canvas>
+                    </div>
+                    <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
+                        <div class="border border-gray-200 rounded-lg p-4 hover:border-primary transition-custom">
+                            <div class="text-2xl font-bold text-primary mb-1">初级</div>
+                            <div class="text-gray-600 mb-2">0-2年经验</div>
+                            <div class="text-lg font-semibold">$60,000-85,000</div>
+                            <div class="text-sm text-gray-500 mt-1">平均薪资范围</div>
+                        </div>
+                        <div class="border border-gray-200 rounded-lg p-4 hover:border-primary transition-custom">
+                            <div class="text-2xl font-bold text-primary mb-1">中级</div>
+                            <div class="text-gray-600 mb-2">3-5年经验</div>
+                            <div class="text-lg font-semibold">$90,000-130,000</div>
+                            <div class="text-sm text-gray-500 mt-1">平均薪资范围</div>
+                        </div>
+                        <div class="border border-gray-200 rounded-lg p-4 hover:border-primary transition-custom">
+                            <div class="text-2xl font-bold text-primary mb-1">高级</div>
+                            <div class="text-gray-600 mb-2">6+年经验</div>
+                            <div class="text-lg font-semibold">$140,000-220,000+</div>
+                            <div class="text-sm text-gray-500 mt-1">平均薪资范围</div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+        
+        <!-- 页脚 -->
+        <footer class="mt-12 text-center text-gray-500 text-sm">
+            <p>AI职位市场数据分析看板 | 数据来源: Global AI Job Market & Salary Trends 2025</p>
+            <p class="mt-1">本看板仅供职业规划参考，数据为样本分析结果</p>
+        </footer>
+    </div>
+
+    <script>
+        // 等待DOM加载完成
+        document.addEventListener('DOMContentLoaded', function() {
+            // 技能要求图表
+            const skillsCtx = document.getElementById('skillsChart').getContext('2d');
+            const skillsChart = new Chart(skillsCtx, {
+                type: 'bar',
+                data: {
+                    labels: ['Python', 'SQL', 'TensorFlow/PyTorch', 'AWS/Azure/GCP', 'Linux', 'Docker/Kubernetes', 'Java', 'R', 'Spark', 'NLP'],
+                    datasets: [{
+                        label: '需求频率 (%)',
+                        data: [78, 65, 52, 48, 42, 38, 35, 32, 28, 25],
+                        backgroundColor: [
+                            'rgba(79, 70, 229, 0.7)',
+                            'rgba(16, 185, 129, 0.7)',
+                            'rgba(245, 158, 11, 0.7)',
+                            'rgba(139, 92, 246, 0.7)',
+                            'rgba(59, 130, 246, 0.7)',
+                            'rgba(236, 72, 153, 0.7)',
+                            'rgba(209, 213, 219, 0.7)',
+                            'rgba(249, 115, 22, 0.7)',
+                            'rgba(16, 185, 129, 0.5)',
+                            'rgba(79, 70, 229, 0.5)'
+                        ],
+                        borderColor: [
+                            'rgba(79, 70, 229, 1)',
+                            'rgba(16, 185, 129, 1)',
+                            'rgba(245, 158, 11, 1)',
+                            'rgba(139, 92, 246, 1)',
+                            'rgba(59, 130, 246, 1)',
+                            'rgba(236, 72, 153, 1)',
+                            'rgba(209, 213, 219, 1)',
+                            'rgba(249, 115, 22, 1)',
+                            'rgba(16, 185, 129, 0.8)',
+                            'rgba(79, 70, 229, 0.8)'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            max: 100,
+                            title: {
+                                display: true,
+                                text: '职位需求百分比 (%)'
+                            }
+                        }
+                    },
+                    plugins: {
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    return `需求频率: ${context.raw}%`;
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+            
+            // 国家就业机会对比图表
+            const countryCtx = document.getElementById('countryChart').getContext('2d');
+            const countryChart = new Chart(countryCtx, {
+                type: 'scatter',
+                data: {
+                    datasets: [{
+                        label: '国家就业机会',
+                        data: [
+                            { x: 320, y: 125000, r: 32, country: '美国' },
+                            { x: 210, y: 105000, r: 21, country: '英国' },
+                            { x: 185, y: 98000, r: 18.5, country: '德国' },
+                            { x: 170, y: 92000, r: 17, country: '加拿大' },
+                            { x: 165, y: 88000, r: 16.5, country: '法国' },
+                            { x: 150, y: 85000, r: 15, country: '印度' },
+                            { x: 140, y: 110000, r: 14, country: '瑞士' },
+                            { x: 130, y: 95000, r: 13, country: '瑞典' },
+                            { x: 120, y: 82000, r: 12, country: '澳大利亚' },
+                            { x: 110, y: 78000, r: 11, country: '中国' }
+                        ],
+                        backgroundColor: 'rgba(79, 70, 229, 0.6)',
+                        borderColor: 'rgba(79, 70, 229, 1)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        x: {
+                            title: {
+                                display: true,
+                                text: '职位数量'
+                            }
+                        },
+                        y: {
+                            title: {
+                                display: true,
+                                text: '平均年薪 (USD)'
+                            }
+                        }
+                    },
+                    plugins: {
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    return `${context.raw.country}: 职位数=${context.raw.x}, 平均薪资=$${context.raw.y.toLocaleString()}`;
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+            
+            // 职业发展路径规划图表
+            const careerPathCtx = document.getElementById('careerPathChart').getContext('2d');
+            const careerPathChart = new Chart(careerPathCtx, {
+                type: 'line',
+                data: {
+                    labels: ['0年', '1年', '2年', '3年', '4年', '5年', '6年', '7年', '8年', '9年', '10年+'],
+                    datasets: [
+                        {
+                            label: 'AI研究科学家',
+                            data: [75000, 82000, 90000, 105000, 120000, 135000, 155000, 175000, 190000, 210000, 235000],
+                            borderColor: 'rgba(79, 70, 229, 1)',
+                            backgroundColor: 'rgba(79, 70, 229, 0.1)',
+                            tension: 0.3,
+                            fill: true
+                        },
+                        {
+                            label: '机器学习工程师',
+                            data: [70000, 78000, 88000, 100000, 115000, 130000, 145000, 160000, 175000, 190000, 210000],
+                            borderColor: 'rgba(16, 185, 129, 1)',
+                            backgroundColor: 'rgba(16, 185, 129, 0.1)',
+                            tension: 0.3,
+                            fill: true
+                        },
+                        {
+                            label: '数据科学家',
+                            data: [65000, 73000, 83000, 95000, 110000, 125000, 140000, 155000, 170000, 185000, 200000],
+                            borderColor: 'rgba(245, 158, 11, 1)',
+                            backgroundColor: 'rgba(245, 158, 11, 0.1)',
+                            tension: 0.3,
+                            fill: true
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            title: {
+                                display: true,
+                                text: '年薪 (USD)'
+                            },
+                            ticks: {
+                                callback: function(value) {
+                                    return '$' + value.toLocaleString();
+                                }
+                            }
+                        },
+                        x: {
+                            title: {
+                                display: true,
+                                text: '工作经验'
+                            }
+                        }
+                    },
+                    plugins: {
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    return `${context.dataset.label}: $${context.raw.toLocaleString()}`;
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+            
+            // 筛选按钮事件
+            document.getElementById('applyFilters').addEventListener('click', function() {
+                // 这里只是模拟筛选效果
+                const jobType = document.getElementById('jobTypeFilter').value;
+                alert(`已应用筛选: ${jobType ? jobType : '所有职位'}
+在实际应用中，这将更新图表数据`);
+            });
+        });
+    </script>
+</body>
+</html>

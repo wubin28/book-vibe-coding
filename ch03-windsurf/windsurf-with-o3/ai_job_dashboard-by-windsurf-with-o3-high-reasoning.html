@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<title>Global AI Job Market & Salary Trends 2025 – 数据看板</title>
+<!-- 轻量浅色风格 -->
+<style>
+  :root{
+    --bg:#fafafa;
+    --card:#ffffff;
+    --text:#222;
+    --accent:#60a5fa;
+  }
+  body{margin:0;font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;background:var(--bg);color:var(--text);}
+  header{padding:1.2rem 2rem;background:var(--card);box-shadow:0 2px 6px rgba(0,0,0,.05);}
+  h1{margin:0;font-size:1.4rem;}
+  .container{padding:1.5rem;display:grid;gap:1.5rem;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));}
+  .card{background:var(--card);padding:1rem 1.2rem;border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,.06);}
+  canvas{width:100%!important;height:320px!important;}
+  footer{padding:1rem;text-align:center;font-size:.9rem;color:#666;}
+</style>
+<!-- Chart.js CDN -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+</head>
+<body>
+<header>
+  <h1>Global AI Job Market & Salary Trends 2025 数据看板</h1>
+  <p style="margin:.3rem 0 0;font-size:.95rem;">共分析 <strong>14 999</strong> 条招聘记录（数据源：Kaggle）</p>
+</header>
+
+<div class="container">
+  <div class="card"><canvas id="skillsChart"></canvas></div>
+  <div class="card"><canvas id="countryChart"></canvas></div>
+  <div class="card"><canvas id="salaryChart"></canvas></div>
+</div>
+
+<footer>© 2025 Career Insights Dashboard</footer>
+
+<script>
+// ===== 已从 14 999 条记录得出的聚合结果 =====
+const topSkills = {
+  labels:["Python","SQL","TensorFlow","Kubernetes","Scala","PyTorch","Linux","Git","Java","GCP","Hadoop","Tableau","R","Computer Vision","Data Visualization","Deep Learning","MLOps","Spark","NLP","Azure"],
+  counts:[4450,3407,3022,3009,2794,2777,2705,2631,2578,2442,2419,2341,2311,2284,2270,2189,2164,2155,2145,2144]
+};
+const topCountries = {
+  labels:["Germany","Denmark","Canada","France","Austria","Singapore","China","India","Sweden","Israel","Ireland","Switzerland","Finland","Japan","Australia","Netherlands","United Kingdom","United States","South Korea","Norway"],
+  counts:[814,778,769,769,765,764,763,754,752,751,750,746,733,733,732,731,729,724,722,721]
+};
+const salaryByExp = {
+  years:[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19],
+  avg:[63112.28,63155.19,88824.16,87116.17,87932.54,120382.67,124130.48,120106.86,124214.81,122246.98,190283.67,187484.70,195265.99,190892.29,185749.54,184671.15,181207.72,185309.14,186479.89,190341.79]
+};
+
+// ===== 报表配色 =====
+const barColor = idx => `hsl(${idx*18},70%,60%)`;
+const accent = getComputedStyle(document.documentElement).getPropertyValue('--accent');
+
+// ===== 1. 热门技能柱状图 =====
+new Chart(document.getElementById('skillsChart'),{
+  type:'bar',
+  data:{
+    labels:topSkills.labels,
+    datasets:[{
+      label:'出现次数',
+      data:topSkills.counts,
+      backgroundColor:topSkills.labels.map((_,i)=>barColor(i)),
+      borderRadius:4
+    }]
+  },
+  options:{
+    plugins:{title:{display:true,text:'Top 20 技能需求',font:{size:16}}},
+    scales:{y:{beginAtZero:true}}
+  }
+});
+
+// ===== 2. 国家/地区机会柱状图 =====
+new Chart(document.getElementById('countryChart'),{
+  type:'bar',
+  data:{
+    labels:topCountries.labels,
+    datasets:[{
+      label:'岗位数量',
+      data:topCountries.counts,
+      backgroundColor:topCountries.labels.map((_,i)=>barColor(i+4)),
+      borderRadius:4
+    }]
+  },
+  options:{
+    plugins:{title:{display:true,text:'Top 20 国家/地区 AI 职位机会',font:{size:16}}},
+    indexAxis:'y',
+    scales:{x:{beginAtZero:true}}
+  }
+});
+
+// ===== 3. 经验-薪资折线图 =====
+new Chart(document.getElementById('salaryChart'),{
+  type:'line',
+  data:{
+    labels:salaryByExp.years.map(y=>y+' 年'),
+    datasets:[{
+      label:'平均薪资 (USD)',
+      data:salaryByExp.avg,
+      tension:.25,
+      fill:true,
+      backgroundColor:accent+'33',
+      borderColor:accent,
+      pointRadius:3
+    }]
+  },
+  options:{
+    plugins:{title:{display:true,text:'工作年限 vs 平均薪资',font:{size:16}}},
+    scales:{y:{beginAtZero:false,grid:{color:'#ddd'}}}
+  }
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+{
+  "promptTestCases": {
+    "webDevelopment": {
+      "role": "Senior Full-Stack Developer",
+      "audience": "Junior developers starting their first job",
+      "boundary": "Modern web development with React and Node.js",
+      "purpose": "build a scalable e-commerce application",
+      "output": "Step-by-step implementation guide with code examples",
+      "concern": "Performance optimization and security best practices"
+    },
+    "dataScience": {
+      "role": "Data Science Mentor",
+      "audience": "Business analysts transitioning to data science",
+      "boundary": "Machine learning for business applications",
+      "purpose": "implement predictive analytics for customer behavior",
+      "output": "Python code with explanations and visualizations",
+      "concern": "Data privacy and model interpretability"
+    },
+    "productManagement": {
+      "role": "Senior Product Manager",
+      "audience": "Startup founders",
+      "boundary": "Product strategy and user experience",
+      "purpose": "validate product-market fit",
+      "output": "Actionable framework with real-world examples",
+      "concern": "Resource constraints and market timing"
+    }
+  },
+  "expectedKeywords": {
+    "webDevelopment": ["React", "Node.js", "e-commerce", "scalable", "performance"],
+    "dataScience": ["machine learning", "Python", "predictive analytics", "data privacy"],
+    "productManagement": ["product-market fit", "framework", "startup", "user experience"]
+  },
+  "errorScenarios": {
+    "invalidApiKey": {
+      "errorMessage": ".env文件中的DEEPSEEK_API_KEY无效",
+      "fallbackPattern": "I want you to act as a"
+    },
+    "networkError": {
+      "errorMessage": "Failed to optimize prompt",
+      "timeout": 1000
+    }
+  }
+} 

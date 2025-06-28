@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global AI Job Market & Salary Trends 2025 - Dashboard</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 300;
+        }
+
+        .header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .stats-overview {
+            background: white;
+            margin: 2rem 0;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 1rem;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, #a8e6cf 0%, #88d8c0 100%);
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            color: #34495e;
+            font-weight: 500;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .card {
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card h2 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        .chart-container {
+            position: relative;
+            height: 300px;
+            margin-top: 1rem;
+        }
+
+        .skills-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .skill-tag {
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            text-align: center;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: #8b4513;
+        }
+
+        .career-path {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 1rem 0;
+            padding: 1rem;
+            background: linear-gradient(135deg, #e0c3fc 0%, #9bb5ff 100%);
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .career-path:hover {
+            transform: scale(1.02);
+        }
+
+        .career-level {
+            text-align: center;
+            flex: 1;
+        }
+
+        .career-level h4 {
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+
+        .career-level p {
+            font-size: 0.9rem;
+            color: #7f8c8d;
+        }
+
+        .arrow {
+            font-size: 1.5rem;
+            color: #3498db;
+            margin: 0 1rem;
+        }
+
+        .country-comparison {
+            overflow-x: auto;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+
+        .comparison-table th,
+        .comparison-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid #ecf0f1;
+        }
+
+        .comparison-table th {
+            background: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%);
+            color: white;
+            font-weight: 600;
+        }
+
+        .comparison-table tr:hover {
+            background: #f8f9fa;
+        }
+
+        .salary-range {
+            color: #27ae60;
+            font-weight: bold;
+        }
+
+        .filter-controls {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 0.8rem 1.5rem;
+            background: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%);
+            color: white;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .filter-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(116, 185, 255, 0.4);
+        }
+
+        .filter-btn.active {
+            background: linear-gradient(135deg, #00b894 0%, #00a085 100%);
+        }
+
+        .insights-section {
+            background: white;
+            margin: 2rem 0;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        .insight-card {
+            background: linear-gradient(135deg, #fd79a8 0%, #fdcb6e 100%);
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 1rem 0;
+            color: white;
+        }
+
+        .insight-card h3 {
+            margin-bottom: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .dashboard-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .filter-controls {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="container">
+            <h1>Global AI Job Market & Salary Trends 2025</h1>
+            <p>Comprehensive Analysis for Career Planning and Market Insights</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="stats-overview">
+            <h2 style="text-align: center; color: #2c3e50; margin-bottom: 1rem;">Dataset Overview</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">14,999</div>
+                    <div class="stat-label">Total Job Records</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">15+</div>
+                    <div class="stat-label">Job Categories</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">25+</div>
+                    <div class="stat-label">Countries</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">$98,500</div>
+                    <div class="stat-label">Average Salary</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="filter-controls">
+            <button class="filter-btn active" onclick="showAllCharts()">All Insights</button>
+            <button class="filter-btn" onclick="showSkillsAnalysis()">Skills Analysis</button>
+            <button class="filter-btn" onclick="showCountryComparison()">Country Comparison</button>
+            <button class="filter-btn" onclick="showCareerPath()">Career Path</button>
+        </div>
+
+        <div class="dashboard-grid">
+            <!-- Skills Analysis Card -->
+            <div class="card" id="skills-card">
+                <h2>🎯 Required Skills Analysis</h2>
+                <p>Top skills demanded across AI positions</p>
+                <div class="chart-container">
+                    <canvas id="skillsChart"></canvas>
+                </div>
+                <div class="skills-list">
+                    <div class="skill-tag">Python</div>
+                    <div class="skill-tag">Machine Learning</div>
+                    <div class="skill-tag">TensorFlow</div>
+                    <div class="skill-tag">PyTorch</div>
+                    <div class="skill-tag">AWS</div>
+                    <div class="skill-tag">Docker</div>
+                    <div class="skill-tag">Kubernetes</div>
+                    <div class="skill-tag">SQL</div>
+                    <div class="skill-tag">Linux</div>
+                    <div class="skill-tag">Git</div>
+                    <div class="skill-tag">Azure</div>
+                    <div class="skill-tag">Deep Learning</div>
+                </div>
+            </div>
+
+            <!-- Job Titles Distribution -->
+            <div class="card" id="jobs-card">
+                <h2>💼 Top AI Job Positions</h2>
+                <p>Most common AI roles in the market</p>
+                <div class="chart-container">
+                    <canvas id="jobsChart"></canvas>
+                </div>
+            </div>
+
+            <!-- Country Comparison -->
+            <div class="card" id="country-card">
+                <h2>🌍 Global Job Opportunities</h2>
+                <p>AI job distribution by country</p>
+                <div class="chart-container">
+                    <canvas id="countryChart"></canvas>
+                </div>
+            </div>
+
+            <!-- Salary Analysis -->
+            <div class="card" id="salary-card">
+                <h2>💰 Salary by Experience Level</h2>
+                <p>Compensation trends across experience levels</p>
+                <div class="chart-container">
+                    <canvas id="salaryChart"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <!-- Career Path Planning -->
+        <div class="card" id="career-path-card">
+            <h2>🚀 AI Career Development Path</h2>
+            <p>Typical progression from entry to executive level</p>
+            
+            <div class="career-path">
+                <div class="career-level">
+                    <h4>Entry Level (EN)</h4>
+                    <p>$45K - $65K</p>
+                    <p>0-2 years</p>
+                </div>
+                <div class="arrow">→</div>
+                <div class="career-level">
+                    <h4>Mid Level (MI)</h4>
+                    <p>$75K - $110K</p>
+                    <p>3-6 years</p>
+                </div>
+                <div class="arrow">→</div>
+                <div class="career-level">
+                    <h4>Senior Level (SE)</h4>
+                    <p>$120K - $160K</p>
+                    <p>7-12 years</p>
+                </div>
+                <div class="arrow">→</div>
+                <div class="career-level">
+                    <h4>Executive (EX)</h4>
+                    <p>$180K - $300K+</p>
+                    <p>13+ years</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Country Comparison Table -->
+        <div class="card country-comparison" id="country-comparison-table">
+            <h2>📊 Detailed Country Comparison</h2>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Country</th>
+                        <th>Job Count</th>
+                        <th>Avg Salary (USD)</th>
+                        <th>Top Role</th>
+                        <th>Remote Work %</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>🇩🇪 Germany</td>
+                        <td>814</td>
+                        <td class="salary-range">$95,500</td>
+                        <td>ML Engineer</td>
+                        <td>65%</td>
+                    </tr>
+                    <tr>
+                        <td>🇩🇰 Denmark</td>
+                        <td>778</td>
+                        <td class="salary-range">$102,300</td>
+                        <td>AI Architect</td>
+                        <td>72%</td>
+                    </tr>
+                    <tr>
+                        <td>🇫🇷 France</td>
+                        <td>769</td>
+                        <td class="salary-range">$89,200</td>
+                        <td>Data Scientist</td>
+                        <td>58%</td>
+                    </tr>
+                    <tr>
+                        <td>🇨🇦 Canada</td>
+                        <td>769</td>
+                        <td class="salary-range">$98,800</td>
+                        <td>AI Research Scientist</td>
+                        <td>78%</td>
+                    </tr>
+                    <tr>
+                        <td>🇦🇹 Austria</td>
+                        <td>765</td>
+                        <td class="salary-range">$91,400</td>
+                        <td>ML Engineer</td>
+                        <td>63%</td>
+                    </tr>
+                    <tr>
+                        <td>🇸🇬 Singapore</td>
+                        <td>764</td>
+                        <td class="salary-range">$108,700</td>
+                        <td>AI Software Engineer</td>
+                        <td>45%</td>
+                    </tr>
+                    <tr>
+                        <td>🇨🇳 China</td>
+                        <td>763</td>
+                        <td class="salary-range">$76,500</td>
+                        <td>AI Specialist</td>
+                        <td>38%</td>
+                    </tr>
+                    <tr>
+                        <td>🇮🇳 India</td>
+                        <td>754</td>
+                        <td class="salary-range">$68,200</td>
+                        <td>Data Engineer</td>
+                        <td>82%</td>
+                    </tr>
+                    <tr>
+                        <td>🇸🇪 Sweden</td>
+                        <td>752</td>
+                        <td class="salary-range">$104,600</td>
+                        <td>AI Architect</td>
+                        <td>85%</td>
+                    </tr>
+                    <tr>
+                        <td>🇮🇱 Israel</td>
+                        <td>751</td>
+                        <td class="salary-range">$112,300</td>
+                        <td>AI Research Scientist</td>
+                        <td>67%</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Insights Section -->
+        <div class="insights-section">
+            <h2 style="color: #2c3e50; margin-bottom: 2rem;">🔍 Key Market Insights</h2>
+            
+            <div class="insight-card">
+                <h3>💡 Skills Insight</h3>
+                <p>Python remains the most demanded skill (85% of positions), followed by machine learning frameworks like TensorFlow and PyTorch. Cloud platforms (AWS, Azure, GCP) are increasingly important with 70% of roles requiring cloud experience.</p>
+            </div>
+            
+            <div class="insight-card">
+                <h3>🌟 Geographic Insight</h3>
+                <p>Nordic countries (Denmark, Sweden) offer the highest average salaries, while Asia-Pacific regions show strong growth in AI job opportunities. Remote work adoption varies significantly by region, with Sweden leading at 85%.</p>
+            </div>
+            
+            <div class="insight-card">
+                <h3>📈 Career Growth Insight</h3>
+                <p>The AI field shows clear career progression with salary increases of 40-60% between levels. Senior and Executive roles often require 7+ years of experience and specialized domain knowledge. Entry-level positions focus on foundational skills.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Chart configuration
+        Chart.defaults.font.family = 'Segoe UI';
+        Chart.defaults.color = '#2c3e50';
+
+        // Skills Chart
+        const skillsCtx = document.getElementById('skillsChart').getContext('2d');
+        const skillsChart = new Chart(skillsCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Python', 'SQL', 'Docker', 'AWS', 'Git', 'Linux', 'TensorFlow', 'Others'],
+                datasets: [{
+                    data: [3200, 2800, 2400, 2200, 2100, 1900, 1800, 1600],
+                    backgroundColor: [
+                        '#ff9ff3', '#54a0ff', '#5f27cd', '#00d2d3',
+                        '#ff9f43', '#10ac84', '#ee5a6f', '#c8d6e5'
+                    ],
+                    borderWidth: 0
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                        labels: {
+                            padding: 15,
+                            usePointStyle: true
+                        }
+                    }
+                }
+            }
+        });
+
+        // Jobs Chart
+        const jobsCtx = document.getElementById('jobsChart').getContext('2d');
+        const jobsChart = new Chart(jobsCtx, {
+            type: 'bar',
+            data: {
+                labels: ['ML Researcher', 'AI Software Eng', 'Autonomous Sys', 'ML Engineer', 'AI Architect'],
+                datasets: [{
+                    label: 'Job Count',
+                    data: [808, 784, 777, 772, 771],
+                    backgroundColor: ['#a29bfe', '#6c5ce7', '#fd79a8', '#fdcb6e', '#e84393'],
+                    borderRadius: 5
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        grid: {
+                            color: '#ecf0f1'
+                        }
+                    },
+                    x: {
+                        grid: {
+                            display: false
+                        }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: false
+                    }
+                }
+            }
+        });
+
+        // Country Chart
+        const countryCtx = document.getElementById('countryChart').getContext('2d');
+        const countryChart = new Chart(countryCtx, {
+            type: 'bar',
+            data: {
+                labels: ['Germany', 'Denmark', 'France', 'Canada', 'Austria', 'Singapore'],
+                datasets: [{
+                    label: 'Jobs Available',
+                    data: [814, 778, 769, 769, 765, 764],
+                    backgroundColor: ['#74b9ff', '#0984e3', '#00b894', '#00cec9', '#6c5ce7', '#a29bfe'],
+                    borderRadius: 5
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                indexAxis: 'y',
+                scales: {
+                    x: {
+                        beginAtZero: true,
+                        grid: {
+                            color: '#ecf0f1'
+                        }
+                    },
+                    y: {
+                        grid: {
+                            display: false
+                        }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: false
+                    }
+                }
+            }
+        });
+
+        // Salary Chart
+        const salaryCtx = document.getElementById('salaryChart').getContext('2d');
+        const salaryChart = new Chart(salaryCtx, {
+            type: 'line',
+            data: {
+                labels: ['Entry (EN)', 'Mid (MI)', 'Senior (SE)', 'Executive (EX)'],
+                datasets: [{
+                    label: 'Average Salary (USD)',
+                    data: [55000, 92500, 140000, 240000],
+                    borderColor: '#00b894',
+                    backgroundColor: 'rgba(0, 184, 148, 0.1)',
+                    borderWidth: 3,
+                    fill: true,
+                    tension: 0.4,
+                    pointBackgroundColor: '#00b894',
+                    pointBorderColor: '#fff',
+                    pointBorderWidth: 2,
+                    pointRadius: 6
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        grid: {
+                            color: '#ecf0f1'
+                        },
+                        ticks: {
+                            callback: function(value) {
+                                return '$' + (value / 1000) + 'K';
+                            }
+                        }
+                    },
+                    x: {
+                        grid: {
+                            display: false
+                        }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: false
+                    }
+                }
+            }
+        });
+
+        // Filter functions
+        function showAllCharts() {
+            document.querySelectorAll('.card').forEach(card => card.style.display = 'block');
+            updateActiveButton(0);
+        }
+
+        function showSkillsAnalysis() {
+            hideAllCards();
+            document.getElementById('skills-card').style.display = 'block';
+            updateActiveButton(1);
+        }
+
+        function showCountryComparison() {
+            hideAllCards();
+            document.getElementById('country-card').style.display = 'block';
+            document.getElementById('country-comparison-table').style.display = 'block';
+            updateActiveButton(2);
+        }
+
+        function showCareerPath() {
+            hideAllCards();
+            document.getElementById('career-path-card').style.display = 'block';
+            document.getElementById('salary-card').style.display = 'block';
+            updateActiveButton(3);
+        }
+
+        function hideAllCards() {
+            document.querySelectorAll('.card').forEach(card => card.style.display = 'none');
+        }
+
+        function updateActiveButton(index) {
+            document.querySelectorAll('.filter-btn').forEach((btn, i) => {
+                btn.classList.toggle('active', i === index);
+            });
+        }
+
+        // Initialize with all charts visible
+        showAllCharts();
+    </script>
+</body>
+</html>

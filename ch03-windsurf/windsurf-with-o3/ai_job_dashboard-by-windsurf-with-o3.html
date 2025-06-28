@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Global AI Job Market & Salary Trends 2025 — Career Dashboard</title>
+<script src="https://cdn.plot.ly/plotly-2.32.0.min.js"></script>
+<style>
+ :root{
+   --bg:#f7f9fb;
+   --card:#ffffff;
+   --text:#333;
+   --accent:#5b8def;
+ }
+ body{
+   margin:0;
+   font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial;
+   background:var(--bg);
+   color:var(--text);
+ }
+ header{
+   padding:2rem 1rem 0;
+   text-align:center;
+ }
+ h1{margin:0 0 .25rem;font-size:1.9rem;}
+ h2{margin:.5rem 0 0;font-weight:500;color:#666;font-size:1rem;}
+ .container{
+   max-width:1280px;
+   margin:auto;
+   padding:1rem;
+   display:grid;
+   gap:2rem;
+ }
+ .card{
+   background:var(--card);
+   border-radius:8px;
+   padding:1rem;
+   box-shadow:0 2px 6px rgba(0,0,0,.05);
+ }
+ .plot{height:400px;}
+ footer{
+   text-align:center;
+   padding:1rem;
+   font-size:.85rem;
+   color:#777;
+ }
+ a{color:var(--accent);}
+</style>
+</head>
+<body>
+<header>
+  <h1>Global AI Job Market & Salary Trends 2025</h1>
+  <h2>Career-Planning Dashboard — Dataset records: <strong>15 000</strong></h2>
+</header>
+
+<div class="container">
+ <!-- Skills -->
+ <div class="card">
+   <h3>Most-Requested Skills (Top 15)</h3>
+   <div id="skills" class="plot"></div>
+ </div>
+
+ <!-- Countries -->
+ <div class="card">
+   <h3>Job Opportunities by Country (Top 15)</h3>
+   <div id="countries" class="plot"></div>
+ </div>
+
+ <!-- Career Path -->
+ <div class="card">
+   <h3>Average Salary vs Experience Level</h3>
+   <div id="career" class="plot"></div>
+ </div>
+</div>
+
+<footer>
+  Built with Plotly.js • Light-theme friendly • Data source: “Global AI Job Market & Salary Trends 2025”
+</footer>
+
+<script>
+// ---------- Embedded aggregates (pre-computed from 15 000 records) ----------
+const topSkills = [
+  ["Python",4450],["SQL",3407],["TensorFlow",3022],["Kubernetes",3009],["Scala",2794],
+  ["PyTorch",2777],["Linux",2705],["Git",2631],["Java",2578],["GCP",2442],
+  ["Hadoop",2419],["Tableau",2341],["R",2311],["Computer Vision",2284],["Data Visualization",2270]
+];
+const topCountries = [
+  ["Germany",814],["Denmark",778],["Canada",769],["France",769],["Austria",765],
+  ["Singapore",764],["China",763],["India",754],["Sweden",752],["Israel",751],
+  ["Ireland",750],["Switzerland",746],["Finland",733],["Japan",733],["Australia",732]
+];
+const expSalary = {EN:63133, MI:87955, SE:122188, EX:187724};
+
+// ---------- Helper to build pastel palette ----------
+function pastel(i, alpha = .85){
+  const hues=[210,0,45,100,150,270,310,35,80,190,230,260,300,20,130];
+  return `hsla(${hues[i%hues.length]},70%,65%,${alpha})`;
+}
+
+// ---------- Chart 1 — Skills ----------
+Plotly.newPlot('skills',[{
+  x: topSkills.map(([skill])=>skill),
+  y: topSkills.map(([,cnt])=>cnt),
+  type:'bar',
+  marker:{color: topSkills.map((_,i)=>pastel(i))}
+}],{
+  template:'plotly_white',
+  margin:{t:20,l:50,r:10,b:80},
+  yaxis:{title:'Postings containing skill'},
+  xaxis:{title:'Skill', tickangle:-45}
+}, {displayModeBar:false});
+
+// ---------- Chart 2 — Countries ----------
+Plotly.newPlot('countries',[{
+  y: topCountries.map(([country])=>country).reverse(),
+  x: topCountries.map(([,cnt])=>cnt).reverse(),
+  orientation:'h',
+  type:'bar',
+  marker:{color: topCountries.map((_,i)=>pastel(i))}
+}],{
+  template:'plotly_white',
+  margin:{t:20,l:100,r:10,b:40},
+  xaxis:{title:'Number of job postings'},
+  yaxis:{title:'Country'}
+}, {displayModeBar:false});
+
+// ---------- Chart 3 — Career path ----------
+const expLabels = {EN:'Entry / Junior', MI:'Mid-Level', SE:'Senior', EX:'Expert'};
+Plotly.newPlot('career',[{
+  x: Object.keys(expSalary).map(k=>expLabels[k]),
+  y: Object.keys(expSalary).map(k=>expSalary[k]),
+  type:'bar',
+  marker:{color:Object.keys(expSalary).map((_,i)=>pastel(i))}
+}],{
+  template:'plotly_white',
+  margin:{t:20,l:60,r:10,b:60},
+  yaxis:{title:'Avg Salary (USD)'},
+  xaxis:{title:'Experience Level'}
+}, {displayModeBar:false});
+</script>
+</body>
+</html>

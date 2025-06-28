@@ -1,0 +1,390 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="2000" viewBox="0 0 1400 2000">
+  <!-- 定义渐变和样式 -->
+  <defs>
+    <!-- 背景渐变 -->
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f5f7fa;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#c3cfe2;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- 卡片阴影滤镜 -->
+    <filter id="cardShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="16" flood-color="rgba(31,38,135,0.1)"/>
+    </filter>
+    
+    <!-- 各种颜色渐变 -->
+    <linearGradient id="primaryGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#74b9ff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0984e3;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="skillGradient1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#ff9a9e;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#fecfef;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="skillGradient2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#a8edea;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#fed6e3;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="statGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- 背景 -->
+  <rect width="1400" height="2000" fill="url(#bgGradient)"/>
+  
+  <!-- 头部标题卡片 -->
+  <rect x="50" y="50" width="1300" height="180" rx="20" fill="rgba(255,255,255,0.95)" filter="url(#cardShadow)"/>
+  
+  <!-- 主标题 -->
+  <text x="700" y="110" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="42" font-weight="300" fill="#2c3e50">
+    🤖 Global AI工作市场与薪资趋势 2025
+  </text>
+  <text x="700" y="140" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="20" fill="#7f8c8d">
+    基于Kaggle数据集的职业规划分析看板
+  </text>
+  
+  <!-- 总职位数标签 -->
+  <rect x="550" y="160" width="300" height="50" rx="25" fill="url(#primaryGradient)"/>
+  <text x="700" y="190" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="18" font-weight="bold" fill="white">
+    📊 总职位数量: 15,000
+  </text>
+  
+  <!-- 关键指标概览卡片 -->
+  <rect x="50" y="260" width="1300" height="140" rx="20" fill="rgba(255,255,255,0.95)" filter="url(#cardShadow)"/>
+  <text x="70" y="295" font-family="Segoe UI, sans-serif" font-size="28" font-weight="400" fill="#2c3e50">
+    📈 关键指标概览
+  </text>
+  
+  <!-- 四个统计指标 -->
+  <rect x="80" y="310" width="280" height="70" rx="15" fill="url(#statGradient)"/>
+  <text x="220" y="340" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="24" font-weight="bold" fill="white">$115,777</text>
+  <text x="220" y="365" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" fill="rgba(255,255,255,0.9)">平均薪资 (USD)</text>
+  
+  <rect x="380" y="310" width="280" height="70" rx="15" fill="url(#statGradient)"/>
+  <text x="520" y="340" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="24" font-weight="bold" fill="white">50%</text>
+  <text x="520" y="365" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" fill="rgba(255,255,255,0.9)">平均远程工作比例</text>
+  
+  <rect x="680" y="310" width="280" height="70" rx="15" fill="url(#statGradient)"/>
+  <text x="820" y="340" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="24" font-weight="bold" fill="white">8</text>
+  <text x="820" y="365" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" fill="rgba(255,255,255,0.9)">主要职位类型</text>
+  
+  <rect x="980" y="310" width="280" height="70" rx="15" fill="url(#statGradient)"/>
+  <text x="1120" y="340" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="24" font-weight="bold" fill="white">36</text>
+  <text x="1120" y="365" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" fill="rgba(255,255,255,0.9)">涵盖国家数量</text>
+  
+  <!-- 技能需求分析图表 -->
+  <rect x="50" y="430" width="630" height="350" rx="20" fill="rgba(255,255,255,0.95)" filter="url(#cardShadow)"/>
+  <text x="70" y="465" font-family="Segoe UI, sans-serif" font-size="24" font-weight="400" fill="#2c3e50">
+    🎯 热门技能需求分析
+  </text>
+  <text x="70" y="485" font-family="Segoe UI, sans-serif" font-size="14" fill="#7f8c8d">
+    掌握这些技能将大大提升您的就业竞争力
+  </text>
+  
+  <!-- 技能条形图 -->
+  <g transform="translate(80, 500)">
+    <!-- Python -->
+    <rect x="0" y="0" width="500" height="30" rx="15" fill="#74b9ff"/>
+    <text x="15" y="22" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="white">Python</text>
+    <text x="485" y="22" font-family="Segoe UI, sans-serif" font-size="14" fill="white" text-anchor="end">4,450</text>
+    
+    <!-- SQL -->
+    <rect x="0" y="40" width="383" height="30" rx="15" fill="#ff9a9e"/>
+    <text x="15" y="62" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="white">SQL</text>
+    <text x="368" y="62" font-family="Segoe UI, sans-serif" font-size="14" fill="white" text-anchor="end">3,407</text>
+    
+    <!-- TensorFlow -->
+    <rect x="0" y="80" width="340" height="30" rx="15" fill="#a8edea"/>
+    <text x="15" y="102" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#2c3e50">TensorFlow</text>
+    <text x="325" y="102" font-family="Segoe UI, sans-serif" font-size="14" fill="#2c3e50" text-anchor="end">3,022</text>
+    
+    <!-- Kubernetes -->
+    <rect x="0" y="120" width="338" height="30" rx="15" fill="#ffce54"/>
+    <text x="15" y="142" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#2c3e50">Kubernetes</text>
+    <text x="323" y="142" font-family="Segoe UI, sans-serif" font-size="14" fill="#2c3e50" text-anchor="end">3,009</text>
+    
+    <!-- Scala -->
+    <rect x="0" y="160" width="314" height="30" rx="15" fill="#9966ff"/>
+    <text x="15" y="182" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="white">Scala</text>
+    <text x="299" y="182" font-family="Segoe UI, sans-serif" font-size="14" fill="white" text-anchor="end">2,794</text>
+    
+    <!-- PyTorch -->
+    <rect x="0" y="200" width="312" height="30" rx="15" fill="#ff7675"/>
+    <text x="15" y="222" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="white">PyTorch</text>
+    <text x="297" y="222" font-family="Segoe UI, sans-serif" font-size="14" fill="white" text-anchor="end">2,777</text>
+    
+    <!-- Linux -->
+    <rect x="0" y="240" width="304" height="30" rx="15" fill="#00b894"/>
+    <text x="15" y="262" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="white">Linux</text>
+    <text x="289" y="262" font-family="Segoe UI, sans-serif" font-size="14" fill="white" text-anchor="end">2,705</text>
+    
+    <!-- Git -->
+    <rect x="0" y="280" width="296" height="30" rx="15" fill="#fd79a8"/>
+    <text x="15" y="302" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="white">Git</text>
+    <text x="281" y="302" font-family="Segoe UI, sans-serif" font-size="14" fill="white" text-anchor="end">2,631</text>
+  </g>
+  
+  <!-- 职业发展路径图表 -->
+  <rect x="720" y="430" width="630" height="350" rx="20" fill="rgba(255,255,255,0.95)" filter="url(#cardShadow)"/>
+  <text x="740" y="465" font-family="Segoe UI, sans-serif" font-size="24" font-weight="400" fill="#2c3e50">
+    📊 职业发展路径
+  </text>
+  <text x="740" y="485" font-family="Segoe UI, sans-serif" font-size="14" fill="#7f8c8d">
+    不同经验水平的薪资发展趋势
+  </text>
+  
+  <!-- 薪资发展线图 -->
+  <g transform="translate(760, 510)">
+    <!-- 坐标轴 -->
+    <line x1="0" y1="220" x2="550" y2="220" stroke="#e0e0e0" stroke-width="2"/>
+    <line x1="0" y1="0" x2="0" y2="220" stroke="#e0e0e0" stroke-width="2"/>
+    
+    <!-- Y轴标签 -->
+    <text x="-10" y="225" font-family="Segoe UI, sans-serif" font-size="12" fill="#7f8c8d" text-anchor="end">$0</text>
+    <text x="-10" y="170" font-family="Segoe UI, sans-serif" font-size="12" fill="#7f8c8d" text-anchor="end">$50K</text>
+    <text x="-10" y="115" font-family="Segoe UI, sans-serif" font-size="12" fill="#7f8c8d" text-anchor="end">$100K</text>
+    <text x="-10" y="60" font-family="Segoe UI, sans-serif" font-size="12" fill="#7f8c8d" text-anchor="end">$150K</text>
+    <text x="-10" y="5" font-family="Segoe UI, sans-serif" font-size="12" fill="#7f8c8d" text-anchor="end">$200K</text>
+    
+    <!-- 数据线 -->
+    <polyline points="80,190 220,155 360,105 500,30" stroke="#74b9ff" stroke-width="4" fill="none"/>
+    
+    <!-- 填充区域 -->
+    <polygon points="80,190 220,155 360,105 500,30 500,220 80,220" fill="rgba(116,185,255,0.1)"/>
+    
+    <!-- 数据点 -->
+    <circle cx="80" cy="190" r="8" fill="#74b9ff" stroke="white" stroke-width="3"/>
+    <circle cx="220" cy="155" r="8" fill="#74b9ff" stroke="white" stroke-width="3"/>
+    <circle cx="360" cy="105" r="8" fill="#74b9ff" stroke="white" stroke-width="3"/>
+    <circle cx="500" cy="30" r="8" fill="#74b9ff" stroke="white" stroke-width="3"/>
+    
+    <!-- 数据标签 -->
+    <text x="80" y="180" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#2c3e50" text-anchor="middle">$63,133</text>
+    <text x="220" y="145" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#2c3e50" text-anchor="middle">$87,955</text>
+    <text x="360" y="95" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#2c3e50" text-anchor="middle">$122,188</text>
+    <text x="500" y="20" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#2c3e50" text-anchor="middle">$187,724</text>
+    
+    <!-- X轴标签 -->
+    <text x="80" y="240" font-family="Segoe UI, sans-serif" font-size="14" fill="#2c3e50" text-anchor="middle">入门级 (EN)</text>
+    <text x="220" y="240" font-family="Segoe UI, sans-serif" font-size="14" fill="#2c3e50" text-anchor="middle">中级 (MI)</text>
+    <text x="360" y="240" font-family="Segoe UI, sans-serif" font-size="14" fill="#2c3e50" text-anchor="middle">高级 (SE)</text>
+    <text x="500" y="240" font-family="Segoe UI, sans-serif" font-size="14" fill="#2c3e50" text-anchor="middle">专家级 (EX)</text>
+  </g>
+  
+  <!-- 薪资分布饼图 -->
+  <rect x="50" y="810" width="630" height="350" rx="20" fill="rgba(255,255,255,0.95)" filter="url(#cardShadow)"/>
+  <text x="70" y="845" font-family="Segoe UI, sans-serif" font-size="24" font-weight="400" fill="#2c3e50">
+    💰 薪资分布情况
+  </text>
+  <text x="70" y="865" font-family="Segoe UI, sans-serif" font-size="14" fill="#7f8c8d">
+    AI行业薪资区间分布
+  </text>
+  
+  <!-- 饼图 -->
+  <g transform="translate(365, 985)">
+    <!-- 0-50K: 7.6% (27.36度) -->
+    <path d="M 0,-100 A 100,100 0 0,1 45,-89 L 0,0 Z" fill="#ff9a9e"/>
+    <!-- 50K-80K: 25.8% (92.88度) -->
+    <path d="M 45,-89 A 100,100 0 0,1 95,31 L 0,0 Z" fill="#ffce54"/>
+    <!-- 80K-120K: 29.5% (106.2度) -->
+    <path d="M 95,31 A 100,100 0 0,1 -31,95 L 0,0 Z" fill="#74b9ff"/>
+    <!-- 120K-160K: 17.4% (62.64度) -->
+    <path d="M -31,95 A 100,100 0 0,1 -89,-45 L 0,0 Z" fill="#a8edea"/>
+    <!-- 160K+: 19.7% (70.92度) -->
+    <path d="M -89,-45 A 100,100 0 0,1 0,-100 L 0,0 Z" fill="#9966ff"/>
+    
+    <!-- 图例 -->
+    <g transform="translate(-280, -80)">
+      <rect x="0" y="0" width="15" height="15" fill="#ff9a9e"/>
+      <text x="25" y="12" font-family="Segoe UI, sans-serif" font-size="12" fill="#2c3e50">0-50K (7.6%)</text>
+      
+      <rect x="0" y="25" width="15" height="15" fill="#ffce54"/>
+      <text x="25" y="37" font-family="Segoe UI, sans-serif" font-size="12" fill="#2c3e50">50K-80K (25.8%)</text>
+      
+      <rect x="0" y="50" width="15" height="15" fill="#74b9ff"/>
+      <text x="25" y="62" font-family="Segoe UI, sans-serif" font-size="12" fill="#2c3e50">80K-120K (29.5%)</text>
+      
+      <rect x="0" y="75" width="15" height="15" fill="#a8edea"/>
+      <text x="25" y="87" font-family="Segoe UI, sans-serif" font-size="12" fill="#2c3e50">120K-160K (17.4%)</text>
+      
+      <rect x="0" y="100" width="15" height="15" fill="#9966ff"/>
+      <text x="25" y="112" font-family="Segoe UI, sans-serif" font-size="12" fill="#2c3e50">160K+ (19.7%)</text>
+    </g>
+  </g>
+  
+  <!-- 工作模式分析饼图 -->
+  <rect x="720" y="810" width="630" height="350" rx="20" fill="rgba(255,255,255,0.95)" filter="url(#cardShadow)"/>
+  <text x="740" y="845" font-family="Segoe UI, sans-serif" font-size="24" font-weight="400" fill="#2c3e50">
+    🏠 工作模式分析
+  </text>
+  <text x="740" y="865" font-family="Segoe UI, sans-serif" font-size="14" fill="#7f8c8d">
+    远程、混合、现场工作的分布情况
+  </text>
+  
+  <!-- 工作模式饼图 -->
+  <g transform="translate(1035, 985)">
+    <!-- 混合工作: 33.4% (120.24度) -->
+    <path d="M 0,-100 A 100,100 0 0,1 87,50 L 0,0 Z" fill="#74b9ff"/>
+    <!-- 完全远程: 32.8% (118.08度) -->
+    <path d="M 87,50 A 100,100 0 0,1 -50,87 L 0,0 Z" fill="#a8edea"/>
+    <!-- 现场工作: 33.8% (121.68度) -->
+    <path d="M -50,87 A 100,100 0 0,1 0,-100 L 0,0 Z" fill="#ff9a9e"/>
+    
+    <!-- 图例 -->
+    <g transform="translate(-280, -50)">
+      <rect x="0" y="0" width="15" height="15" fill="#74b9ff"/>
+      <text x="25" y="12" font-family="Segoe UI, sans-serif" font-size="12" fill="#2c3e50">混合工作 (33.4%)</text>
+      
+      <rect x="0" y="25" width="15" height="15" fill="#a8edea"/>
+      <text x="25" y="37" font-family="Segoe UI, sans-serif" font-size="12" fill="#2c3e50">完全远程 (32.8%)</text>
+      
+      <rect x="0" y="50" width="15" height="15" fill="#ff9a9e"/>
+      <text x="25" y="62" font-family="Segoe UI, sans-serif" font-size="12" fill="#2c3e50">现场工作 (33.8%)</text>
+    </g>
+  </g>
+  
+  <!-- 全球就业机会对比 -->
+  <rect x="50" y="1190" width="1300" height="300" rx="20" fill="rgba(255,255,255,0.95)" filter="url(#cardShadow)"/>
+  <text x="70" y="1225" font-family="Segoe UI, sans-serif" font-size="24" font-weight="400" fill="#2c3e50">
+    🌍 全球就业机会对比
+  </text>
+  <text x="70" y="1245" font-family="Segoe UI, sans-serif" font-size="14" fill="#7f8c8d">
+    各国AI工作机会与平均薪资水平
+  </text>
+  
+  <!-- 国家对比条形图 -->
+  <g transform="translate(80, 1260)">
+    <!-- 坐标轴 -->
+    <line x1="0" y1="200" x2="1200" y2="200" stroke="#e0e0e0" stroke-width="2"/>
+    <line x1="0" y1="0" x2="0" y2="200" stroke="#e0e0e0" stroke-width="2"/>
+    
+    <!-- 德国 -->
+    <rect x="20" y="30" width="80" height="170" rx="5" fill="#74b9ff"/>
+    <text x="60" y="220" font-family="Segoe UI, sans-serif" font-size="12" fill="#2c3e50" text-anchor="middle">德国</text>
+    <text x="60" y="20" font-family="Segoe UI, sans-serif" font-size="10" fill="#2c3e50" text-anchor="middle">814职位</text>
+    <text x="60" y="120" font-family="Segoe UI, sans-serif" font-size="10" font-weight="bold" fill="white" text-anchor="middle">$121K</text>
+    
+    <!-- 丹麦 -->
+    <rect x="120" y="10" width="80" height="190" rx="5" fill="#ff9a9e"/>
+    <text x="160" y="220" font-family="Segoe UI, sans-serif" font-size="12" fill="#2c3e50" text-anchor="middle">丹麦</text>
+    <text x="160" y="20" font-family="Segoe UI, sans-serif" font-size="10" fill="#2c3e50" text-anchor="middle">778职位</text>
+    <text x="160" y="110" font-family="Segoe UI, sans-serif" font-size="10" font-weight="bold" fill="white" text-anchor="middle">$166K</text>
+    
+    <!-- 加拿大 -->
+    <rect x="220" y="50" width="80" height="150" rx="5" fill="#a8edea"/>
+    <text x="260" y="220" font-family="Segoe UI, sans-serif" font-size="12" fill="#2c3e50" text-anchor="middle">加拿大</text>
+    <text x="260" y="40" font-family="Segoe UI, sans-serif" font-size="10" fill="#2c3e50" text-anchor="middle">769职位</text>
+    <text x="260" y="130" font-family="Segoe UI, sans-serif" font-size="10" font-weight="bold" fill="#2c3e50" text-anchor="middle">$114K</text>
+    
+    <!-- 法国 -->
+    <rect x="320" y="50" width="80" height="150" rx="5" fill="#ffce54"/>
+    <text x="360" y="220" font-family="Segoe UI, sans-serif" font-size="12" fill="#2c3e50" text-anchor="middle">法国</text>
+    <text x="360" y="40" font-family="Segoe UI, sans-serif" font-size="10" fill="#2c3e50" text-anchor="middle">769职位</text>
+    <text x="360" y="130" font-family="Segoe UI, sans-serif" font-size="10" font-weight="bold" fill="#2c3e50" text-anchor="middle">$114K</text>
+    
+    <!-- 新加坡 -->
+    <rect x="420" y="40" width="80" height="160" rx="5" fill="#9966ff"/>
+    <text x="460" y="220" font-family="Segoe UI, sans-serif" font-size="12" fill="#2c3e50" text-anchor="middle">新加坡</text>
+    <text x="460" y="30" font-family="Segoe UI, sans-serif" font-size="10" fill="#2c3e50" text-anchor="middle">764职位</text>
+    <text x="460" y="125" font-family="Segoe UI, sans-serif" font-size="10" font-weight="bold" fill="white" text-anchor="middle">$128K</text>
+  </g>
+  
+  <!-- 必备技能清单 -->
+  <rect x="50" y="1520" width="1300" height="200" rx="20" fill="rgba(255,255,255,0.95)" filter="url(#cardShadow)"/>
+  <text x="70" y="1555" font-family="Segoe UI, sans-serif" font-size="24" font-weight="400" fill="#2c3e50">
+    🔧 必备技能清单
+  </text>
+  <text x="70" y="1575" font-family="Segoe UI, sans-serif" font-size="14" fill="#7f8c8d">
+    AI领域最受欢迎的技能及需求量
+  </text>
+  
+  <!-- 技能标签网格 -->
+  <g transform="translate(80, 1590)">
+    <!-- 第一行 -->
+    <rect x="0" y="0" width="180" height="40" rx="12" fill="url(#skillGradient1)"/>
+    <text x="90" y="18" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#2c3e50" text-anchor="middle">Python</text>
+    <text x="90" y="32" font-family="Segoe UI, sans-serif" font-size="10" fill="#2c3e50" text-anchor="middle">4,450 个职位需求</text>
+    
+    <rect x="200" y="0" width="180" height="40" rx="12" fill="url(#skillGradient2)"/>
+    <text x="290" y="18" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#2c3e50" text-anchor="middle">SQL</text>
+    <text x="290" y="32" font-family="Segoe UI, sans-serif" font-size="10" fill="#2c3e50" text-anchor="middle">3,407 个职位需求</text>
+    
+    <rect x="400" y="0" width="180" height="40" rx="12" fill="url(#skillGradient1)"/>
+    <text x="490" y="18" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#2c3e50" text-anchor="middle">TensorFlow</text>
+    <text x="490" y="32" font-family="Segoe UI, sans-serif" font-size="10" fill="#2c3e50" text-anchor="middle">3,022 个职位需求</text>
+    
+    <rect x="600" y="0" width="180" height="40" rx="12" fill="url(#skillGradient2)"/>
+    <text x="690" y="18" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#2c3e50" text-anchor="middle">Kubernetes</text>
+    <text x="690" y="32" font-family="Segoe UI, sans-serif" font-size="10" fill="#2c3e50" text-anchor="middle">3,009 个职位需求</text>
+    
+    <rect x="800" y="0" width="180" height="40" rx="12" fill="url(#skillGradient1)"/>
+    <text x="890" y="18" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#2c3e50" text-anchor="middle">Scala</text>
+    <text x="890" y="32" font-family="Segoe UI, sans-serif" font-size="10" fill="#2c3e50" text-anchor="middle">2,794 个职位需求</text>
+    
+    <!-- 第二行 -->
+    <rect x="0" y="50" width="180" height="40" rx="12" fill="url(#skillGradient2)"/>
+    <text x="90" y="68" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#2c3e50" text-anchor="middle">PyTorch</text>
+    <text x="90" y="82" font-family="Segoe UI, sans-serif" font-size="10" fill="#2c3e50" text-anchor="middle">2,777 个职位需求</text>
+    
+    <rect x="200" y="50" width="180" height="40" rx="12" fill="url(#skillGradient1)"/>
+    <text x="290" y="68" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#2c3e50" text-anchor="middle">Linux</text>
+    <text x="290" y="82" font-family="Segoe UI, sans-serif" font-size="10" fill="#2c3e50" text-anchor="middle">2,705 个职位需求</text>
+    
+    <rect x="400" y="50" width="180" height="40" rx="12" fill="url(#skillGradient2)"/>
+    <text x="490" y="68" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#2c3e50" text-anchor="middle">Git</text>
+    <text x="490" y="82" font-family="Segoe UI, sans-serif" font-size="10" fill="#2c3e50" text-anchor="middle">2,631 个职位需求</text>
+    
+    <rect x="600" y="50" width="180" height="40" rx="12" fill="url(#skillGradient1)"/>
+    <text x="690" y="68" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#2c3e50" text-anchor="middle">Java</text>
+    <text x="690" y="82" font-family="Segoe UI, sans-serif" font-size="10" fill="#2c3e50" text-anchor="middle">2,578 个职位需求</text>
+    
+    <rect x="800" y="50" width="180" height="40" rx="12" fill="url(#skillGradient2)"/>
+    <text x="890" y="68" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#2c3e50" text-anchor="middle">GCP</text>
+    <text x="890" y="82" font-family="Segoe UI, sans-serif" font-size="10" fill="#2c3e50" text-anchor="middle">2,442 个职位需求</text>
+  </g>
+  
+  <!-- 顶级就业目的地 -->
+  <rect x="50" y="1750" width="1300" height="200" rx="20" fill="rgba(255,255,255,0.95)" filter="url(#cardShadow)"/>
+  <text x="70" y="1785" font-family="Segoe UI, sans-serif" font-size="24" font-weight="400" fill="#2c3e50">
+    🏆 顶级就业目的地
+  </text>
+  <text x="70" y="1805" font-family="Segoe UI, sans-serif" font-size="14" fill="#7f8c8d">
+    AI人才最活跃的国家和地区
+  </text>
+  
+  <!-- 国家信息卡片 -->
+  <g transform="translate(80, 1820)">
+    <!-- 德国 -->
+    <rect x="0" y="0" width="300" height="60" rx="15" fill="url(#skillGradient2)"/>
+    <text x="15" y="25" font-family="Segoe UI, sans-serif" font-size="16" font-weight="bold" fill="#2c3e50">🇩🇪 德国</text>
+    <text x="15" y="40" font-family="Segoe UI, sans-serif" font-size="12" fill="#2c3e50">814个职位</text>
+    <text x="105" y="40" font-family="Segoe UI, sans-serif" font-size="12" fill="#2c3e50">$121,810平均薪资</text>
+    <text x="225" y="40" font-family="Segoe UI, sans-serif" font-size="12" fill="#2c3e50">48%远程工作</text>
+    
+    <!-- 丹麦 -->
+    <rect x="320" y="0" width="300" height="60" rx="15" fill="url(#skillGradient1)"/>
+    <text x="335" y="25" font-family="Segoe UI, sans-serif" font-size="16" font-weight="bold" fill="#2c3e50">🇩🇰 丹麦</text>
+    <text x="335" y="40" font-family="Segoe UI, sans-serif" font-size="12" fill="#2c3e50">778个职位</text>
+    <text x="425" y="40" font-family="Segoe UI, sans-serif" font-size="12" fill="#2c3e50">$165,652平均薪资</text>
+    <text x="545" y="40" font-family="Segoe UI, sans-serif" font-size="12" fill="#2c3e50">50%远程工作</text>
+    
+    <!-- 加拿大 -->
+    <rect x="640" y="0" width="300" height="60" rx="15" fill="url(#skillGradient2)"/>
+    <text x="655" y="25" font-family="Segoe UI, sans-serif" font-size="16" font-weight="bold" fill="#2c3e50">🇨🇦 加拿大</text>
+    <text x="655" y="40" font-family="Segoe UI, sans-serif" font-size="12" fill="#2c3e50">769个职位</text>
+    <text x="745" y="40" font-family="Segoe UI, sans-serif" font-size="12" fill="#2c3e50">$114,253平均薪资</text>
+    <text x="865" y="40" font-family="Segoe UI, sans-serif" font-size="12" fill="#2c3e50">50%远程工作</text>
+    
+    <!-- 法国 -->
+    <rect x="960" y="0" width="300" height="60" rx="15" fill="url(#skillGradient1)"/>
+    <text x="975" y="25" font-family="Segoe UI, sans-serif" font-size="16" font-weight="bold" fill="#2c3e50">🇫🇷 法国</text>
+    <text x="975" y="40" font-family="Segoe UI, sans-serif" font-size="12" fill="#2c3e50">769个职位</text>
+    <text x="1065" y="40" font-family="Segoe UI, sans-serif" font-size="12" fill="#2c3e50">$114,411平均薪资</text>
+    <text x="1185" y="40" font-family="Segoe UI, sans-serif" font-size="12" fill="#2c3e50">50%远程工作</text>
+  </g>
+</svg>
