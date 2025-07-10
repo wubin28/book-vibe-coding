@@ -144,11 +144,11 @@
                     </div>
                 </section>
                 
-                <!-- 国家就业机会对比 -->
+                <!-- 国家/地区就业机会对比 -->
                 <section class="bg-white rounded-xl p-5 card-shadow transition-custom hover:shadow-lg">
                     <div class="flex justify-between items-center mb-6">
                         <h2 class="text-xl font-semibold flex items-center">
-                            <i class="fa fa-globe text-primary mr-2"></i>国家就业机会对比
+                            <i class="fa fa-globe text-primary mr-2"></i>国家/地区就业机会对比
                         </h2>
                         <div class="text-sm text-gray-500">职位数量与平均薪资</div>
                     </div>
@@ -263,13 +263,13 @@
                 }
             });
             
-            // 国家就业机会对比图表
+            // 国家/地区就业机会对比图表
             const countryCtx = document.getElementById('countryChart').getContext('2d');
             const countryChart = new Chart(countryCtx, {
                 type: 'scatter',
                 data: {
                     datasets: [{
-                        label: '国家就业机会',
+                        label: '国家/地区就业机会',
                         data: [
                             { x: 320, y: 125000, r: 32, country: '美国' },
                             { x: 210, y: 105000, r: 21, country: '英国' },

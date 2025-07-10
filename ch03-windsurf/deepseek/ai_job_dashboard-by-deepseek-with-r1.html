@@ -312,7 +312,7 @@
                 <div class="chart-header">
                     <h2 class="chart-title">经验级别与薪资关系</h2>
                     <div class="chart-actions">
-                        <button class="chart-btn">按国家</button>
+                        <button class="chart-btn">按国家/地区</button>
                         <button class="chart-btn">按职位</button>
                     </div>
                 </div>
@@ -325,7 +325,7 @@
                 <div class="chart-header">
                     <h2 class="chart-title">公司规模与薪资水平</h2>
                     <div class="chart-actions">
-                        <button class="chart-btn">按国家</button>
+                        <button class="chart-btn">按国家/地区</button>
                         <button class="chart-btn">按行业</button>
                     </div>
                 </div>
@@ -454,7 +454,7 @@
         
         // 初始化图表
         document.addEventListener('DOMContentLoaded', function() {
-            // 国家分布图
+            // 国家/地区分布图
             const countryCtx = document.getElementById('countryDistributionChart').getContext('2d');
             new Chart(countryCtx, {
                 type: 'bar',

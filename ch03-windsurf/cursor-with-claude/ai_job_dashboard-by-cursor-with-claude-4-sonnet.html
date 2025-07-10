@@ -281,7 +281,7 @@
                 </div>
                 <div class="stat-card">
                     <div class="stat-number">25+</div>
-                    <div class="stat-label">Countries</div>
+                    <div class="stat-label">Countries/Regions</div>
                 </div>
                 <div class="stat-card">
                     <div class="stat-number">$98,500</div>
@@ -293,7 +293,7 @@
         <div class="filter-controls">
             <button class="filter-btn active" onclick="showAllCharts()">All Insights</button>
             <button class="filter-btn" onclick="showSkillsAnalysis()">Skills Analysis</button>
-            <button class="filter-btn" onclick="showCountryComparison()">Country Comparison</button>
+            <button class="filter-btn" onclick="showCountryComparison()">Country/Region Comparison</button>
             <button class="filter-btn" onclick="showCareerPath()">Career Path</button>
         </div>
 
@@ -333,7 +333,7 @@
             <!-- Country Comparison -->
             <div class="card" id="country-card">
                 <h2>🌍 Global Job Opportunities</h2>
-                <p>AI job distribution by country</p>
+                <p>AI job distribution by country/region</p>
                 <div class="chart-container">
                     <canvas id="countryChart"></canvas>
                 </div>
@@ -383,11 +383,11 @@
 
         <!-- Country Comparison Table -->
         <div class="card country-comparison" id="country-comparison-table">
-            <h2>📊 Detailed Country Comparison</h2>
+            <h2>📊 Detailed Country/Region Comparison</h2>
             <table class="comparison-table">
                 <thead>
                     <tr>
-                        <th>Country</th>
+                        <th>Country/Region</th>
                         <th>Job Count</th>
                         <th>Avg Salary (USD)</th>
                         <th>Top Role</th>
@@ -480,7 +480,7 @@
             
             <div class="insight-card">
                 <h3>🌟 Geographic Insight</h3>
-                <p>Nordic countries (Denmark, Sweden) offer the highest average salaries, while Asia-Pacific regions show strong growth in AI job opportunities. Remote work adoption varies significantly by region, with Sweden leading at 85%.</p>
+                <p>Nordic countries/regions (Denmark, Sweden) offer the highest average salaries, while Asia-Pacific regions show strong growth in AI job opportunities. Remote work adoption varies significantly by region, with Sweden leading at 85%.</p>
             </div>
             
             <div class="insight-card">
@@ -562,7 +562,7 @@
             }
         });
 
-        // Country Chart
+        // Country/Region Chart
         const countryCtx = document.getElementById('countryChart').getContext('2d');
         const countryChart = new Chart(countryCtx, {
             type: 'bar',
