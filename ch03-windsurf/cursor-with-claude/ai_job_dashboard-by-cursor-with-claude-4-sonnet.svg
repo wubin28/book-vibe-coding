@@ -56,7 +56,7 @@
   
   <rect x="600" y="190" width="240" height="60" fill="url(#statGradient)" rx="10"/>
   <text x="720" y="215" text-anchor="middle" fill="#2c3e50" font-family="Arial, sans-serif" font-size="24" font-weight="bold">25+</text>
-  <text x="720" y="235" text-anchor="middle" fill="#34495e" font-family="Arial, sans-serif" font-size="12">Countries</text>
+  <text x="720" y="235" text-anchor="middle" fill="#34495e" font-family="Arial, sans-serif" font-size="12">Countries/Regions</text>
   
   <rect x="860" y="190" width="240" height="60" fill="url(#statGradient)" rx="10"/>
   <text x="980" y="215" text-anchor="middle" fill="#2c3e50" font-family="Arial, sans-serif" font-size="24" font-weight="bold">$98,500</text>
@@ -136,7 +136,7 @@
   <!-- Global Job Opportunities Chart -->
   <rect x="50" y="600" width="550" height="300" fill="white" rx="10" filter="url(#dropShadow)"/>
   <text x="70" y="630" fill="#2c3e50" font-family="Arial, sans-serif" font-size="18" font-weight="600">🌍 Global Job Opportunities</text>
-  <text x="70" y="650" fill="#666" font-family="Arial, sans-serif" font-size="14">AI job distribution by country</text>
+  <text x="70" y="650" fill="#666" font-family="Arial, sans-serif" font-size="14">AI job distribution by country/region</text>
   
   <!-- Horizontal Bar Chart -->
   <g transform="translate(70, 680)">
@@ -244,11 +244,11 @@
   
   <!-- Country Comparison Table -->
   <rect x="50" y="1120" width="1100" height="400" fill="white" rx="10" filter="url(#dropShadow)"/>
-  <text x="70" y="1150" fill="#2c3e50" font-family="Arial, sans-serif" font-size="18" font-weight="600">📊 Detailed Country Comparison</text>
+  <text x="70" y="1150" fill="#2c3e50" font-family="Arial, sans-serif" font-size="18" font-weight="600">📊 Detailed Country/Region Comparison</text>
   
   <!-- Table Header -->
   <rect x="70" y="1170" width="1060" height="30" fill="url(#headerGradient)" rx="5"/>
-  <text x="90" y="1190" fill="white" font-family="Arial, sans-serif" font-size="12" font-weight="600">Country</text>
+  <text x="90" y="1190" fill="white" font-family="Arial, sans-serif" font-size="12" font-weight="600">Country/Region</text>
   <text x="250" y="1190" fill="white" font-family="Arial, sans-serif" font-size="12" font-weight="600">Job Count</text>
   <text x="400" y="1190" fill="white" font-family="Arial, sans-serif" font-size="12" font-weight="600">Avg Salary (USD)</text>
   <text x="600" y="1190" fill="white" font-family="Arial, sans-serif" font-size="12" font-weight="600">Top Role</text>
@@ -330,7 +330,7 @@
   <!-- Geographic Insight -->
   <rect x="80" y="1660" width="1040" height="60" fill="url(#skillGradient)" rx="10"/>
   <text x="100" y="1680" fill="#8b4513" font-family="Arial, sans-serif" font-size="14" font-weight="600">🌟 Geographic Insight</text>
-  <text x="100" y="1700" fill="#8b4513" font-family="Arial, sans-serif" font-size="12">Nordic countries (Denmark, Sweden) offer the highest average salaries, while Asia-Pacific regions show strong growth in AI job opportunities.</text>
+  <text x="100" y="1700" fill="#8b4513" font-family="Arial, sans-serif" font-size="12">Nordic countries/regions (Denmark, Sweden) offer the highest average salaries, while Asia-Pacific regions show strong growth in AI job opportunities.</text>
   <text x="100" y="1715" fill="#8b4513" font-family="Arial, sans-serif" font-size="12">Remote work adoption varies significantly by region, with Sweden leading at 85%.</text>
   
   <!-- Career Growth Insight -->

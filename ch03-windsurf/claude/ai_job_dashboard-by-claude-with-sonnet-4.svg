@@ -75,7 +75,7 @@
   
   <rect x="980" y="310" width="280" height="70" rx="15" fill="url(#statGradient)"/>
   <text x="1120" y="340" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="24" font-weight="bold" fill="white">36</text>
-  <text x="1120" y="365" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" fill="rgba(255,255,255,0.9)">涵盖国家数量</text>
+  <text x="1120" y="365" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" fill="rgba(255,255,255,0.9)">涵盖国家/地区数量</text>
   
   <!-- 技能需求分析图表 -->
   <rect x="50" y="430" width="630" height="350" rx="20" fill="rgba(255,255,255,0.95)" filter="url(#cardShadow)"/>
@@ -254,7 +254,7 @@
     🌍 全球就业机会对比
   </text>
   <text x="70" y="1245" font-family="Segoe UI, sans-serif" font-size="14" fill="#7f8c8d">
-    各国AI工作机会与平均薪资水平
+    各个国家/地区AI工作机会与平均薪资水平
   </text>
   
   <!-- 国家对比条形图 -->
@@ -354,7 +354,7 @@
     🏆 顶级就业目的地
   </text>
   <text x="70" y="1805" font-family="Segoe UI, sans-serif" font-size="14" fill="#7f8c8d">
-    AI人才最活跃的国家和地区
+    AI人才最活跃的国家/地区
   </text>
   
   <!-- 国家信息卡片 -->
