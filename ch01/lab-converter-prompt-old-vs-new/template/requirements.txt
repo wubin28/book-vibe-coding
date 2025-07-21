@@ -1,0 +1,2 @@
+python-docx>=0.8.10
+pillow>=8.0.0
